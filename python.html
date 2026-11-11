@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07152e">
+
+    <title>Python Masterclass | ELOMCODE School</title>
+
+    <link rel="stylesheet" href="python.css">
+
+    <!-- Python runtime: executes Python code inside the browser -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
+    <script src="python.js" defer></script>
+</head>
+
+<body>
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<header class="topbar">
+    <a href="index.html" class="brand">
+        <span class="brand-mark">E</span>
+        <span>
+            <strong>ELOMCODE</strong>
+            <small>PYTHON MASTERCLASS</small>
+        </span>
+    </a>
+
+    <div class="top-actions">
+        <div class="xp-pill">✦ <span id="topXP">0 XP</span></div>
+        <a href="courses.html" class="top-link">Back to Courses</a>
+        <a href="index.html" class="top-link school-link">Back to School</a>
+    </div>
+</header>
+
+<div class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-heading">
+            <span class="eyebrow">YOUR LEARNING PATH</span>
+            <h2>Python <span>Masterclass</span></h2>
+            <p>From your first line of code to building real projects.</p>
+        </div>
+
+        <div class="sidebar-progress">
+            <div class="progress-label">
+                <span>Course progress</span>
+                <strong id="progressPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-caption">
+                <span id="progressLessons">0 of 55 lessons</span>
+                <span id="sidebarXP">0 XP</span>
+            </div>
+        </div>
+
+        <div class="lesson-list" id="lessonList">
+            <div class="loading-lessons">Preparing your Python lessons...</div>
+        </div>
+
+        <div class="sidebar-footer">
+            <span class="online-dot"></span>
+            <span>Learning locally on this device</span>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="mobile-toolbar">
+            <button id="menuButton" class="secondary-button">☰ Lessons</button>
+            <span class="mobile-course-label">PYTHON / MASTERCLASS</span>
+        </div>
+
+        <section class="welcome-strip">
+            <div class="welcome-copy">
+                <span class="eyebrow">ELOMCODE SCHOOL · COURSE 05</span>
+                <h1>Think in Python.<br><span>Build your ideas.</span></h1>
+                <p>Learn the language. Understand the logic. Create something meaningful.</p>
+            </div>
+
+            <div class="python-symbol" aria-hidden="true">
+                <div class="python-orbit orbit-one"></div>
+                <div class="python-orbit orbit-two"></div>
+                <div class="python-logo">
+                    <span class="snake-top"></span>
+                    <span class="snake-bottom"></span>
+                </div>
+                <span class="floating-code code-one">&lt;/&gt;</span>
+                <span class="floating-code code-two">{ }</span>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-icon">▤</span>
+                <div>
+                    <span class="stat-label">COMPLETED</span>
+                    <strong id="completedCount">0 / 55</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">✦</span>
+                <div>
+                    <span class="stat-label">TOTAL XP</span>
+                    <strong id="xpText">0 XP</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">⌘</span>
+                <div>
+                    <span class="stat-label">CURRENT LESSON</span>
+                    <strong id="experienceLesson">Lesson 1</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-panel">
+
+            <div class="lesson-heading">
+                <div>
+                    <div class="lesson-meta">
+                        <span class="lesson-number" id="lessonNumber">LESSON 01</span>
+                        <span class="category-tag" id="lessonCategory">PYTHON FOUNDATIONS</span>
+                    </div>
+
+                    <h2 id="lessonTitle">Welcome to Python</h2>
+                    <p id="lessonSubtitle">Your journey into Python programming begins here.</p>
+                </div>
+
+                <div class="lesson-status" id="lessonStatus">IN PROGRESS</div>
+            </div>
+
+            <div class="explanation-box">
+                <h3>Understand the concept</h3>
+                <div id="lessonExplanation"></div>
+                <div class="lesson-tip" id="lessonTip"></div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">LEARN BY EXAMPLE</span>
+                    <h3>See how it works</h3>
+                </div>
+                <span class="section-badge">EXAMPLE</span>
+            </div>
+
+            <div class="example-card">
+                <div class="code-topbar">
+                    <div class="window-dots">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <span>example.py</span>
+                    <span class="code-language">PYTHON</span>
+                </div>
+
+                <pre class="example-code" id="exampleCode"><code>print("Hello, Python!")</code></pre>
+
+                <div class="example-output">
+                    <div class="output-heading">
+                        <span>EXPECTED OUTPUT</span>
+                        <span class="output-indicator"></span>
+                    </div>
+                    <pre id="exampleExpected">Hello, Python!</pre>
+                </div>
+            </div>
+
+            <div class="section-heading practice-heading">
+                <div>
+                    <span class="eyebrow">YOUR TURN</span>
+                    <h3>Write your own code</h3>
+                    <p>Start with an empty editor. Write your solution and run it.</p>
+                </div>
+                <span class="section-badge practice-badge">PRACTICE</span>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-icon">✦</div>
+                <div>
+                    <h4 id="challengeTitle">Your first challenge</h4>
+                    <p id="challengeText">Write a Python program that prints a message.</p>
+                </div>
+            </div>
+
+            <div class="editor-card">
+                <div class="editor-topbar">
+                    <div class="editor-title">
+                        <span class="editor-dot"></span>
+                        <strong>practice.py</strong>
+                    </div>
+
+                    <span class="editor-note">YOUR CODE · PYTHON</span>
+                </div>
+
+                <textarea
+                    id="codeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                    autocapitalize="off"
+                    autocomplete="off"
+                    autocorrect="off"
+                    aria-label="Write your Python code here"
+                    placeholder="# Write your Python code here...
+# Your editor starts empty."></textarea>
+
+                <div class="editor-actions">
+                    <button id="runButton" class="primary-button">
+                        <span>▶</span> Run Code
+                    </button>
+
+                    <button id="resetButton" class="secondary-button">
+                        Clear Editor
+                    </button>
+
+                    <span id="runtimeStatus" class="runtime-status">
+                        Preparing Python runtime...
+                    </span>
+                </div>
+
+                <div class="practice-output">
+                    <div class="practice-output-heading">
+                        <strong>YOUR OUTPUT</strong>
+                        <span id="outputStatus">Waiting for your code</span>
+                    </div>
+
+                    <pre id="practiceOutput">Your program's output will appear here.</pre>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button id="previousButton" class="secondary-button">← Previous</button>
+
+                <button id="completeButton" class="complete-button">
+                    ✓ Mark Lesson Complete
+                </button>
+
+                <button id="nextButton" class="primary-button">Next Lesson →</button>
+            </div>
+
+        </section>
+
+        <section class="certificate-card">
+            <div class="certificate-icon">🏆</div>
+
+            <div class="certificate-copy">
+                <span class="eyebrow">YOUR ACHIEVEMENT</span>
+                <h3>Python Masterclass Certificate</h3>
+                <p id="certificateMessage">
+                    Complete all 55 lessons to unlock your certificate.
+                </p>
+                <span id="certificateStatus" class="certificate-status">55 LESSONS REQUIRED</span>
+            </div>
+
+            <button id="certificateOpenButton" class="secondary-button" disabled>
+                View Certificate
+            </button>
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-brand">ELOMCODE <span>School</span></div>
+            <p>Learn. Code. Build. Become.</p>
+            <p>Course architect: Elijah Opomulero</p>
+        </footer>
+
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="modal-backdrop" id="certificateModal" aria-hidden="true">
+    <div class="certificate-modal" role="dialog" aria-modal="true" aria-labelledby="certificateTitle">
+
+        <button id="certificateClose" class="modal-close" aria-label="Close certificate">×</button>
+
+        <div class="certificate-paper">
+            <div class="certificate-border">
+
+                <span class="certificate-brand">ELOMCODE SCHOOL</span>
+                <div class="certificate-star">✦</div>
+                <h2 id="certificateTitle">Certificate of Completion</h2>
+                <p class="certificate-intro">This certificate is proudly presented to</p>
+
+                <input
+                    id="certificateName"
+                    type="text"
+                    maxlength="70"
+                    placeholder="Enter your full name"
+                    aria-label="Learner's full name">
+
+                <p class="certificate-description">
+                    for successfully completing the Python Masterclass and demonstrating
+                    commitment to learning Python programming.
+                </p>
+
+                <div class="certificate-details">
+                    <div>
+                        <strong id="certificateXP">1375 XP</strong>
+                        <span>XP EARNED</span>
+                    </div>
+                    <div>
+                        <strong>55 / 55</strong>
+                        <span>LESSONS COMPLETED</span>
+                    </div>
+                </div>
+
+                <div class="signature-area">
+                    <strong>Elijah Opomulero</strong>
+                    <span>Course Architect · ELOMCODE School</span>
+                </div>
+
+                <p class="certificate-motto">LEARN. CODE. BUILD. BECOME.</p>
+            </div>
+        </div>
+
+        <div class="certificate-modal-actions">
+            <button id="certificatePrintButton" class="primary-button">Print / Save as PDF</button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

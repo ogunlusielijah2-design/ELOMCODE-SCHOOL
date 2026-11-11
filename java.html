@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn Java programming step by step with the ELOMCODE School Java Masterclass."
+    >
+
+    <meta name="theme-color" content="#071a38">
+
+    <title>Java Masterclass | ELOMCODE School</title>
+
+    <link rel="stylesheet" href="java.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND EFFECTS
+    ========================================== -->
+
+    <div class="background-effects" aria-hidden="true">
+        <div class="background-orb orb-one"></div>
+        <div class="background-orb orb-two"></div>
+        <div class="background-grid"></div>
+    </div>
+
+
+    <!-- =========================================
+         TOP NAVIGATION
+    ========================================== -->
+
+    <header class="java-header">
+
+        <div class="header-brand">
+
+            <a href="index.html" class="brand-symbol" aria-label="ELOMCODE School home">
+                <span>E</span>
+            </a>
+
+            <div class="brand-text">
+                <h1>ELOMCODE <span>School</span></h1>
+                <p>Learn. Code. Build. Become.</p>
+            </div>
+
+        </div>
+
+
+        <div class="header-course-label">
+            <span class="status-dot"></span>
+            <span>JAVA MASTERCLASS</span>
+        </div>
+
+
+        <div class="header-actions">
+
+            <a href="courses.html" class="header-button secondary-button">
+                <span aria-hidden="true">←</span>
+                <span>Back to Courses</span>
+            </a>
+
+            <a href="index.html" class="header-button primary-button">
+                Back to School
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         COURSE HERO
+    ========================================== -->
+
+    <section class="course-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span class="hero-label-icon">J</span>
+                <span>YOUR JAVA LEARNING JOURNEY</span>
+            </div>
+
+            <h2>
+                Java
+                <span class="hero-title-highlight">Masterclass.</span>
+            </h2>
+
+            <p class="hero-description">
+                Start with the fundamentals, understand how Java works,
+                practise real programming concepts, and gradually build
+                the skills needed to create your own Java applications.
+            </p>
+
+
+            <div class="hero-information">
+
+                <div class="hero-info-item">
+                    <span class="info-icon">▤</span>
+
+                    <div>
+                        <strong id="heroLessonCount">50 Lessons</strong>
+                        <small>Structured learning</small>
+                    </div>
+                </div>
+
+
+                <div class="hero-info-item">
+                    <span class="info-icon">⌘</span>
+
+                    <div>
+                        <strong>Hands-on Practice</strong>
+                        <small>Learn by doing</small>
+                    </div>
+                </div>
+
+
+                <div class="hero-info-item">
+                    <span class="info-icon">◇</span>
+
+                    <div>
+                        <strong>Certificate</strong>
+                        <small>After completing the course</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual" aria-hidden="true">
+
+            <div class="java-visual-glow"></div>
+
+            <div class="java-code-card">
+
+                <div class="code-card-top">
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span class="code-file-name">Main.java</span>
+                </div>
+
+
+                <div class="hero-code">
+                    <p><span class="code-number">01</span> <span class="code-purple">public class</span> <span class="code-blue">Main</span> {</p>
+
+                    <p><span class="code-number">02</span> &nbsp;&nbsp;<span class="code-purple">public static void</span> main(String[] args) {</p>
+
+                    <p><span class="code-number">03</span> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(</p>
+
+                    <p><span class="code-number">04</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Hello, Java!"</span></p>
+
+                    <p><span class="code-number">05</span> &nbsp;&nbsp;&nbsp;&nbsp;);</p>
+
+                    <p><span class="code-number">06</span> &nbsp;&nbsp;}</p>
+
+                    <p><span class="code-number">07</span> }</p>
+                </div>
+
+
+                <div class="code-card-bottom">
+                    <span class="terminal-indicator"></span>
+                    <span>YOUR CODING JOURNEY STARTS HERE</span>
+                </div>
+
+            </div>
+
+            <div class="floating-code-symbol symbol-one">{ }</div>
+            <div class="floating-code-symbol symbol-two">&lt;/&gt;</div>
+            <div class="floating-code-symbol symbol-three">01</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         COURSE PROGRESS
+    ========================================== -->
+
+    <section class="course-progress-card">
+
+        <div class="progress-heading">
+
+            <div>
+                <span class="section-eyebrow">YOUR JOURNEY</span>
+                <h3>Course Progress</h3>
+                <p>Every lesson brings you one step closer to mastering Java.</p>
+            </div>
+
+            <div class="progress-percentage">
+                <strong id="progressPercent">0%</strong>
+                <span>completed</span>
+            </div>
+
+        </div>
+
+
+        <div class="progress-track">
+            <div
+                class="progress-fill"
+                id="progressFill"
+                style="width: 0%;"
+            ></div>
+        </div>
+
+
+        <div class="progress-footer">
+
+            <span>
+                <strong id="progressLessons">0</strong>
+                of
+                <strong id="totalLessons">50</strong>
+                lessons completed
+            </span>
+
+            <span class="xp-display">
+                <span aria-hidden="true">✦</span>
+                <strong id="xpText">0 XP</strong>
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MAIN LEARNING WORKSPACE
+    ========================================== -->
+
+    <main class="learning-layout">
+
+
+        <!-- =====================================
+             LESSON SIDEBAR
+        ====================================== -->
+
+        <aside class="lesson-sidebar" id="lessonSidebar">
+
+            <div class="sidebar-heading">
+
+                <div>
+                    <span class="section-eyebrow">LEARNING PATH</span>
+                    <h3>Course Lessons</h3>
+                </div>
+
+                <button
+                    type="button"
+                    class="sidebar-close-button"
+                    id="sidebarCloseButton"
+                    aria-label="Close lesson sidebar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="sidebar-course-info">
+
+                <div class="sidebar-course-icon">J</div>
+
+                <div class="sidebar-course-text">
+                    <strong>Java Masterclass</strong>
+                    <span id="sidebarProgressText">0 of 50 completed</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-mini-progress">
+                <div
+                    class="sidebar-mini-progress-fill"
+                    id="sidebarProgressFill"
+                    style="width: 0%;"
+                ></div>
+            </div>
+
+
+            <div class="lesson-search-box">
+
+                <span aria-hidden="true">⌕</span>
+
+                <input
+                    type="search"
+                    id="lessonSearch"
+                    placeholder="Find a lesson..."
+                    aria-label="Search course lessons"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div
+                class="lesson-list"
+                id="lessonList"
+                aria-label="Java course lessons"
+            >
+
+                <!--
+                    Lesson buttons are created by java.js.
+                    If they do not appear, check that java.js
+                    is saved in the same folder as this file.
+                -->
+
+                <div class="lesson-loading" id="lessonLoading">
+                    <span class="loading-spinner"></span>
+                    <p>Preparing your Java lessons...</p>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-bottom-card">
+
+                <div class="sidebar-bottom-icon">✦</div>
+
+                <div>
+                    <strong>Keep Building</strong>
+                    <p>Understand each concept, practise it, and keep moving forward.</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================
+             LESSON CONTENT
+        ====================================== -->
+
+        <section class="lesson-workspace">
+
+
+            <!-- Mobile sidebar toggle -->
+
+            <div class="mobile-learning-toolbar">
+
+                <button
+                    type="button"
+                    id="sidebarOpenButton"
+                    class="mobile-sidebar-button"
+                >
+                    ☰
+                    <span>Lessons</span>
+                </button>
+
+                <span id="mobileLessonIndicator">Lesson 1 of 50</span>
+
+            </div>
+
+
+
+            <!-- Lesson heading -->
+
+            <div class="lesson-heading-card">
+
+                <div class="lesson-breadcrumb">
+
+                    <a href="course.html">Courses</a>
+
+                    <span>/</span>
+
+                    <span>Java</span>
+
+                    <span>/</span>
+
+                    <span id="lessonBreadcrumbTitle">Introduction</span>
+
+                </div>
+
+
+                <div class="lesson-heading-content">
+
+                    <div class="lesson-heading-text">
+
+                        <div class="lesson-category-row">
+
+                            <span class="lesson-category-badge" id="lessonCategory">
+                                GETTING STARTED
+                            </span>
+
+                            <span class="lesson-number" id="lessonNumber">
+                                LESSON 01
+                            </span>
+
+                        </div>
+
+
+                        <h2 id="lessonTitle">
+                            Welcome to Java
+                        </h2>
+
+
+                        <p id="lessonSubtitle">
+                            Begin your journey into Java programming.
+                        </p>
+
+                    </div>
+
+
+                    <div class="lesson-completion-indicator" id="lessonCompletionIndicator">
+
+                        <span class="completion-circle" id="completionCircle">
+                            ✓
+                        </span>
+
+                        <span id="completionLabel">Not completed</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Lesson explanation -->
+
+            <article class="lesson-content-card">
+
+                <div class="content-card-heading">
+
+                    <div class="content-heading-icon">▤</div>
+
+                    <div>
+                        <span class="section-eyebrow">UNDERSTAND THE CONCEPT</span>
+                        <h3>Lesson Explanation</h3>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="lesson-explanation"
+                    id="lessonExplanation"
+                >
+
+                    <p>
+                        Welcome to the ELOMCODE School Java Masterclass.
+                        Your lessons will appear here.
+                    </p>
+
+                </div>
+
+
+                <div class="lesson-tip-box" id="lessonTipBox">
+
+                    <div class="tip-icon">✦</div>
+
+                    <div>
+                        <strong>ELomcode Learning Tip</strong>
+
+                        <p id="lessonTip">
+                            Take your time to understand each concept before moving forward.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Example code -->
+
+            <section class="example-card">
+
+                <div class="section-card-heading">
+
+                    <div class="section-heading-left">
+
+                        <div class="content-heading-icon example-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <div>
+                            <span class="section-eyebrow">LEARN BY EXAMPLE</span>
+                            <h3>Example Code</h3>
+                        </div>
+
+                    </div>
+
+
+                    <span class="example-language-badge">
+                        JAVA
+                    </span>
+
+                </div>
+
+
+                <p class="section-description">
+                    Study the example below and understand what each part does.
+                </p>
+
+
+                <div class="editor-window example-editor-window">
+
+                    <div class="editor-toolbar">
+
+                        <div class="editor-file-label">
+                            <span class="file-icon">J</span>
+                            <span id="exampleFileName">Main.java</span>
+                        </div>
+
+                        <span class="editor-status">
+                            EXAMPLE
+                        </span>
+
+                    </div>
+
+
+                    <pre
+                        class="code-display"
+                        id="exampleCode"
+                    ><code>// Your Java example will appear here.</code></pre>
+
+
+                    <div class="example-output-section">
+
+                        <div class="output-heading">
+                            <span class="output-dot"></span>
+                            <strong>EXPECTED OUTPUT</strong>
+                        </div>
+
+                        <pre id="exampleOutput">Your example output will appear here.</pre>
+
+                        <p class="output-note">
+                            This is the expected result for the displayed example.
+                            It is not a live execution result.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Practice workspace -->
+
+            <section class="practice-card" id="practiceArea">
+
+                <div class="section-card-heading">
+
+                    <div class="section-heading-left">
+
+                        <div class="content-heading-icon practice-icon">
+                            &gt;_
+                        </div>
+
+                        <div>
+                            <span class="section-eyebrow">YOUR TURN</span>
+                            <h3>Practice Workspace</h3>
+                        </div>
+
+                    </div>
+
+
+                    <span class="practice-badge">
+                        HANDS-ON
+                    </span>
+
+                </div>
+
+
+                <p class="section-description">
+                    Write your own Java code below. The editor starts empty so
+                    you can practise what you have learned.
+                </p>
+
+
+                <div class="editor-window practice-editor-window">
+
+                    <div class="editor-toolbar">
+
+                        <div class="editor-file-label">
+                            <span class="file-icon">J</span>
+                            <span>Main.java</span>
+                        </div>
+
+
+                        <div class="editor-toolbar-actions">
+
+                            <span class="editor-status" id="editorStatus">
+                                READY
+                            </span>
+
+                            <button
+                                type="button"
+                                id="clearButton"
+                                class="small-toolbar-button"
+                            >
+                                Clear
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="code-editor-wrapper">
+
+                        <div
+                            class="editor-line-numbers"
+                            id="editorLineNumbers"
+                            aria-hidden="true"
+                        >1</div>
+
+
+                        <textarea
+                            id="codeEditor"
+                            class="code-editor"
+                            spellcheck="false"
+                            autocapitalize="off"
+                            autocomplete="off"
+                            autocorrect="off"
+                            aria-label="Write your Java code here"
+                            placeholder="// Write your Java code here...
+
+// Example starting point:
+// public class Main {
+//     public static void main(String[] args) {
+//         System.out.println(&quot;Hello, Java!&quot;);
+//     }
+// }"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="editor-footer">
+
+                        <span>
+                            <span class="editor-footer-dot"></span>
+                            Java source editor
+                        </span>
+
+                        <span id="characterCount">0 characters</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Practice actions -->
+
+                <div class="practice-actions">
+
+                    <button
+                        type="button"
+                        id="runButton"
+                        class="run-code-button"
+                    >
+                        <span aria-hidden="true">▶</span>
+                        Run My Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="resetButton"
+                        class="reset-code-button"
+                    >
+                        Reset Editor
+                    </button>
+
+                </div>
+
+
+                <div class="compiler-notice">
+
+                    <span class="notice-icon">i</span>
+
+                    <p>
+                        Java requires a compiler to execute. This workspace can
+                        send your code to an online Java execution service when
+                        available. Running code requires an internet connection;
+                        if the service is unavailable, an error will be displayed.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Run output -->
+
+                <div class="run-output-card" id="runOutputCard">
+
+                    <div class="run-output-header">
+
+                        <div class="run-output-title">
+                            <span class="terminal-icon">&gt;_</span>
+                            <strong>Execution Console</strong>
+                        </div>
+
+                        <span
+                            class="run-output-status"
+                            id="runOutputStatus"
+                        >
+                            WAITING
+                        </span>
+
+                    </div>
+
+
+                    <pre
+                        id="runOutput"
+                        class="run-output"
+                        aria-live="polite"
+                    >Your program's execution result will appear here.</pre>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Lesson challenge -->
+
+            <section class="challenge-card">
+
+                <div class="challenge-heading">
+
+                    <div class="challenge-icon">✦</div>
+
+                    <div>
+                        <span class="section-eyebrow">PUT YOUR KNOWLEDGE TO WORK</span>
+                        <h3>Lesson Challenge</h3>
+                    </div>
+
+                </div>
+
+
+                <h4 id="challengeTitle">Your First Challenge</h4>
+
+                <p id="challengeText">
+                    Complete the challenge for this lesson to test your understanding.
+                </p>
+
+
+                <div class="challenge-hint" id="challengeHint">
+                    <strong>Need a hint?</strong>
+                    <span id="hintText">
+                        Review the lesson explanation and example code.
+                    </span>
+                </div>
+
+
+                <button
+                    type="button"
+                    id="showHintButton"
+                    class="hint-button"
+                >
+                    Show Hint
+                </button>
+
+            </section>
+
+
+
+            <!-- Lesson navigation -->
+
+            <section class="lesson-navigation">
+
+                <button
+                    type="button"
+                    id="previousButton"
+                    class="lesson-nav-button previous-button"
+                    disabled
+                >
+                    <span class="nav-arrow">←</span>
+
+                    <span>
+                        <small>PREVIOUS LESSON</small>
+                        <strong>Previous</strong>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    id="completeButton"
+                    class="complete-lesson-button"
+                >
+                    <span class="complete-button-icon">✓</span>
+                    <span>Mark Lesson Complete</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    id="nextButton"
+                    class="lesson-nav-button next-button"
+                >
+                    <span>
+                        <small>NEXT LESSON</small>
+                        <strong>Continue Learning</strong>
+                    </span>
+
+                    <span class="nav-arrow">→</span>
+                </button>
+
+            </section>
+
+
+
+            <!-- Certificate section -->
+
+            <section class="certificate-section" id="certificateSection">
+
+                <div class="certificate-decoration" aria-hidden="true">
+                    ✦
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <span class="section-eyebrow">YOUR ACHIEVEMENT</span>
+
+                    <h3>Java Masterclass Certificate</h3>
+
+                    <p id="certificateMessage">
+                        Complete all 50 lessons to unlock your Java Masterclass certificate.
+                    </p>
+
+
+                    <div class="certificate-progress-track">
+                        <div
+                            id="certificateProgressFill"
+                            class="certificate-progress-fill"
+                            style="width: 0%;"
+                        ></div>
+                    </div>
+
+
+                    <div class="certificate-bottom">
+
+                        <span id="certificateStatus">
+                            0 of 50 lessons completed
+                        </span>
+
+
+                        <button
+                            type="button"
+                            id="certificateOpenButton"
+                            class="certificate-button"
+                            disabled
+                        >
+                            View Certificate
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Return navigation -->
+
+            <div class="bottom-navigation">
+
+                <a href="course.html" class="bottom-back-link">
+                    <span>←</span>
+                    Back to Courses
+                </a>
+
+                <a href="index.html" class="bottom-back-link">
+                    Back to School
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         CERTIFICATE MODAL
+    ========================================== -->
+
+    <div
+        class="modal-overlay"
+        id="certificateModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="certificate-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="certificateModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="certificateClose"
+                aria-label="Close certificate"
+            >
+                ×
+            </button>
+
+
+            <div class="certificate-paper" id="certificatePaper">
+
+                <div class="certificate-inner-border">
+
+                    <div class="certificate-brand-mark">E.O</div>
+
+                    <p class="certificate-school-name">
+                        ELOMCODE SCHOOL
+                    </p>
+
+                    <div class="certificate-star">✦</div>
+
+                    <h2 id="certificateModalTitle">
+                        Certificate of Completion
+                    </h2>
+
+                    <p class="certificate-intro">
+                        This certificate is proudly presented to
+                    </p>
+
+
+                    <input
+                        type="text"
+                        id="certificateName"
+                        class="certificate-name-input"
+                        placeholder="Enter your full name"
+                        maxlength="70"
+                        autocomplete="name"
+                        aria-label="Name to appear on certificate"
+                    >
+
+
+                    <p class="certificate-description">
+                        for successfully completing the
+                    </p>
+
+                    <h3>Java Masterclass</h3>
+
+                    <p class="certificate-achievement">
+                        Demonstrating commitment to learning Java programming
+                        fundamentals, problem-solving, and practical coding.
+                    </p>
+
+
+                    <div class="certificate-signatures">
+
+                        <div class="signature-block">
+                            <span class="signature-line"></span>
+                            <strong>Elijah Opomulero</strong>
+                            <small>Course Architect</small>
+                        </div>
+
+
+                        <div class="signature-block">
+                            <span class="signature-line"></span>
+                            <strong id="certificateDate">ELOMCODE School</strong>
+                            <small>Date of Completion</small>
+                        </div>
+
+                    </div>
+
+
+                    <p class="certificate-footer">
+                        LEARN. CODE. BUILD. BECOME.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="certificate-modal-actions">
+
+                <button
+                    type="button"
+                    id="certificatePrintButton"
+                    class="certificate-print-button"
+                >
+                    Print / Save Certificate
+                </button>
+
+            </div>
+
+
+            <p class="certificate-modal-note">
+                Enter your name before printing. The certificate becomes
+                available after all course lessons have been completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST NOTIFICATIONS
+    ========================================== -->
+
+    <div
+        class="toast-message"
+        id="toastMessage"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="java-footer">
+
+        <div class="footer-brand">
+            <span class="footer-logo">E</span>
+
+            <div>
+                <strong>ELOMCODE School</strong>
+                <p>Learn. Code. Build. Become.</p>
+            </div>
+        </div>
+
+
+        <p class="footer-credit">
+            Built by <strong>Elijah Opomulero</strong>
+        </p>
+
+
+        <p class="footer-copyright">
+            © <span id="currentYear">2026</span> ELOMCODE School.
+            Keep learning. Keep building.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="java.js"></script>
+
+</body>
+</html>

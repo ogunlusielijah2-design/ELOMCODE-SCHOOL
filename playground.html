@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071326">
+    <meta name="description" content="ELOMCODE Playground — write code, experiment with ideas, and build projects.">
+
+    <title>ELOMCODE Playground | Build Without Limits</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="playground.css">
+    <script src="playground.js" defer></script>
+</head>
+
+<body>
+
+    <div class="background-system" aria-hidden="true">
+        <div class="background-grid"></div>
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div id="particles"></div>
+    </div>
+
+    <header class="topbar">
+
+        <a class="brand" href="courses.html">
+            <div class="brand-mark">
+                <span>E</span>
+            </div>
+
+            <div class="brand-copy">
+                <strong>ELOMCODE <span>PLAYGROUND</span></strong>
+                <small>Learn. Code. Build. Become.</small>
+            </div>
+        </a>
+
+        <div class="topbar-center">
+            <span class="online-dot"></span>
+            YOUR CREATIVE SPACE
+        </div>
+
+        <a href="index.html" class="back-button">
+            <span>←</span> Back to School
+        </a>
+		
+		 <a href="courses.html" class="back-button">
+                ← Back to Courses
+            </a>
+
+    </header>
+
+
+    <main class="app-container">
+
+        <section class="welcome-section">
+
+            <div class="welcome-copy">
+
+                <div class="eyebrow">
+                    <span class="pulse"></span>
+                    THE PLACE WHERE IDEAS BECOME REALITY
+                </div>
+
+                <h1>
+                    Imagine it.<br>
+                    <span class="gradient-text">Code it. Build it.</span>
+                </h1>
+
+                <p>
+                    Welcome to your personal coding universe. Experiment
+                    with code, create websites, test your ideas, and build
+                    something that belongs to you.
+                </p>
+
+            </div>
+
+            <div class="welcome-core" aria-hidden="true">
+                <div class="core-ring ring-one"></div>
+                <div class="core-ring ring-two"></div>
+                <div class="core-ring ring-three"></div>
+                <div class="core-letter">E</div>
+                <span class="core-symbol symbol-one">&lt;/&gt;</span>
+                <span class="core-symbol symbol-two">{ }</span>
+                <span class="core-symbol symbol-three">01</span>
+            </div>
+
+        </section>
+
+
+        <section class="workspace">
+
+            <div class="workspace-toolbar">
+
+                <div class="project-info">
+
+                    <div class="project-icon">⌘</div>
+
+                    <div class="project-details">
+                        <input
+                            type="text"
+                            id="projectName"
+                            value="My First Project"
+                            aria-label="Project name"
+                            maxlength="60"
+                        >
+
+                        <span>
+                            <span class="status-dot"></span>
+                            <span id="saveStatus">Local workspace ready</span>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="toolbar-actions">
+
+                    <button class="tool-button" id="newProjectBtn" type="button">
+                        <span>＋</span> New
+                    </button>
+
+                    <button class="tool-button" id="saveProjectBtn" type="button">
+                        <span>▣</span> Save
+                    </button>
+
+                    <button class="tool-button" id="openProjectBtn" type="button">
+                        <span>↗</span> Open
+                    </button>
+
+                    <button class="tool-button" id="downloadBtn" type="button">
+                        <span>↓</span> Export
+                    </button>
+
+                    <input
+                        type="file"
+                        id="importProjectInput"
+                        accept=".json,application/json"
+                        hidden
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="editor-toolbar">
+
+                <div class="editor-tabs" role="tablist" aria-label="Code editors">
+
+                    <button
+                        class="editor-tab active"
+                        data-editor="html"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                    >
+                        <span class="file-icon html-color">5</span>
+                        index.html
+                    </button>
+
+                    <button
+                        class="editor-tab"
+                        data-editor="css"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        <span class="file-icon css-color">#</span>
+                        style.css
+                    </button>
+
+                    <button
+                        class="editor-tab"
+                        data-editor="js"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        <span class="file-icon js-color">JS</span>
+                        script.js
+                    </button>
+
+                </div>
+
+                <div class="editor-controls">
+
+                    <label class="wrap-control">
+                        <input type="checkbox" id="wordWrapToggle">
+                        <span>Word wrap</span>
+                    </label>
+
+                    <button
+                        class="icon-button"
+                        id="copyCodeBtn"
+                        type="button"
+                        title="Copy current code"
+                    >▣</button>
+
+                    <button
+                        class="icon-button"
+                        id="resetEditorBtn"
+                        type="button"
+                        title="Reset starter code"
+                    >↺</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="coding-layout">
+
+                <section class="editor-panel" aria-label="Code editor">
+
+                    <div class="editor-heading">
+                        <div>
+                            <span class="panel-kicker">EDITOR</span>
+                            <h2 id="editorTitle">HTML Editor</h2>
+                        </div>
+
+                        <span class="language-badge" id="languageBadge">HTML5</span>
+                    </div>
+
+                    <div class="code-editor">
+
+                        <div class="line-numbers" id="lineNumbers">1</div>
+
+                        <textarea
+                            id="codeEditor"
+                            spellcheck="false"
+                            autocapitalize="off"
+                            autocomplete="off"
+                            autocorrect="off"
+                            aria-label="Write your code here"
+                            wrap="off"
+                            placeholder="Start writing your code..."
+                        ></textarea>
+
+                    </div>
+
+                    <div class="editor-footer">
+                        <span id="lineCount">1 line</span>
+                        <span id="characterCount">0 characters</span>
+                        <span id="currentLanguage">HTML</span>
+                    </div>
+
+                </section>
+
+
+                <section class="preview-panel" aria-label="Live preview">
+
+                    <div class="preview-heading">
+
+                        <div>
+                            <span class="panel-kicker">LIVE ENVIRONMENT</span>
+                            <h2>Preview</h2>
+                        </div>
+
+                        <div class="preview-actions">
+
+                            <button
+                                class="icon-button"
+                                id="refreshPreviewBtn"
+                                type="button"
+                                title="Run code"
+                            >↻</button>
+
+                            <button
+                                class="icon-button"
+                                id="fullscreenBtn"
+                                type="button"
+                                title="Expand preview"
+                            >⛶</button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-browser-bar">
+
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="preview-address">
+                            elomcode.local / preview
+                        </div>
+
+                        <span class="preview-live">
+                            <span></span> LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-frame-wrap" id="previewFrameWrap">
+
+                        <iframe
+                            id="previewFrame"
+                            title="Your website preview"
+                            sandbox="allow-scripts"
+                            referrerpolicy="no-referrer"
+                        ></iframe>
+
+                    </div>
+
+
+                    <div class="preview-footer">
+                        <span>
+                            <span class="status-dot"></span>
+                            Preview runs in an isolated frame
+                        </span>
+
+                        <span id="previewStatus">Ready to build</span>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <div class="runbar">
+
+                <div class="runbar-info">
+                    <span class="runbar-symbol">⚡</span>
+
+                    <div>
+                        <strong>Ready to see your creation?</strong>
+                        <small>Run your HTML, CSS and JavaScript together.</small>
+                    </div>
+                </div>
+
+                <div class="runbar-actions">
+
+                    <button class="secondary-action" id="clearConsoleBtn" type="button">
+                        Clear Output
+                    </button>
+
+                    <button class="run-button" id="runCodeBtn" type="button">
+                        <span>▶</span> Run Code
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <section class="console-panel">
+
+                <div class="console-heading">
+
+                    <div>
+                        <span class="panel-kicker">DEVELOPER TOOLS</span>
+                        <h2>Output Console</h2>
+                    </div>
+
+                    <span class="console-indicator">
+                        <span></span> CONSOLE
+                    </span>
+
+                </div>
+
+                <div
+                    class="console-output"
+                    id="consoleOutput"
+                    role="log"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                >
+                    <div class="console-welcome">
+                        <span class="console-prompt">›</span>
+                        Welcome to ELOMCODE Playground.
+                        Your output will appear here.
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <section class="quick-start">
+
+            <div class="section-heading">
+                <div>
+                    <span class="panel-kicker">YOUR NEXT MOVE</span>
+                    <h2>What do you want to create?</h2>
+                    <p>Choose a starting point. You can change everything afterward.</p>
+                </div>
+            </div>
+
+
+            <div class="template-grid">
+
+                <button class="template-card" data-template="blank" type="button">
+                    <span class="template-icon blank-icon">＋</span>
+                    <strong>Blank Project</strong>
+                    <small>Start with a clean workspace.</small>
+                    <span class="template-arrow">↗</span>
+                </button>
+
+                <button class="template-card" data-template="website" type="button">
+                    <span class="template-icon website-icon">▤</span>
+                    <strong>Personal Website</strong>
+                    <small>Create a stylish personal page.</small>
+                    <span class="template-arrow">↗</span>
+                </button>
+
+                <button class="template-card" data-template="portfolio" type="button">
+                    <span class="template-icon portfolio-icon">✦</span>
+                    <strong>Portfolio</strong>
+                    <small>Showcase your work and skills.</small>
+                    <span class="template-arrow">↗</span>
+                </button>
+
+                <button class="template-card" data-template="interactive" type="button">
+                    <span class="template-icon interactive-icon">{ }</span>
+                    <strong>Interactive App</strong>
+                    <small>Build a small JavaScript experience.</small>
+                    <span class="template-arrow">↗</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="language-notice">
+
+            <div class="notice-icon">⌘</div>
+
+            <div>
+                <strong>Your coding journey doesn't stop here.</strong>
+                <p>
+                    This workspace runs HTML, CSS and JavaScript directly.
+                    Other languages, including Python, Java and C++, can be
+                    connected to appropriate execution environments as the
+                    playground grows.
+                </p>
+            </div>
+
+        </section>
+
+
+        <footer class="page-footer">
+            <div class="footer-mark">E</div>
+
+            <div>
+                <strong>ELOMCODE PLAYGROUND</strong>
+                <p>Built with purpose by Elijah Opomulero.</p>
+            </div>
+
+            <a href="courses.html">Return to School ↑</a>
+        </footer>
+
+    </main>
+
+
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+
+    <dialog class="project-dialog" id="projectDialog">
+
+        <div class="dialog-heading">
+            <div>
+                <span class="panel-kicker">YOUR WORKSPACE</span>
+                <h2>Saved Projects</h2>
+            </div>
+
+            <button class="icon-button" id="closeProjectDialog" type="button">
+                ✕
+            </button>
+        </div>
+
+        <p class="dialog-description">
+            Reopen a project saved in this browser.
+        </p>
+
+        <div class="saved-project-list" id="savedProjectList"></div>
+
+        <div class="dialog-footer">
+            <span>Projects are stored in this browser.</span>
+        </div>
+
+    </dialog>
+
+
+</body>
+</html>

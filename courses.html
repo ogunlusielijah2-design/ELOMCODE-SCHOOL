@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#071326">
+    <meta name="description" content="Explore ELOMCODE School — learn, code, build and become a better developer.">
+
+    <title>ELOMCODE School | Choose Your Learning Path</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="courses.css">
+</head>
+
+<body>
+
+    <!-- CINEMATIC BACKGROUND -->
+
+    <div class="background-system" aria-hidden="true">
+        <div class="background-grid"></div>
+
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="aurora aurora-three"></div>
+
+        <div class="floating-shape shape-one"></div>
+        <div class="floating-shape shape-two"></div>
+        <div class="floating-shape shape-three"></div>
+
+        <div id="stars"></div>
+        <div id="particles"></div>
+    </div>
+
+    <div class="cursor-glow" aria-hidden="true"></div>
+	
+	<!-- ELOMCODE AMBIENT LIGHT LOGO -->
+
+<div class="ambient-light-control" id="ambientLightControl">
+
+    <button
+        class="ambient-logo"
+        id="ambientToggle"
+        type="button"
+        aria-label="Open ambient light settings"
+        aria-expanded="false"
+        aria-controls="ambientLightOptions"
+        title="Change Ambient Light"
+    >
+        <span class="ambient-logo-ring"></span>
+        <span class="ambient-logo-letter">E</span>
+        <span class="ambient-logo-spark">✦</span>
+    </button>
+
+    <div
+        class="ambient-options"
+        id="ambientLightOptions"
+        aria-label="Choose ambient light colour"
+        hidden
+    >
+
+        <div class="ambient-menu-heading">
+            <span>AMBIENT LIGHT</span>
+            <small>Choose your atmosphere</small>
+        </div>
+
+        <button class="ambient-colour active"
+            type="button" data-ambient="blue"
+            aria-label="Electric Blue" aria-pressed="true">
+            <span class="ambient-colour-dot blue"></span>
+            <span>Electric Blue</span>
+        </button>
+
+        <button class="ambient-colour"
+            type="button" data-ambient="purple"
+            aria-label="Royal Purple" aria-pressed="false">
+            <span class="ambient-colour-dot purple"></span>
+            <span>Royal Purple</span>
+        </button>
+
+        <button class="ambient-colour"
+            type="button" data-ambient="cyan"
+            aria-label="Cyan Glow" aria-pressed="false">
+            <span class="ambient-colour-dot cyan"></span>
+            <span>Cyan Glow</span>
+        </button>
+
+        <button class="ambient-colour"
+            type="button" data-ambient="green"
+            aria-label="Emerald Green" aria-pressed="false">
+            <span class="ambient-colour-dot green"></span>
+            <span>Emerald Green</span>
+        </button>
+
+        <button class="ambient-colour"
+            type="button" data-ambient="pink"
+            aria-label="Neon Pink" aria-pressed="false">
+            <span class="ambient-colour-dot pink"></span>
+            <span>Neon Pink</span>
+        </button>
+
+        <button class="ambient-colour"
+            type="button" data-ambient="gold"
+            aria-label="Golden Light" aria-pressed="false">
+            <span class="ambient-colour-dot gold"></span>
+            <span>Golden Light</span>
+        </button>
+		
+
+
+    </div>
+
+</div>
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <a class="brand" href="#home" aria-label="ELOMCODE School Home">
+
+            <div class="brand-mark">
+                <span>E</span>
+                <div class="brand-mark-ring"></div>
+            </div>
+
+            <div class="brand-copy">
+                <strong>ELOMCODE <span>SCHOOL</span></strong>
+                <small>Learn. Code. Build. Become.</small>
+            </div>
+
+        </a>
+
+        <nav class="top-navigation" aria-label="Main navigation">
+            <a href="#home" class="top-link nav-active">Home</a>
+            <a href="#courses" class="top-link">Courses</a>
+            <a href="#features" class="top-link">Experience</a>
+            <a href="#founder" class="top-link">Founder</a>
+        </nav>
+
+        <a href="index.html" class="back-school-button">
+            <span class="back-arrow">←</span>
+            <span>Back to School</span>
+        </a>
+
+        <button class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+    <!-- PAGE LAYOUT -->
+
+    <div class="page-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="school-sidebar" id="schoolSidebar">
+
+            <div class="sidebar-glow"></div>
+
+            <div class="sidebar-heading">
+
+                <div class="sidebar-heading-icon">E</div>
+
+                <div>
+                    <div class="sidebar-small-label">YOUR LEARNING SPACE</div>
+                    <strong>Explore School</strong>
+                </div>
+
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-section-label">LEARNING</div>
+
+            <a href="#home" class="side-item active">
+                <span class="side-icon">⌂</span>
+                <span>School Home</span>
+                <span class="side-arrow">↗</span>
+            </a>
+
+            <a href="#courses" class="side-item">
+                <span class="side-icon">&lt;/&gt;</span>
+                <span>All Courses</span>
+                <span class="side-arrow">↗</span>
+            </a>
+
+            <a href="#code-universe" class="side-item">
+                <span class="side-icon">◎</span>
+                <span>Code Universe</span>
+                <span class="side-arrow">↗</span>
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-section-label">YOUR EXPERIENCE</div>
+
+            <!-- CHALLENGE ZONE -->
+
+            <a href="challenges.html"
+               class="side-item"
+               id="sidebarChallengesLink">
+
+                <span class="side-icon">⚡</span>
+                <span>Challenge Zone</span>
+                <span class="side-arrow">↗</span>
+
+            </a>
+
+            <!-- CODE GAMES -->
+
+            <a href="games.html"
+               class="side-item"
+               id="sidebarGamesLink">
+
+                <span class="side-icon">◈</span>
+                <span>Code Games</span>
+                <span class="side-arrow">↗</span>
+
+            </a>
+			
+			            <!-- CODE PLAYGROUND -->
+
+            <a href="playground.html"
+               class="side-item"
+               id="sidebarPlaygroundLink">
+
+                <span class="side-icon">&lt;/&gt;</span>
+                <span>Code Playground</span>
+                <span class="side-arrow">↗</span>
+
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-section-label">DISCOVER</div>
+
+            <a href="#founder" class="side-item">
+                <span class="side-icon">✦</span>
+                <span>Meet the Founder</span>
+                <span class="side-arrow">↗</span>
+            </a>
+
+            <a href="#about-school" class="side-item">
+                <span class="side-icon">◉</span>
+                <span>About ELOMCODE</span>
+                <span class="side-arrow">↗</span>
+            </a>
+
+            <div class="sidebar-bottom-card">
+
+                <div class="sidebar-orbit-icon">
+                    <span>E</span>
+                </div>
+
+                <div class="sidebar-bottom-title">
+                    Your next level awaits.
+                </div>
+
+                <p class="sidebar-bottom-description">
+                    Every great developer begins somewhere.
+                    Let your journey begin here.
+                </p>
+
+                <a href="#courses" class="sidebar-bottom-link">
+                    Explore courses <span>→</span>
+                </a>
+
+                <div class="sidebar-status">
+                    <span class="status-dot"></span>
+                    Learning journey starts here
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content" id="home">
+
+            <!-- HERO -->
+
+            <section class="hero-section">
+
+                <div class="hero-copy">
+
+                    <div class="hero-eyebrow">
+                        <span class="eyebrow-pulse"></span>
+                        THE FUTURE IS BUILT BY YOU
+                    </div>
+
+                    <h1>
+                        Choose Your
+                        <span class="gradient-text">Learning Path.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Welcome to a different kind of learning experience.
+                        Explore programming, experiment with ideas, challenge
+                        your mind, and turn what you learn into something real.
+                    </p>
+
+                   <div class="hero-actions">
+
+    <a href="#courses" class="primary-button">
+        Explore Courses
+        <span class="button-arrow">↗</span>
+    </a>
+
+    <a href="playground.html" class="secondary-button">
+        <span class="play-icon">▶</span>
+        Open Code Playground
+        <span class="button-arrow">↗</span>
+    </a>
+
+    <a href="#features" class="secondary-button">
+        Discover the Experience
+        <span class="button-arrow">↗</span>
+    </a>
+
+</div>
+
+                    <div class="hero-statistics">
+
+                        <div class="hero-stat">
+                            <strong>10</strong>
+                            <span>Learning Paths</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="hero-stat">
+                            <strong>∞</strong>
+                            <span>Ideas to Explore</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="hero-stat">
+                            <strong>1</strong>
+                            <span>Journey Starts Here</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANIMATED E-CORE -->
+
+                <div class="hero-visual">
+
+                    <div class="e-core-stage">
+
+                        <div class="core-background-glow"></div>
+
+                        <div class="core-halo halo-one"></div>
+                        <div class="core-halo halo-two"></div>
+                        <div class="core-halo halo-three"></div>
+
+                        <div class="core-energy-ring energy-ring-one"></div>
+                        <div class="core-energy-ring energy-ring-two"></div>
+
+                        <div class="orbit-ring orbit-one">
+                            <span class="orbit-dot"></span>
+                        </div>
+
+                        <div class="orbit-ring orbit-two">
+                            <span class="orbit-dot"></span>
+                        </div>
+
+                        <div class="orbit-ring orbit-three">
+                            <span class="orbit-dot"></span>
+                        </div>
+
+                        <div class="core-satellite satellite-one">&lt;/&gt;</div>
+                        <div class="core-satellite satellite-two">{ }</div>
+                        <div class="core-satellite satellite-three">01</div>
+                        <div class="core-satellite satellite-four">✦</div>
+
+                        <div class="e-core">
+
+                            <div class="core-shine"></div>
+                            <div class="core-inner-border"></div>
+
+                            <div class="core-letter">E</div>
+
+                            <div class="core-letter-caption">
+                                ELOMCODE
+                            </div>
+
+                            <div class="core-scan-line"></div>
+
+                        </div>
+
+                        <div class="founder-orbit-label">
+                            <span class="founder-orbit-line"></span>
+                            ELOMCODE CORE
+                        </div>
+
+                        <div class="core-caption">
+                            <span class="core-caption-dot"></span>
+                            BUILT WITH PURPOSE
+                        </div>
+
+                        <div class="tech-node tech-html">
+                            <span class="tech-node-dot"></span>
+                            HTML
+                        </div>
+
+                        <div class="tech-node tech-css">
+                            <span class="tech-node-dot"></span>
+                            CSS
+                        </div>
+
+                        <div class="tech-node tech-js">
+                            <span class="tech-node-dot"></span>
+                            JS
+                        </div>
+
+                        <div class="tech-node tech-sql">
+                            <span class="tech-node-dot"></span>
+                            SQL
+                        </div>
+
+                        <div class="tech-node tech-python">
+                            <span class="tech-node-dot"></span>
+                            PYTHON
+                        </div>
+
+                        <div class="tech-node tech-java">
+                            <span class="tech-node-dot"></span>
+                            JAVA
+                        </div>
+
+                        <span class="code-particle code-particle-one">{ }</span>
+                        <span class="code-particle code-particle-two">&lt;/&gt;</span>
+                        <span class="code-particle code-particle-three">01</span>
+                        <span class="code-particle code-particle-four">01</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CODE UNIVERSE -->
+
+            <section class="code-universe-section" id="code-universe">
+
+                <div class="section-topline">
+                    <span class="section-indicator"></span>
+                    <span>ONE SCHOOL. MANY POSSIBILITIES.</span>
+                </div>
+
+                <div class="code-universe-content">
+
+                    <div class="code-universe-copy">
+
+                        <h2>
+                            Enter the
+                            <span class="gradient-text">Code Universe.</span>
+                        </h2>
+
+                        <p>
+                            From your first line of code to the projects
+                            you once thought were impossible, build your
+                            skills one concept at a time.
+                        </p>
+
+                    </div>
+
+                    <div class="language-orbit">
+
+                        <div class="language-orbit-track orbit-track-one"></div>
+                        <div class="language-orbit-track orbit-track-two"></div>
+
+                        <div class="language-orbit-center">
+                            <span>E</span>
+                        </div>
+
+                        <div class="language-node language-node-html">HTML</div>
+                        <div class="language-node language-node-css">CSS</div>
+                        <div class="language-node language-node-js">JS</div>
+                        <div class="language-node language-node-sql">SQL</div>
+                        <div class="language-node language-node-py">PY</div>
+                        <div class="language-node language-node-java">JAVA</div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COURSES -->
+
+            <section class="page-section courses-section" id="courses">
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading-copy">
+
+                        <div class="section-eyebrow">
+                            <span class="eyebrow-pulse"></span>
+                            FIND YOUR STARTING POINT
+                        </div>
+
+                        <h2>
+                            Explore Our
+                            <span class="gradient-text">Courses.</span>
+                        </h2>
+
+                        <p>
+                            Choose a language. Learn its foundations.
+                            Build your understanding.
+                        </p>
+
+                    </div>
+
+                    <div class="course-count-badge">
+                        <span class="course-count-number">10</span>
+                        <span class="course-count-label">LEARNING PATHS</span>
+                    </div>
+
+                </div>
+				
+				<!-- CERTIFICATE AVAILABILITY NOTICE -->
+
+<div class="certificate-availability-notice">
+
+    <div class="certificate-notice-icon">
+        <span>🏆</span>
+    </div>
+
+    <div class="certificate-notice-content">
+
+        <h3>CERTIFICATE AVAILABILITY NOTICE</h3>
+
+        <p>
+            Please be informed that only two course certificates
+            are currently available on ELOMCODE School:
+        </p>
+
+        <div class="available-certificates">
+
+            <span>✓ CSS Masterclass Certificate</span>
+
+            <span>✓ JavaScript Masterclass Certificate</span>
+
+        </div>
+
+        <p>
+            The remaining course certificates are still under
+            construction.
+        </p>
+
+        <p>
+            Please note that some courses may not display a
+            certificate option yet. In some cases, a certificate
+            option may appear but may not be clickable or functional.
+        </p>
+
+        <p>
+            We are still working on the remaining certificates,
+            and they will be made available gradually as
+            development progresses.
+        </p>
+
+        <strong>
+            Thank you for your patience and understanding!
+        </strong>
+
+    </div>
+
+</div>
+
+<!-- END CERTIFICATE NOTICE -->
+
+
+                <div class="course-toolbar">
+
+                    <div class="course-toolbar-label">
+                        <span class="toolbar-icon">⌘</span>
+                        Browse your options
+                    </div>
+
+                    <div class="course-filters">
+
+                        <button class="course-filter active"
+                                type="button" data-filter="all">
+                            All Courses
+                        </button>
+
+                        </div>
+
+                </div>
+
+
+                <div class="course-grid" id="courseGrid">
+
+                    <!-- HTML -->
+
+                    <article class="course-card course-html"
+                             data-status="available"
+                             data-course="HTML"
+                             data-href="html.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon html-icon">5</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">WEB FOUNDATIONS</div>
+
+                            <h3>HTML Masterclass</h3>
+
+                            <p>
+                                Learn how websites are structured.
+                                Build your first pages with confidence.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Beginner friendly</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Web</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CSS -->
+
+                    <article class="course-card course-css"
+                             data-status="available"
+                             data-course="CSS"
+                             data-href="css.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon css-icon">#</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">DESIGN & STYLING</div>
+
+                            <h3>CSS Masterclass</h3>
+
+                            <p>
+                                Transform plain pages into beautiful,
+                                responsive, modern experiences.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Beginner friendly</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Web</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- JAVASCRIPT -->
+
+                    <article class="course-card course-javascript"
+                             data-status="available"
+                             data-course="JavaScript"
+                             data-href="javascript.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon js-icon">JS</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">INTERACTIVE WEB</div>
+
+                            <h3>JavaScript Masterclass</h3>
+
+                            <p>
+                                Bring websites to life with logic,
+                                events, and interactive functionality.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Programming</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Web</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SQL -->
+
+                    <article class="course-card course-sql"
+                             data-status="available"
+                             data-course="SQL"
+                             data-href="sql.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon sql-icon">DB</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">DATA & DATABASES</div>
+
+                            <h3>SQL Fundamentals</h3>
+
+                            <p>
+                                Discover how to query, organize,
+                                and understand information in databases.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Data skills</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Database</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PYTHON -->
+
+                    <article class="course-card course-python"
+                             data-status="available"
+                             data-course="Python"
+                             data-href="python.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon python-icon">Py</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">GENERAL PROGRAMMING</div>
+
+                            <h3>Python Programming</h3>
+
+                            <p>
+                                Start programming with readable syntax,
+                                practical examples, and logical thinking.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Beginner friendly</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Programming</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- JAVA -->
+
+                    <article class="course-card course-java"
+                             data-status="available"
+                             data-course="Java"
+                             data-href="java.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon java-icon">☕</div>
+
+                            <span class="course-status available-status">
+                                <span></span> AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">SOFTWARE DEVELOPMENT</div>
+
+                            <h3>Java Programming</h3>
+
+                            <p>
+                                Explore programming fundamentals,
+                                object-oriented ideas, and Java syntax.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Programming</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Software</span>
+                            </div>
+
+                        </div>
+
+                        <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TYPESCRIPT -->
+
+                    <article class="course-card course-typescript"
+                             data-status="available"
+                             data-course="TypeScript"
+                             data-href="typescript.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon typescript-icon">TS</div>
+
+                            <span class="course-status available-status">
+                                <span></span>  AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">MODERN WEB DEVELOPMENT</div>
+
+                            <h3>TypeScript</h3>
+
+                            <p>
+                                Explore typed JavaScript and techniques
+                                for building more maintainable applications.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Web development</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Advanced path</span>
+                            </div>
+
+                        </div>
+
+                         <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <!-- C++ -->
+
+                    <article class="course-card course-cpp"
+                             data-status="available"
+                             data-course="C++"
+                             data-href="cpp.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon cpp-icon">C++</div>
+
+                            <span class="course-status coming-status">
+                                <span></span>  AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">SYSTEMS PROGRAMMING</div>
+
+                            <h3>C++ Programming</h3>
+
+                            <p>
+                                Discover powerful programming concepts,
+                                problem-solving, and performance-focused code.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Programming</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Systems</span>
+                            </div>
+
+                        </div>
+
+                         <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- C# -->
+
+                    <article class="course-card course-csharp"
+                             data-status="available"
+                             data-course="C#"
+                             data-href="csharp.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon csharp-icon">C#</div>
+
+                            <span class="course-status coming-status">
+                                <span></span>  AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">APPLICATION DEVELOPMENT</div>
+
+                            <h3>C# Programming</h3>
+
+                            <p>
+                                Learn the foundations of C# and explore
+                                how it can power applications and games.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Programming</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Applications</span>
+                            </div>
+
+                        </div>
+
+                          <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PHP -->
+
+                    <article class="course-card course-php"
+                             data-status="available"
+                             data-course="PHP"
+                             data-href="php.html">
+
+                        <div class="course-card-glow"></div>
+
+                        <div class="course-card-top">
+
+                            <div class="course-language-icon php-icon">PHP</div>
+
+                            <span class="course-status coming-status">
+                                <span></span>  AVAILABLE
+                            </span>
+
+                        </div>
+
+                        <div class="course-card-content">
+
+                            <div class="course-category">BACKEND DEVELOPMENT</div>
+
+                            <h3>PHP Development</h3>
+
+                            <p>
+                                Discover server-side programming and
+                                the foundations of dynamic websites.
+                            </p>
+
+                            <div class="course-card-meta">
+                                <span>◈ Web development</span>
+                                <span class="course-meta-dot"></span>
+                                <span>Backend</span>
+                            </div>
+
+                        </div>
+
+                         <div class="course-card-bottom">
+
+                            <span class="course-level">
+                                <span class="level-dot"></span>
+                                Start learning
+                            </span>
+
+                            <button class="course-open-button" type="button">
+                                Open course <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+					
+
+					
+
+                </div>
+
+
+                <div class="courses-footer-note">
+                    <span class="footer-note-icon">✦</span>
+                    Your journey does not have to be perfect.
+                    It just has to begin.
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCE ZONES -->
+
+            <section class="page-section features-section" id="features">
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading-copy">
+
+                        <div class="section-eyebrow">
+                            BEYOND THE LESSONS
+                        </div>
+
+                        <h2>
+                            Your Learning.
+                            <span class="gradient-text">Your Experience.</span>
+                        </h2>
+
+                        <p>
+                            Learning should be more than reading.
+                            Test yourself, explore, and celebrate your progress.
+                        </p>
+						
+						<div class="hero-actions playground-quick-access">
+
+    <a href="playground.html" class="primary-button">
+        <span>&lt;/&gt;</span>
+        Open Code Playground
+        <span class="button-arrow">↗</span>
+    </a>
+
+</div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <!-- CHALLENGES -->
+
+                    <article class="feature-card feature-challenges">
+
+                        <div class="feature-card-top">
+
+                            <div class="feature-icon challenge-icon">
+                                ⚡
+                            </div>
+
+                            <span class="feature-open-arrow">↗</span>
+
+                        </div>
+
+                        <div class="feature-card-content">
+
+                            <div class="feature-kicker">
+                                THINK DIFFERENTLY
+                            </div>
+
+                            <h3>Challenge Zone</h3>
+
+                            <p>
+                                Put your knowledge to work with coding
+                                problems that encourage creative thinking.
+                            </p>
+
+                        </div>
+
+                        <div class="feature-card-bottom">
+
+                            <a href="challenges.html"
+                               class="feature-launch-button"
+                               id="challengesLaunchButton">
+                                Enter Challenge Zone <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CODE GAMES -->
+
+                    <article class="feature-card feature-games">
+
+                        <div class="feature-card-top">
+
+                            <div class="feature-icon games-icon">
+                                ◈
+                            </div>
+
+                            <span class="feature-open-arrow">↗</span>
+
+                        </div>
+
+                        <div class="feature-card-content">
+
+                            <div class="feature-kicker">
+                                PLAY. LEARN. REPEAT.
+                            </div>
+
+                            <h3>Code Games</h3>
+
+                            <p>
+                                Explore interactive coding activities
+                                that make learning more engaging.
+                            </p>
+
+                        </div>
+
+                        <div class="feature-card-bottom">
+
+                            <a href="games.html"
+                               class="feature-launch-button"
+                               id="gamesLaunchButton">
+                                Enter Code Games <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+					
+					<!-- CODE PLAYGROUND -->
+
+<article class="feature-card feature-playground">
+
+    <div class="feature-card-top">
+
+        <div class="feature-icon playground-icon">
+            &lt;/&gt;
+        </div>
+
+        <span class="feature-open-arrow">↗</span>
+
+    </div>
+
+    <div class="feature-card-content">
+
+        <div class="feature-kicker">
+            CREATE. EXPERIMENT. BUILD.
+        </div>
+
+        <h3>Code Playground</h3>
+
+        <p>
+            Write code, experiment with ideas, and practise your
+            programming skills in your own interactive coding space.
+        </p>
+
+    </div>
+
+    <div class="feature-card-bottom">
+
+        <a href="playground.html"
+           class="feature-launch-button"
+           id="playgroundLaunchButton">
+            Open Code Playground <span>→</span>
+        </a>
+
+    </div>
+
+</article>
+
+                </div>
+
+            </section>
+			
+			
+
+
+            <!-- FOUNDER -->
+
+            <section class="founder-section" id="founder">
+
+                <div class="founder-background-glow"></div>
+                <div class="founder-decoration founder-decoration-one"></div>
+                <div class="founder-decoration founder-decoration-two"></div>
+
+                <div class="founder-content">
+
+                    <div class="section-eyebrow">
+                        <span class="eyebrow-pulse"></span>
+                        THE VISION BEHIND THE EXPERIENCE
+                    </div>
+
+                    <h2>
+                        Built with a vision.
+                        <span class="gradient-text">Driven by purpose.</span>
+                    </h2>
+
+                    <p class="founder-description">
+                        ELOMCODE School was created by
+                        <strong>Elijah Opomulero</strong> with a vision
+                        to make coding a more engaging, practical, and
+                        creative learning experience.
+                    </p>
+
+                    <p class="founder-description">
+                        The goal is simple: help learners develop their
+                        skills, challenge their minds, turn ideas into
+                        projects, and discover what they are capable of building.
+                    </p>
+
+                    <div class="founder-signature">
+                        <span class="signature-line"></span>
+
+                        <div>
+                            <strong>Elijah Opomulero</strong>
+                            <small>Founder & Platform Architect</small>
+                        </div>
+                    </div>
+
+                    <a href="#about-school" class="founder-continue-button">
+                        Discover the vision <span>↗</span>
+                    </a>
+
+                </div>
+
+
+                <div class="founder-visual">
+
+                    <div class="founder-visual-glow"></div>
+
+                    <div class="founder-orbit founder-orbit-one"></div>
+                    <div class="founder-orbit founder-orbit-two"></div>
+                    <div class="founder-orbit founder-orbit-three"></div>
+
+                    <div class="founder-floating-code founder-code-one">
+                        &lt;vision&gt;
+                    </div>
+
+                    <div class="founder-floating-code founder-code-two">
+                        { create(); }
+                    </div>
+
+                    <div class="founder-floating-code founder-code-three">
+                        01 · 10 · 11
+                    </div>
+
+                    <div class="founder-emblem">
+
+                        <div class="founder-emblem-inner">
+                            <span class="founder-emblem-letter">E</span>
+                            <span class="founder-emblem-caption">ELOMCODE</span>
+                        </div>
+
+                    </div>
+
+                    <div class="founder-name-plate">
+                        <span class="name-plate-label">FOUNDED BY</span>
+                        <strong>Elijah Opomulero</strong>
+                        <span class="name-plate-subtitle">
+                            Learn. Code. Build. Become.
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ABOUT PLATFORM -->
+
+            <section class="about-school" id="about-school">
+
+                <div class="about-light about-light-one"></div>
+                <div class="about-light about-light-two"></div>
+
+                <div class="about-school-inner">
+
+                    <div class="about-brand-mark">
+                        <span>E</span>
+                        <div class="about-brand-ring"></div>
+                    </div>
+
+                    <div class="about-school-copy">
+
+                        <div class="section-eyebrow">
+                            MORE THAN A CODING PLATFORM
+                        </div>
+
+                        <h2>
+                            Welcome to
+                            <span class="gradient-text">ELOMCODE School.</span>
+                        </h2>
+
+                        <p>
+                            ELOMCODE School is a learning environment designed
+                            to combine structured lessons, hands-on practice,
+                            challenges, creativity, and personal growth.
+                        </p>
+
+                        <p>
+                            It is a place to start small, ask questions,
+                            experiment with code, learn from mistakes,
+                            and gradually build confidence as a developer.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-values">
+
+                        <div class="about-value">
+                            <span class="about-value-icon">01</span>
+                            <strong>Learn</strong>
+                            <p>Understand the foundations.</p>
+                        </div>
+
+                        <div class="about-value">
+                            <span class="about-value-icon">02</span>
+                            <strong>Code</strong>
+                            <p>Practice what you discover.</p>
+                        </div>
+
+                        <div class="about-value">
+                            <span class="about-value-icon">03</span>
+                            <strong>Build</strong>
+                            <p>Turn ideas into projects.</p>
+                        </div>
+
+                        <div class="about-value">
+                            <span class="about-value-icon">04</span>
+                            <strong>Become</strong>
+                            <p>Keep growing your abilities.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="about-bottom-line">
+                        <span></span>
+                        A learning journey built around possibility.
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </section>
+			
+			<!-- ELOMCODE SCHOOL — GOODBYE & FAREWELL -->
+
+<section class="farewell-section">
+
+    <div class="farewell-inner">
+
+        <div class="farewell-symbol">✦</div>
+
+        <div class="farewell-eyebrow">
+            I HOPE U ENJOYED THE EXPERIENCE HERE.
+        </div>
+
+        <h2>
+            Thank You for Being Part of
+            <span>ELOMCODE School.</span>
+        </h2>
+
+        <p>
+            Every learning journey leaves something behind,
+            and we hope yours has been filled with knowledge,
+            inspiration, and new possibilities.
+        </p>
+
+        <p>
+            Thank you for spending your time with us at
+            ELOMCODE School. Whether you learned your first
+            line of code, discovered a new concept, completed
+            a challenge, or built something of your own,
+            remember that every step counts.
+        </p>
+
+        <p>
+            As you leave this learning space, take the knowledge
+            with you. What you have learned here is not just
+            meant to stay on this platform. It is meant to grow
+            with you, guide your ideas, strengthen your creativity,
+            and help you build things you once thought were impossible.
+        </p>
+
+        <p>
+            Never stop answering/solving questions. Never stop exploring.
+            Never stop creating. And most importantly, never stop
+            believing in your ability to become better.
+        </p>
+
+        <p class="farewell-highlight">
+            Today, you are a learner. Tomorrow, you could be
+            the developer who changes something in the world.
+        </p>
+
+        <p>
+            Thank you for learning with us. Thank you for being
+            part of this journey.
+        </p>
+
+        <p>
+            keep learning, keep building, and keep becoming.
+        </p>
+
+        <div class="farewell-signature">
+
+            <strong>Elijah Opomulero Motivates</strong>
+
+            <small>
+                Founder & Platform Architect, ELOMCODE School
+            </small>
+
+        </div>
+
+        <div class="farewell-motto">
+            LEARN. CODE. BUILD. BECOME.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END GOODBYE & FAREWELL -->
+
+
+            <!-- FOOTER -->
+
+            <footer class="school-footer">
+
+                <a href="#home" class="footer-brand">
+
+                    <span class="footer-brand-mark">E</span>
+
+                    <span>
+                        <strong>ELOMCODE SCHOOL</strong>
+                        <small>Learn. Code. Build. Become.</small>
+                    </span>
+
+                </a>
+
+                <p class="footer-message">
+                    Keep learning. Keep building. Keep becoming.
+                </p>
+
+                <div class="footer-copyright">
+                    © <span id="currentYear"></span>
+                    ELOMCODE School. Built with purpose by Elijah Opomulero.
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- INTERACTIVE EXPERIENCE PANEL -->
+
+    <div class="experience-overlay"
+         id="experienceOverlay"
+         aria-hidden="true">
+
+        <div class="experience-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modalTitle">
+
+            <button class="modal-close"
+                    id="modalClose"
+                    type="button"
+                    aria-label="Close panel">
+                ×
+            </button>
+
+            <div class="modal-decoration"></div>
+
+            <div class="modal-eyebrow" id="modalEyebrow">
+                ELOMCODE EXPERIENCE
+            </div>
+
+            <div class="modal-icon" id="modalIcon">✧</div>
+
+            <h2 id="modalTitle">Welcome</h2>
+
+            <p class="modal-description" id="modalDescription">
+                Explore your next learning experience.
+            </p>
+
+            <div class="modal-content" id="modalContent"></div>
+
+            <button class="primary-button modal-main-button"
+                    id="modalMainButton"
+                    type="button">
+                Explore <span class="button-arrow">→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div class="toast-message"
+         id="toastMessage"
+         role="status"></div>
+
+
+    <script src="courses.js"></script>
+
+    <!-- DIRECT PAGE NAVIGATION -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Keep the existing course cards and open-course behaviour.
+        document.querySelectorAll(".course-card").forEach(function (card) {
+
+            const button = card.querySelector(
+                ".course-open-button, .coming-course-button"
+            );
+
+            if (!button) return;
+
+            button.addEventListener("click", function (event) {
+
+                event.preventDefault();
+
+                const destination = card.getAttribute("data-href");
+                const status = card.getAttribute("data-status");
+
+                if (!destination) return;
+
+                if (status === "coming") {
+                    showComingSoonMessage(card);
+                    return;
+                }
+
+                window.location.href = destination;
+
+            });
+
+        });
+
+        function showComingSoonMessage(card) {
+
+            const courseName =
+                card.getAttribute("data-course") || "This course";
+
+            const toast = document.getElementById("toastMessage");
+
+            if (toast) {
+                toast.textContent =
+                    courseName + " is coming soon. Stay tuned!";
+                toast.classList.add("show");
+
+                window.setTimeout(function () {
+                    toast.classList.remove("show");
+                }, 3000);
+
+            } else {
+                alert(courseName + " is coming soon. Stay tuned!");
+            }
+
+        }
+
+        // Challenges opens the actual challenges page.
+        const challengesLink = document.getElementById(
+            "challengesLaunchButton"
+        );
+
+        if (challengesLink) {
+            challengesLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.location.href = "challenges.html";
+            });
+        }
+
+        // Code Games opens the actual games page.
+        const gamesLink = document.getElementById("gamesLaunchButton");
+
+        if (gamesLink) {
+            gamesLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.location.href = "games.html";
+            });
+        }
+
+        // Update the copyright year.
+        const yearElement = document.getElementById("currentYear");
+
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+
+    });
+    </script>
+
+</body>
+</html>

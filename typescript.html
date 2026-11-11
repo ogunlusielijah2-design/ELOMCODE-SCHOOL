@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07152e">
+    <meta name="description" content="Learn TypeScript from the foundations to advanced programming with ELOMCODE School.">
+
+    <title>TypeScript Masterclass | ELOMCODE School</title>
+
+    <link rel="stylesheet" href="typescript.css">
+
+    <!-- TypeScript Compiler -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.8.3/typescript.min.js"></script>
+
+    <!-- TypeScript Course Engine -->
+    <script src="typescript.js" defer></script>
+</head>
+
+<body>
+
+    <!-- AMBIENT BACKGROUND -->
+    <div class="ambient-background" aria-hidden="true">
+        <div class="ambient-orb orb-one"></div>
+        <div class="ambient-orb orb-two"></div>
+        <div class="ambient-orb orb-three"></div>
+        <div id="particles"></div>
+    </div>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+        <a href="index.html" class="brand">
+            <div class="brand-icon">TS</div>
+
+            <div class="brand-copy">
+                <span class="brand-name">ELOMCODE</span>
+                <span class="brand-subtitle">SCHOOL</span>
+            </div>
+        </a>
+
+        <div class="topbar-center">
+            <span class="status-dot"></span>
+            <span>INTERACTIVE MASTERCLASS</span>
+        </div>
+
+        <div class="topbar-actions">
+		 <a href="courses.html" class="header-button secondary-button">
+                <span aria-hidden="true">←</span>
+                <span>Back to Courses</span>
+            </a>
+            <a href="courses.html" class="top-link">All Courses</a>
+            <a href="index.html" class="top-link">Back to School</a>
+        </div>
+
+    </header>
+
+
+    <!-- COURSE HERO -->
+    <section class="course-hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-line"></span>
+                THE DEVELOPER'S NEXT STEP
+            </div>
+
+            <h1>
+                TypeScript
+                <span class="gradient-text">Masterclass.</span>
+            </h1>
+
+            <p class="hero-description">
+                Learn to write cleaner, safer, and more reliable JavaScript.
+                Explore TypeScript step by step, practise in your browser,
+                complete challenges, and earn your certificate.
+            </p>
+
+            <div class="hero-tags">
+                <span>45 LESSONS</span>
+                <span>BEGINNER FRIENDLY</span>
+                <span>HANDS-ON PRACTICE</span>
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <span class="stat-number" id="progressLessons">0/45</span>
+                    <span class="stat-label">LESSONS COMPLETED</span>
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="hero-stat">
+                    <span class="stat-number" id="topXP">0 XP</span>
+                    <span class="stat-label">TOTAL EXPERIENCE</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ANIMATED TYPESCRIPT ORB -->
+        <div class="hero-visual">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+
+            <div class="typescript-orb">
+
+                <div class="orb-inner">
+                    <span class="orb-small-text">LEARN</span>
+                    <span class="orb-ts">TS</span>
+                    <span class="orb-bottom-text">BUILD WITH CONFIDENCE</span>
+                </div>
+
+            </div>
+
+            <div class="floating-code code-one">&lt;T&gt;</div>
+            <div class="floating-code code-two">{ }</div>
+            <div class="floating-code code-three">const</div>
+            <div class="floating-code code-four">type</div>
+            <div class="floating-code code-five">interface</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OVERALL COURSE PROGRESS -->
+    <section class="progress-section">
+
+        <div class="progress-heading">
+            <div>
+                <span class="section-kicker">YOUR LEARNING JOURNEY</span>
+                <h2>Course Progress</h2>
+            </div>
+
+            <span class="progress-percent" id="progressPercent">0%</span>
+        </div>
+
+        <div class="progress-track" id="overallProgressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p class="progress-message" id="progressMessage">
+            Your TypeScript journey starts here. Let's build something great!
+        </p>
+
+    </section>
+
+
+    <!-- MAIN LEARNING WORKSPACE -->
+    <main class="learning-layout">
+
+
+        <!-- LEFT LESSON SIDEBAR -->
+        <aside class="lesson-sidebar">
+
+            <div class="sidebar-heading">
+
+                <div>
+                    <span class="section-kicker">THE CURRICULUM</span>
+                    <h2>Lessons</h2>
+                </div>
+
+                <span class="lesson-count" id="sidebarLessonCount">45</span>
+
+            </div>
+
+            <div class="sidebar-progress">
+                <div class="sidebar-progress-track">
+                    <div class="sidebar-progress-fill" id="sidebarProgressFill"></div>
+                </div>
+                <span id="sidebarProgressText">0 of 45 completed</span>
+            </div>
+
+            <div class="lesson-list" id="lessonList">
+
+                <!-- Lesson buttons are generated by typescript.js -->
+
+                <div class="sidebar-loading">
+                    Preparing your learning path...
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+
+                <div class="sidebar-footer-icon">✦</div>
+
+                <div>
+                    <strong>Keep Building</strong>
+                    <p>Every lesson is another step forward.</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT LESSON CONTENT -->
+        <section class="lesson-workspace">
+
+            <!-- CURRENT LESSON HEADER -->
+            <div class="lesson-header">
+
+                <div class="lesson-heading-content">
+
+                    <div class="lesson-meta">
+                        <span id="lessonCategory">FOUNDATIONS</span>
+                        <span class="meta-separator">/</span>
+                        <span id="lessonNumber">LESSON 01 OF 45</span>
+                    </div>
+
+                    <h2 id="lessonTitle">Welcome to TypeScript</h2>
+
+                    <p id="lessonSubtitle">
+                        Discover TypeScript and why developers use it.
+                    </p>
+
+                </div>
+
+                <div class="lesson-badge">
+                    <span class="badge-icon">✦</span>
+                    <span>LEARNING MODE</span>
+                </div>
+
+            </div>
+
+
+            <!-- LESSON EXPLANATION -->
+            <article class="content-card explanation-card">
+
+                <div class="card-heading">
+                    <div class="card-icon explanation-icon">01</div>
+
+                    <div>
+                        <span class="section-kicker">UNDERSTAND THE CONCEPT</span>
+                        <h3>Lesson Explanation</h3>
+                    </div>
+                </div>
+
+                <div class="lesson-explanation" id="lessonExplanation">
+                    <p>
+                        Welcome to the TypeScript Masterclass!
+                        Select a lesson from the sidebar to begin learning.
+                    </p>
+                </div>
+
+                <div class="learning-tip" id="lessonTip">
+                    <span class="tip-icon">✦</span>
+
+                    <div>
+                        <strong>DEVELOPER TIP</strong>
+                        <p>Your journey begins with one lesson at a time.</p>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- EXAMPLE CODE -->
+            <article class="content-card example-card">
+
+                <div class="card-heading">
+
+                    <div class="card-icon example-icon">02</div>
+
+                    <div>
+                        <span class="section-kicker">LEARN BY EXAMPLE</span>
+                        <h3>Example Code</h3>
+                    </div>
+
+                </div>
+
+                <div class="code-window">
+
+                    <div class="code-window-header">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="file-label">example.ts</span>
+
+                        <button
+                            type="button"
+                            class="small-action"
+                            id="runExampleButton"
+                        >
+                            ▶ Run Example
+                        </button>
+
+                    </div>
+
+                    <pre class="code-display"><code id="exampleCode">// Your lesson example will appear here.</code></pre>
+
+                </div>
+
+                <div class="output-heading">
+                    <span>EXAMPLE OUTPUT</span>
+                    <span class="output-status" id="exampleOutputStatus">READY</span>
+                </div>
+
+                <iframe
+                    id="exampleOutputFrame"
+                    class="output-frame"
+                    title="TypeScript example output"
+                    sandbox="allow-scripts"
+                ></iframe>
+
+            </article>
+
+
+            <!-- HANDS-ON PRACTICE -->
+            <article class="content-card practice-card">
+
+                <div class="card-heading">
+
+                    <div class="card-icon practice-icon">03</div>
+
+                    <div>
+                        <span class="section-kicker">YOUR TURN TO BUILD</span>
+                        <h3>Practice Workspace</h3>
+                    </div>
+
+                </div>
+
+                <p class="practice-intro">
+                    Write your own TypeScript code below. Your editor starts
+                    empty so you can practise independently.
+                </p>
+
+
+                <div class="code-window practice-window">
+
+                    <div class="code-window-header">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="file-label">your-code.ts</span>
+
+                        <span class="editor-status" id="editorStatus">
+                            READY TO CODE
+                        </span>
+
+                    </div>
+
+                    <textarea
+                        id="codeEditor"
+                        class="code-editor"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        autocorrect="off"
+                        aria-label="TypeScript code editor"
+                        placeholder="// Write your TypeScript code here...
+
+// Example:
+// const message: string = 'Hello, ELOMCODE!';
+// console.log(message);"
+                    ></textarea>
+
+                    <div class="editor-footer">
+
+                        <span>TypeScript · Browser Editor</span>
+
+                        <span>CTRL + ENTER TO RUN</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="runButton"
+                    >
+                        <span>▶</span>
+                        Run My Code
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="resetButton"
+                    >
+                        Clear Editor
+                    </button>
+
+                </div>
+
+
+                <div class="output-heading practice-output-heading">
+                    <span>YOUR PROGRAM OUTPUT</span>
+                    <span class="output-status" id="outputStatus">WAITING</span>
+                </div>
+
+                <iframe
+                    id="practiceOutputFrame"
+                    class="output-frame practice-output"
+                    title="Your TypeScript program output"
+                    sandbox="allow-scripts"
+                ></iframe>
+
+            </article>
+
+
+            <!-- CHALLENGE ZONE -->
+            <article class="content-card challenge-card">
+
+                <div class="challenge-top">
+
+                    <div class="challenge-symbol">⚡</div>
+
+                    <div>
+                        <span class="section-kicker">TEST YOUR UNDERSTANDING</span>
+                        <h3>Lesson Challenge</h3>
+                    </div>
+
+                </div>
+
+                <h4 id="challengeTitle">Your First Challenge</h4>
+
+                <div class="challenge-text" id="challengeText">
+                    Complete the current lesson's challenge to strengthen
+                    your understanding of TypeScript.
+                </div>
+
+                <div class="challenge-note">
+                    <span>✦</span>
+                    Learning comes from understanding, practising, and trying again.
+                </div>
+
+            </article>
+
+
+            <!-- LESSON NAVIGATION -->
+            <div class="lesson-navigation">
+
+                <button
+                    type="button"
+                    class="secondary-button navigation-button"
+                    id="previousButton"
+                >
+                    <span>←</span>
+                    Previous Lesson
+                </button>
+
+                <button
+                    type="button"
+                    class="complete-action"
+                    id="completeButton"
+                >
+                    <span id="completeButtonText">✓ Complete Lesson</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-button navigation-button"
+                    id="nextButton"
+                >
+                    Next Lesson
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <div
+                class="completion-message"
+                id="lessonCompletionMessage"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- CERTIFICATE CORNER -->
+            <section class="certificate-section">
+
+                <div class="certificate-decoration certificate-decoration-one"></div>
+                <div class="certificate-decoration certificate-decoration-two"></div>
+
+                <div class="certificate-content">
+
+                    <div class="certificate-icon">✦</div>
+
+                    <span class="section-kicker">YOUR ACHIEVEMENT AWAITS</span>
+
+                    <h2>Certificate Corner</h2>
+
+                    <p id="certificateMessage">
+                        Complete all 45 lessons to unlock your TypeScript
+                        Masterclass certificate.
+                    </p>
+
+                    <div class="certificate-status" id="certificateStatus">
+                        <span class="certificate-status-dot"></span>
+                        CERTIFICATE LOCKED
+                    </div>
+
+                    <button
+                        type="button"
+                        class="certificate-button"
+                        id="certificateButton"
+                        disabled
+                    >
+                        Unlock Your Certificate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="certificate-button certificate-open-button"
+                        id="certificateOpenButton"
+                        hidden
+                    >
+                        View My Certificate
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="course-footer">
+
+                <div class="footer-brand">
+                    <div class="footer-brand-icon">E</div>
+
+                    <div>
+                        <strong>ELOMCODE SCHOOL</strong>
+                        <span>Learn. Code. Build. Become.</span>
+                    </div>
+                </div>
+
+                <p>
+                    Designed with purpose by
+                    <strong>Elijah Opomulero</strong>.
+                </p>
+
+                <a href="courses.html">Explore Other Courses →</a>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- CERTIFICATE MODAL -->
+    <div
+        class="certificate-modal"
+        id="certificateModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="certificate-backdrop"
+            id="certificateBackdrop"
+        ></div>
+
+        <div
+            class="certificate-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="certificateModalTitle"
+        >
+
+            <div class="modal-topbar">
+                <div class="modal-brand">
+                    <span class="modal-brand-icon">E</span>
+                    <span>ELOMCODE SCHOOL</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="certificateClose"
+                    aria-label="Close certificate"
+                >
+                    ×
+                </button>
+            </div>
+
+
+            <div class="certificate-paper" id="certificatePaper">
+
+                <div class="certificate-border">
+
+                    <div class="certificate-emblem">E</div>
+
+                    <span class="certificate-overline">
+                        ELOMCODE SCHOOL PRESENTS
+                    </span>
+
+                    <h2 id="certificateModalTitle">
+                        Certificate of Completion
+                    </h2>
+
+                    <div class="certificate-divider"></div>
+
+                    <p class="certificate-intro">
+                        This certificate is presented to
+                    </p>
+
+                    <input
+                        type="text"
+                        id="certificateName"
+                        class="certificate-name-input"
+                        placeholder="Enter learner's full name"
+                        maxlength="80"
+                        aria-label="Learner's full name"
+                    >
+
+                    <p class="certificate-description">
+                        for successfully completing the
+                        <strong>TypeScript Masterclass</strong>,
+                        demonstrating commitment to learning programming
+                        concepts and developing practical coding skills.
+                    </p>
+
+                    <div class="certificate-details">
+
+                        <div>
+                            <span>COMPLETION DATE</span>
+                            <strong id="certificateDate">—</strong>
+                        </div>
+
+                        <div>
+                            <span>EXPERIENCE EARNED</span>
+                            <strong id="certificateXP">1125 XP</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="certificate-signature-area">
+
+                        <div class="signature-block">
+                            <div class="signature-line"></div>
+                            <strong>Elijah Opomulero</strong>
+                            <span>FOUNDER & COURSE ARCHITECT</span>
+                        </div>
+
+                        <div class="certificate-seal">
+                            <span>45</span>
+                            <small>LESSONS</small>
+                            <small>COMPLETED</small>
+                        </div>
+
+                    </div>
+
+                    <div class="certificate-bottom">
+                        LEARN. CODE. BUILD. BECOME.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="certificate-modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="certificateCancelButton"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="certificatePrintButton"
+                >
+                    Print / Save Certificate
+                </button>
+
+            </div>
+
+            <p class="certificate-disclaimer">
+                This certificate is generated by the learning experience
+                in your browser.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCESSIBLE ANNOUNCEMENTS -->
+    <div
+        id="liveAnnouncement"
+        class="visually-hidden"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+</body>
+</html>

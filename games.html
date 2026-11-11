@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#050b18">
+    <meta name="description" content="Play coding games, test your programming knowledge, complete daily challenges, and improve your skills at ELOMCODE School.">
+
+    <title>ELOMCODE School — Cinematic Code Games Zone</title>
+
+    <link rel="stylesheet" href="games.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="ambient-glow"></div>
+    <div class="grid-background"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- FLOATING CODE SYMBOLS -->
+    <div class="floating-code" aria-hidden="true"
+         style="position:fixed;top:23%;left:3%;font-size:25px;">
+        &lt;/&gt;
+    </div>
+
+    <div class="floating-code" aria-hidden="true"
+         style="position:fixed;top:58%;right:4%;font-size:22px;">
+        { }
+    </div>
+
+    <div class="floating-code" aria-hidden="true"
+         style="position:fixed;bottom:12%;left:7%;font-size:20px;">
+        JS
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">E</div>
+
+            <div class="brand-name">
+                ELOMCODE SCHOOL
+                <span>Code Games Zone</span>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+            <a href="courses.html" class="top-link">
+                ← Back to Courses
+            </a>
+
+            <a href="index.html" class="nav-button primary">
+                Back to School
+            </a>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <div class="hero-label">
+                ELOMCODE INTERACTIVE EXPERIENCE
+            </div>
+
+            <h1>
+                Think Like a Developer.
+                <span>Play Like a Champion.</span>
+            </h1>
+
+            <p>
+                Welcome to the ELOMCODE Code Games Zone.
+                Test your coding knowledge, challenge your brain,
+                discover new questions, and improve your programming
+                skills one game at a time.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#gameLibrary" class="hero-button primary">
+                    Explore Games →
+                </a>
+
+                <a href="#dailyChallenge" class="hero-button secondary">
+                    View Daily Challenges
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- DAILY CHALLENGE PANEL -->
+        <section class="daily-challenge-panel" id="dailyChallenge">
+
+            <div class="daily-challenge-header">
+
+                <div>
+                    <div class="eyebrow">
+                        FRESH CHALLENGES
+                    </div>
+
+                    <h2>
+                        Your Daily Coding Mission
+                    </h2>
+
+                    <p>
+                        Every day brings a fresh selection of questions.
+                        Complete a round, play another set immediately,
+                        and keep developing your coding knowledge.
+                        Your daily progress updates automatically.
+                    </p>
+                </div>
+
+                <div class="daily-challenge-date" id="dailyDate">
+                    LOADING DATE...
+                </div>
+
+            </div>
+
+            <div class="daily-status-grid">
+
+                <div class="daily-status-card" id="dailyCardHtml">
+
+                    <div class="daily-status-label">
+                        HTML CHALLENGE
+                    </div>
+
+                    <div class="daily-status-value" id="dailyHtmlStatus">
+                        Ready to play
+                    </div>
+
+                    <div class="daily-status-detail" id="dailyHtmlDetail">
+                        Your HTML challenge awaits.
+                    </div>
+
+                </div>
+
+
+                <div class="daily-status-card" id="dailyCardCss">
+
+                    <div class="daily-status-label">
+                        CSS CHALLENGE
+                    </div>
+
+                    <div class="daily-status-value" id="dailyCssStatus">
+                        Ready to play
+                    </div>
+
+                    <div class="daily-status-detail" id="dailyCssDetail">
+                        Your CSS challenge awaits.
+                    </div>
+
+                </div>
+
+
+                <div class="daily-status-card" id="dailyCardJs">
+
+                    <div class="daily-status-label">
+                        JAVASCRIPT CHALLENGE
+                    </div>
+
+                    <div class="daily-status-value" id="dailyJsStatus">
+                        Ready to play
+                    </div>
+
+                    <div class="daily-status-detail" id="dailyJsDetail">
+                        Your JavaScript challenge awaits.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="daily-round-info" id="dailySummary">
+                Complete your first round to begin tracking today's progress.
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div>
+                    <div class="stat-label">Games Played</div>
+                    <div class="stat-value" id="gamesPlayed">0</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div>
+                    <div class="stat-label">Correct Answers</div>
+                    <div class="stat-value" id="correctAnswers">0</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div>
+                    <div class="stat-label">Best Score</div>
+
+                    <div class="stat-value">
+                        <span id="bestScore">0</span>
+                        <small>PTS</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- GAME LIBRARY -->
+        <section class="game-library" id="gameLibrary">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="section-label">
+                        CHOOSE YOUR CHALLENGE
+                    </div>
+
+                    <h2 style="margin-top:12px;">
+                        Enter the <span class="gradient-text">Game Zone</span>
+                    </h2>
+
+                    <p>
+                        Each game contains a rotating selection of questions.
+                        Complete a round and start another to keep learning.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="game-grid">
+
+                <!-- HTML GAME -->
+                <article class="game-card html-game">
+
+                    <div class="game-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>HTML Tag Master</h3>
+
+                    <p>
+                        Test your knowledge of HTML elements, page structure,
+                        attributes, links, forms, and semantic markup.
+                    </p>
+
+                    <div class="game-meta">
+                        <span>HTML</span>
+                        <span>5 Questions Per Round</span>
+                        <span>100 Points</span>
+                    </div>
+
+                    <button type="button" onclick="startGame('html')">
+                        Start HTML Challenge →
+                    </button>
+
+                </article>
+
+
+                <!-- CSS GAME -->
+                <article class="game-card css-game">
+
+                    <div class="game-icon">
+                        CSS
+                    </div>
+
+                    <h3>Guess the CSS</h3>
+
+                    <p>
+                        Explore selectors, colours, spacing, layouts,
+                        responsive design, borders, and visual styling.
+                    </p>
+
+                    <div class="game-meta">
+                        <span>CSS</span>
+                        <span>5 Questions Per Round</span>
+                        <span>100 Points</span>
+                    </div>
+
+                    <button type="button" onclick="startGame('css')">
+                        Start CSS Challenge →
+                    </button>
+
+                </article>
+
+
+                <!-- JAVASCRIPT GAME -->
+                <article class="game-card js-game">
+
+                    <div class="game-icon">
+                        JS
+                    </div>
+
+                    <h3>Predict the Output</h3>
+
+                    <p>
+                        Exercise your programming logic with variables,
+                        arithmetic, comparisons, conditions, and functions.
+                    </p>
+
+                    <div class="game-meta">
+                        <span>JavaScript</span>
+                        <span>5 Questions Per Round</span>
+                        <span>100 Points</span>
+                    </div>
+
+                    <button type="button" onclick="startGame('js')">
+                        Start JavaScript Challenge →
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVE GAME SPACE -->
+        <section class="game-area hidden" id="gameArea">
+
+            <div class="game-header">
+
+                <div>
+                    <div class="section-label">
+                        LIVE CHALLENGE
+                    </div>
+
+                    <h2 id="activeGameTitle" style="margin-top:12px;">
+                        Coding Challenge
+                    </h2>
+
+                    <p id="activeGameDescription">
+                        Test your knowledge and earn points.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="closeGame()"
+                >
+                    ✕ Exit Game
+                </button>
+
+            </div>
+
+
+            <!-- QUESTION SCREEN -->
+            <div class="game-content" id="questionScreen">
+
+                <div class="quiz-top">
+
+                    <div class="question-counter" id="questionCounter">
+                        QUESTION 1 OF 5
+                    </div>
+
+                    <div class="score-badge" id="currentScore">
+                        SCORE: 0
+                    </div>
+
+                </div>
+
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+
+                <div class="question-text" id="questionText">
+                    Your question will appear here.
+                </div>
+
+
+                <div class="question-description" id="questionDescription"></div>
+
+
+                <div class="options" id="answerOptions"></div>
+
+
+                <button
+                    type="button"
+                    class="hint-button"
+                    id="hintButton"
+                    onclick="showHint()"
+                >
+                    💡 Show Hint
+                </button>
+
+
+                <div class="hint-box hidden" id="hintBox"></div>
+
+
+                <div class="feedback hidden" id="feedbackBox"></div>
+
+
+                <div class="quiz-controls">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="closeGame()"
+                    >
+                        Exit Challenge
+                    </button>
+
+                    <button
+                        type="button"
+                        class="next-button"
+                        id="nextButton"
+                        onclick="nextQuestion()"
+                        disabled
+                    >
+                        Check Answer First →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS SCREEN -->
+            <div class="game-content hidden" id="resultsScreen">
+
+                <div class="result-screen">
+
+                    <div class="result-icon" id="resultIcon">
+                        ★
+                    </div>
+
+                    <div class="section-label">
+                        ROUND COMPLETED
+                    </div>
+
+                    <h2 id="resultTitle" style="margin-top:16px;">
+                        Great Work!
+                    </h2>
+
+                    <p id="resultMessage">
+                        You have completed this coding challenge.
+                    </p>
+
+                    <div class="result-score">
+                        <span id="finalScore">0</span>
+                        <span style="font-size:22px;color:#9aaac5;">/100</span>
+                    </div>
+
+
+                    <div class="result-details">
+
+                        <div class="result-detail">
+                            <strong id="resultCorrect">0</strong>
+                            <span>Correct Answers</span>
+                        </div>
+
+                        <div class="result-detail">
+                            <strong id="resultWrong">0</strong>
+                            <span>Incorrect Answers</span>
+                        </div>
+
+                        <div class="result-detail">
+                            <strong id="resultAccuracy">0%</strong>
+                            <span>Accuracy</span>
+                        </div>
+
+                    </div>
+
+
+                    <p id="resultDailyMessage"></p>
+
+
+                    <div class="result-actions">
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            onclick="restartGame()"
+                        >
+                            Play Another Set ↻
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            onclick="closeGame()"
+                        >
+                            Return to Game Zone
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING TIPS -->
+        <section class="tips-section">
+
+            <div class="section-label">
+                LEVEL UP YOUR SKILLS
+            </div>
+
+            <h2 style="margin-top:12px;">
+                Play. Learn. Improve.
+            </h2>
+
+            <div class="tips-grid" style="margin-top:20px;">
+
+                <div class="tip-card">
+                    <h3>01. Think Before You Answer</h3>
+                    <p>
+                        Read every question carefully. Understanding
+                        why an answer is correct matters more than
+                        answering quickly.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <h3>02. Learn From Mistakes</h3>
+                    <p>
+                        Read the explanations after each answer.
+                        Mistakes can help you understand programming
+                        concepts more clearly.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <h3>03. Return Every Day</h3>
+                    <p>
+                        Daily challenges provide fresh questions.
+                        Consistent practice can help you strengthen
+                        your coding knowledge.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>
+            <strong>ELOMCODE SCHOOL</strong>
+            — Learn. Code. Build. Become.
+        </p>
+
+        <p>
+            Code Games Zone · Built by Elijah Opomulero
+        </p>
+
+        <p>
+            Keep learning. Keep building. Keep becoming.
+        </p>
+
+    </footer>
+
+
+    <script>
+    /* =====================================================
+       ELOMCODE SCHOOL — DAILY CODE GAMES ENGINE
+       Daily questions, multiple rounds and saved statistics
+       ===================================================== */
+
+    const STORAGE_KEY = "elomcode_games_zone_v1";
+
+    const QUESTIONS_PER_ROUND = 5;
+    const POINTS_PER_QUESTION = 20;
+
+
+    /* =====================================================
+       QUESTION BANK
+       Each game has a larger bank so rounds can rotate.
+       ===================================================== */
+
+    const questionBank = {
+
+        html: [
+
+            {
+                q: "Which HTML element is normally used for the largest main heading?",
+                options: ["<h1>", "<heading>", "<head>", "<h6>"],
+                answer: "<h1>",
+                hint: "It is the first heading level.",
+                explanation: "The <h1> element represents the highest-level heading."
+            },
+
+            {
+                q: "Which HTML element creates a hyperlink?",
+                options: ["<linkto>", "<a>", "<href>", "<url>"],
+                answer: "<a>",
+                hint: "Its name begins with the first letter of 'anchor'.",
+                explanation: "The <a> element creates links. Its href attribute specifies the destination."
+            },
+
+            {
+                q: "Which attribute provides alternative text for an image?",
+                options: ["title", "src", "alt", "name"],
+                answer: "alt",
+                hint: "It helps describe an image when it cannot be seen.",
+                explanation: "The alt attribute provides alternative text for images."
+            },
+
+            {
+                q: "Which element creates an unordered list?",
+                options: ["<ol>", "<ul>", "<li>", "<list>"],
+                answer: "<ul>",
+                hint: "The list normally displays bullet points.",
+                explanation: "The <ul> element creates an unordered list."
+            },
+
+            {
+                q: "Which element contains the visible page content?",
+                options: ["<head>", "<meta>", "<body>", "<title>"],
+                answer: "<body>",
+                hint: "It contains the main content displayed in the browser.",
+                explanation: "The <body> element contains the visible content of an HTML document."
+            },
+
+            {
+                q: "Which declaration identifies a document as HTML5?",
+                options: ["<html5>", "<!DOCTYPE html>", "<doctype>", "<document html>"],
+                answer: "<!DOCTYPE html>",
+                hint: "It appears near the beginning of the document.",
+                explanation: "<!DOCTYPE html> tells the browser to use modern HTML standards mode."
+            },
+
+            {
+                q: "Which element creates a paragraph?",
+                options: ["<para>", "<text>", "<p>", "<paragraph>"],
+                answer: "<p>",
+                hint: "It is a one-letter element name.",
+                explanation: "The <p> element represents a paragraph."
+            },
+
+            {
+                q: "Which attribute specifies an image file?",
+                options: ["href", "src", "alt", "file"],
+                answer: "src",
+                hint: "It stands for source.",
+                explanation: "The src attribute specifies the image resource."
+            },
+
+            {
+                q: "Which element creates a line break?",
+                options: ["<break>", "<lb>", "<br>", "<newline>"],
+                answer: "<br>",
+                hint: "It is a short, void HTML element.",
+                explanation: "The <br> element inserts a line break."
+            },
+
+            {
+                q: "Which element sets the title shown in a browser tab?",
+                options: ["<header>", "<title>", "<h1>", "<caption>"],
+                answer: "<title>",
+                hint: "It belongs inside the document head.",
+                explanation: "The <title> element defines the document title displayed in the browser tab."
+            },
+
+            {
+                q: "Which element is used to create a table row?",
+                options: ["<td>", "<tr>", "<th>", "<table-row>"],
+                answer: "<tr>",
+                hint: "The letters stand for table row.",
+                explanation: "The <tr> element represents a row in an HTML table."
+            },
+
+            {
+                q: "Which element represents a list item?",
+                options: ["<item>", "<li>", "<ul>", "<row>"],
+                answer: "<li>",
+                hint: "It is used inside ordered or unordered lists.",
+                explanation: "The <li> element represents an item in a list."
+            },
+
+            {
+                q: "Which element is used to collect user input in a form?",
+                options: ["<form>", "<inputbox>", "<collect>", "<data>"],
+                answer: "<form>",
+                hint: "It groups controls used to submit information.",
+                explanation: "The <form> element groups controls for submitting user-provided information."
+            },
+
+            {
+                q: "Which HTML element is used to play video?",
+                options: ["<movie>", "<media>", "<video>", "<play>"],
+                answer: "<video>",
+                hint: "Its name describes the media type.",
+                explanation: "The <video> element embeds video content."
+            },
+
+            {
+                q: "Which attribute connects a label to a form input by ID?",
+                options: ["for", "target", "connect", "name"],
+                answer: "for",
+                hint: "It is commonly used on the label element.",
+                explanation: "The label's for attribute should match the input element's id."
+            },
+
+            {
+                q: "Which element is used for navigation links?",
+                options: ["<navigate>", "<nav>", "<links>", "<menu-links>"],
+                answer: "<nav>",
+                hint: "It is a semantic element with three letters.",
+                explanation: "The <nav> element represents a section of navigation links."
+            },
+
+            {
+                q: "Which element contains metadata and links to stylesheets?",
+                options: ["<body>", "<main>", "<head>", "<footer>"],
+                answer: "<head>",
+                hint: "It comes before the body.",
+                explanation: "The <head> contains document metadata and resource references."
+            },
+
+            {
+                q: "Which attribute should be unique for an element on a page?",
+                options: ["class", "id", "style", "title"],
+                answer: "id",
+                hint: "It identifies a specific element.",
+                explanation: "An id should uniquely identify an element within the document."
+            },
+
+            {
+                q: "Which element represents the main content of a page?",
+                options: ["<main>", "<center>", "<content>", "<section-main>"],
+                answer: "<main>",
+                hint: "It is a semantic HTML element.",
+                explanation: "The <main> element represents the dominant content of the document."
+            },
+
+            {
+                q: "Which attribute opens a link in a new browsing context when set to _blank?",
+                options: ["open", "window", "target", "new"],
+                answer: "target",
+                hint: "It specifies where a linked document should open.",
+                explanation: 'The target="_blank" attribute requests that the link open in a new tab or window.'
+            },
+
+            {
+                q: "Which element represents emphasized text?",
+                options: ["<em>", "<stronger>", "<italic>", "<marktext>"],
+                answer: "<em>",
+                hint: "It indicates stress emphasis.",
+                explanation: "The <em> element represents stress emphasis."
+            },
+
+            {
+                q: "Which element is most appropriate for a self-contained article?",
+                options: ["<article>", "<aside>", "<span>", "<label>"],
+                answer: "<article>",
+                hint: "Think of a blog post or news story.",
+                explanation: "The <article> element represents self-contained content that can stand independently."
+            },
+
+            {
+                q: "Which attribute sets an element's unique identifier?",
+                options: ["class", "id", "role", "for"],
+                answer: "id",
+                hint: "CSS and JavaScript can use it to target one element.",
+                explanation: "The id attribute gives an element a unique identifier."
+            },
+
+            {
+                q: "Which element is used to include JavaScript in an HTML page?",
+                options: ["<javascript>", "<code>", "<script>", "<js>"],
+                answer: "<script>",
+                hint: "It is also used to load external JavaScript files.",
+                explanation: "The <script> element embeds or references JavaScript code."
+            }
+
+        ],
+
+
+        css: [
+
+            {
+                q: "Which CSS property changes text colour?",
+                options: ["font-color", "text-color", "color", "foreground"],
+                answer: "color",
+                hint: "It is a short, common property name.",
+                explanation: "The color property sets an element's text colour."
+            },
+
+            {
+                q: "Which declaration creates a flex container?",
+                options: ["position: flex", "display: flex", "flex: display", "layout: flex"],
+                answer: "display: flex",
+                hint: "It begins with the display property.",
+                explanation: "display: flex establishes a flex formatting context."
+            },
+
+            {
+                q: "Which CSS property controls space inside an element's border?",
+                options: ["margin", "padding", "gap", "outline"],
+                answer: "padding",
+                hint: "It separates content from its border.",
+                explanation: "Padding creates space between content and an element's border."
+            },
+
+            {
+                q: "Which selector targets elements with class=\"card\"?",
+                options: ["#card", ".card", "card()", "*card"],
+                answer: ".card",
+                hint: "Class selectors start with a dot.",
+                explanation: "The .card selector targets elements whose class includes card."
+            },
+
+            {
+                q: "Which property rounds an element's corners?",
+                options: ["corner-style", "border-radius", "border-round", "rounding"],
+                answer: "border-radius",
+                hint: "It includes the word radius.",
+                explanation: "border-radius rounds an element's corners."
+            },
+
+            {
+                q: "Which property changes an element's background colour?",
+                options: ["background-color", "color-background", "fill-color", "back-color"],
+                answer: "background-color",
+                hint: "It combines the words background and color.",
+                explanation: "The background-color property sets the background colour."
+            },
+
+            {
+                q: "Which selector targets an element with id=\"hero\"?",
+                options: [".hero", "#hero", "hero", "@hero"],
+                answer: "#hero",
+                hint: "ID selectors use a hash symbol.",
+                explanation: "The #hero selector targets the element with id hero."
+            },
+
+            {
+                q: "Which property controls the size of text?",
+                options: ["text-size", "font-style", "font-size", "size"],
+                answer: "font-size",
+                hint: "It begins with font.",
+                explanation: "font-size controls the size of text."
+            },
+
+            {
+                q: "Which property creates space outside an element's border?",
+                options: ["padding", "margin", "border-spacing", "inset"],
+                answer: "margin",
+                hint: "It separates an element from neighbouring elements.",
+                explanation: "Margin creates space outside an element's border."
+            },
+
+            {
+                q: "Which value hides an element while removing it from layout?",
+                options: ["visibility: hidden", "display: none", "opacity: 0", "position: hidden"],
+                answer: "display: none",
+                hint: "The element no longer takes up layout space.",
+                explanation: "display: none removes the element from the layout."
+            },
+
+            {
+                q: "Which property controls the thickness of text?",
+                options: ["font-weight", "text-thickness", "font-bold", "weight"],
+                answer: "font-weight",
+                hint: "It can use values such as 400 and 700.",
+                explanation: "font-weight controls how light or bold text appears."
+            },
+
+            {
+                q: "Which declaration centres text horizontally?",
+                options: ["text-align: center", "align: middle", "font-align: center", "center: text"],
+                answer: "text-align: center",
+                hint: "It uses the text-align property.",
+                explanation: "text-align: center centres inline content within the line box."
+            },
+
+            {
+                q: "Which property adds a shadow around a box?",
+                options: ["shadow", "box-shadow", "element-shadow", "border-shadow"],
+                answer: "box-shadow",
+                hint: "It begins with box.",
+                explanation: "box-shadow adds a shadow effect around an element's box."
+            },
+
+            {
+                q: "Which property controls the space between grid columns or flex items?",
+                options: ["padding", "gap", "margin-inside", "spacing"],
+                answer: "gap",
+                hint: "It is a short, three-letter property.",
+                explanation: "gap sets spacing between rows and columns in grid and flex layouts."
+            },
+
+            {
+                q: "Which unit is relative to the root element's font size?",
+                options: ["px", "em", "rem", "%"],
+                answer: "rem",
+                hint: "The first letter stands for root.",
+                explanation: "rem units are relative to the root element's font size."
+            },
+
+            {
+                q: "Which property controls the order of overlapping positioned elements?",
+                options: ["layer", "z-index", "stack-order", "depth"],
+                answer: "z-index",
+                hint: "It uses a letter followed by a hyphen.",
+                explanation: "z-index controls stacking order for elements in relevant stacking contexts."
+            },
+
+            {
+                q: "Which at-rule is commonly used for responsive breakpoints?",
+                options: ["@responsive", "@screen", "@media", "@device"],
+                answer: "@media",
+                hint: "It starts with an at-sign.",
+                explanation: "@media applies CSS rules when a media condition matches."
+            },
+
+            {
+                q: "Which property controls the speed curve of a CSS transition?",
+                options: ["transition-flow", "animation-style", "transition-timing-function", "transition-speed"],
+                answer: "transition-timing-function",
+                hint: "It controls easing such as ease-in and ease-out.",
+                explanation: "transition-timing-function defines how a transition progresses over time."
+            },
+
+            {
+                q: "Which property makes an element's width include padding and border?",
+                options: ["box-sizing: border-box", "width: full", "display: border", "sizing: inside"],
+                answer: "box-sizing: border-box",
+                hint: "It changes the CSS box model calculation.",
+                explanation: "With border-box, declared width includes content, padding, and border."
+            },
+
+            {
+                q: "Which declaration creates a two-column CSS Grid layout?",
+                options: ["grid-columns: 2", "grid-template-columns: 1fr 1fr", "display: columns", "columns: grid"],
+                answer: "grid-template-columns: 1fr 1fr",
+                hint: "Use two fractional units.",
+                explanation: "grid-template-columns: 1fr 1fr creates two equal-width grid columns."
+            },
+
+            {
+                q: "Which pseudo-class applies while the pointer is over an element?",
+                options: [":focus", ":active", ":hover", ":visited"],
+                answer: ":hover",
+                hint: "It describes hovering.",
+                explanation: ":hover applies when the pointer designates an element."
+            },
+
+            {
+                q: "Which property controls the space between lines of text?",
+                options: ["line-height", "letter-spacing", "word-spacing", "text-gap"],
+                answer: "line-height",
+                hint: "It includes the word line.",
+                explanation: "line-height sets the height of a line box."
+            },
+
+            {
+                q: "Which property controls how an image fits inside a fixed-size box?",
+                options: ["image-fit", "object-fit", "background-size", "fit-content"],
+                answer: "object-fit",
+                hint: "It is commonly used with images and videos.",
+                explanation: "object-fit controls how replaced content fits its box."
+            },
+
+            {
+                q: "Which CSS function is useful for fluid sizing between a minimum and maximum?",
+                options: ["scale()", "fluid()", "clamp()", "resize()"],
+                answer: "clamp()",
+                hint: "It accepts a minimum, preferred value, and maximum.",
+                explanation: "clamp(minimum, preferred, maximum) constrains a value within a range."
+            }
+
+        ],
+
+
+        js: [
+
+            {
+                q: "What is the result of 2 + 3?",
+                options: ["23", "5", "6", "1"],
+                answer: "5",
+                hint: "Add the two numbers.",
+                explanation: "The + operator performs numeric addition when both operands are numbers."
+            },
+
+            {
+                q: "What is the result of 10 > 4?",
+                options: ["true", "false", "10", "4"],
+                answer: "true",
+                hint: "Is ten greater than four?",
+                explanation: "10 is greater than 4, so the comparison evaluates to true."
+            },
+
+            {
+                q: "Which keyword declares a block-scoped variable that can be reassigned?",
+                options: ["const", "let", "fixed", "static"],
+                answer: "let",
+                hint: "It is often used when the variable's value may change.",
+                explanation: "let declares a block-scoped variable that can be reassigned."
+            },
+
+            {
+                q: "What is the result of 8 - 3?",
+                options: ["11", "6", "5", "4"],
+                answer: "5",
+                hint: "Subtract three from eight.",
+                explanation: "8 minus 3 equals 5."
+            },
+
+            {
+                q: "If score = 7 + 2, what is the value of score?",
+                options: ["72", "9", "5", "14"],
+                answer: "9",
+                hint: "The values are numbers, so addition is numeric.",
+                explanation: "7 + 2 equals 9."
+            },
+
+            {
+                q: "Which keyword declares a variable that cannot be reassigned?",
+                options: ["let", "var", "const", "change"],
+                answer: "const",
+                hint: "It is commonly used for bindings that should not be reassigned.",
+                explanation: "const prevents reassignment of the declared binding."
+            },
+
+            {
+                q: "What does console.log('Hello') do?",
+                options: ["Creates a heading", "Prints to the console", "Changes the page title", "Deletes text"],
+                answer: "Prints to the console",
+                hint: "It is commonly used for debugging.",
+                explanation: "console.log() writes a message to the browser's developer console."
+            },
+
+            {
+                q: "What is the result of 3 * 4?",
+                options: ["7", "12", "34", "1"],
+                answer: "12",
+                hint: "The asterisk represents multiplication.",
+                explanation: "3 multiplied by 4 equals 12."
+            },
+
+            {
+                q: "Which operator checks strict equality?",
+                options: ["=", "==", "===", "!="],
+                answer: "===",
+                hint: "It uses three equal signs.",
+                explanation: "=== compares values without performing type coercion."
+            },
+
+            {
+                q: "What is the value of Boolean(0)?",
+                options: ["true", "false", "0", "undefined"],
+                answer: "false",
+                hint: "Zero is a falsy value in JavaScript.",
+                explanation: "Boolean(0) evaluates to false."
+            },
+
+            {
+                q: "Which array method adds an item to the end of an array?",
+                options: ["push()", "pop()", "shift()", "join()"],
+                answer: "push()",
+                hint: "It adds rather than removes an item.",
+                explanation: "push() adds one or more elements to the end of an array."
+            },
+
+            {
+                q: "What does 10 % 3 return?",
+                options: ["3", "1", "0", "10"],
+                answer: "1",
+                hint: "The percent operator returns the remainder.",
+                explanation: "10 divided by 3 leaves a remainder of 1."
+            },
+
+            {
+                q: "Which statement runs code only when a condition is true?",
+                options: ["if", "repeat", "define", "select"],
+                answer: "if",
+                hint: "It is a conditional statement.",
+                explanation: "An if statement runs its block when the condition evaluates to true."
+            },
+
+            {
+                q: "What is the result of '5' + 2?",
+                options: ["7", "52", "10", "Error"],
+                answer: "52",
+                hint: "One operand is a string.",
+                explanation: "When one operand is a string, + performs string concatenation in this example."
+            },
+
+            {
+                q: "Which symbol begins a single-line comment in JavaScript?",
+                options: ["<!--", "//", "**", "##"],
+                answer: "//",
+                hint: "It uses two forward slashes.",
+                explanation: "// begins a single-line JavaScript comment."
+            },
+
+            {
+                q: "What does an array's length property report?",
+                options: ["Its last value", "Its number of elements", "Its memory size", "Its first index"],
+                answer: "Its number of elements",
+                hint: "An array with three items has length 3.",
+                explanation: "The length property reports the number of elements in a standard array."
+            },
+
+            {
+                q: "What does typeof 42 return?",
+                options: ["integer", "number", "float", "numeric"],
+                answer: "number",
+                hint: "JavaScript uses one main numeric primitive type.",
+                explanation: "typeof 42 returns the string 'number'."
+            },
+
+            {
+                q: "Which loop is commonly used to iterate while a condition is true?",
+                options: ["repeat", "while", "during", "loopif"],
+                answer: "while",
+                hint: "It checks a condition before each iteration.",
+                explanation: "A while loop continues as long as its condition evaluates to true."
+            },
+
+            {
+                q: "What does a function's return statement do?",
+                options: ["Repeats the function", "Sends a value back to the caller", "Prints automatically", "Creates a variable"],
+                answer: "Sends a value back to the caller",
+                hint: "It can provide the result of a function call.",
+                explanation: "return ends the current function execution and can provide a value."
+            },
+
+            {
+                q: "What is the result of 5 === '5'?",
+                options: ["true", "false", "5", "undefined"],
+                answer: "false",
+                hint: "The two values have different types.",
+                explanation: "Strict equality checks both value and type."
+            },
+
+            {
+                q: "Which array method creates a new array by transforming each item?",
+                options: ["map()", "findIndex()", "push()", "pop()"],
+                answer: "map()",
+                hint: "It applies a callback to every element.",
+                explanation: "map() creates a new array from the callback result for each element."
+            },
+
+            {
+                q: "What does document.querySelector('.box') select?",
+                options: ["Every box", "The first matching element", "Only an ID", "A CSS file"],
+                answer: "The first matching element",
+                hint: "It uses a CSS selector.",
+                explanation: "querySelector() returns the first element matching the provided CSS selector."
+            },
+
+            {
+                q: "What does JSON.parse() do?",
+                options: ["Turns a JSON string into a JavaScript value", "Deletes JSON", "Creates CSS", "Converts every value to a number"],
+                answer: "Turns a JSON string into a JavaScript value",
+                hint: "It is the opposite of JSON.stringify() for valid JSON.",
+                explanation: "JSON.parse() parses a JSON string into a JavaScript value."
+            },
+
+            {
+                q: "Which method converts a string to lowercase?",
+                options: ["lower()", "toLowerCase()", "lowercase()", "smallText()"],
+                answer: "toLowerCase()",
+                hint: "The method name includes the word Case.",
+                explanation: "toLowerCase() returns a string converted to lowercase."
+            }
+
+        ]
+
+    };
+
+
+    /* =====================================================
+       GAME INFORMATION
+       ===================================================== */
+
+    const gameInfo = {
+        html: {
+            title: "HTML Tag Master",
+            description: "Test your understanding of HTML structure, elements, and attributes."
+        },
+
+        css: {
+            title: "Guess the CSS",
+            description: "Explore CSS properties, selectors, layouts, and responsive design."
+        },
+
+        js: {
+            title: "Predict the Output",
+            description: "Challenge your JavaScript logic and predict what the code will do."
+        }
+    };
+
+
+    /* =====================================================
+       DATE HELPERS
+       ===================================================== */
+
+    function getLocalDateKey() {
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+    }
+
+
+    function getFormattedDate() {
+        return new Date().toLocaleDateString("en-US", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+    }
+
+
+    /* =====================================================
+       DEFAULT AND SAVED STATISTICS
+       ===================================================== */
+
+    function createDefaultStats() {
+        return {
+            gamesPlayed: 0,
+            correctAnswers: 0,
+            bestScore: 0,
+
+            completedGames: {
+                html: 0,
+                css: 0,
+                js: 0
+            },
+
+            todayDate: getLocalDateKey(),
+
+            todayRounds: {
+                html: 0,
+                css: 0,
+                js: 0
+            },
+
+            dailyChallengeCompleted: {
+                html: false,
+                css: false,
+                js: false
+            },
+
+            todayUsedQuestions: {
+                html: [],
+                css: [],
+                js: []
+            }
+        };
+    }
+
+
+    function loadStats() {
+        const defaults = createDefaultStats();
+
+        try {
+            const saved = JSON.parse(
+                localStorage.getItem(STORAGE_KEY) || "null"
+            );
+
+            if (!saved || typeof saved !== "object") {
+                return defaults;
+            }
+
+            const stats = {
+                ...defaults,
+                ...saved,
+
+                completedGames: {
+                    ...defaults.completedGames,
+                    ...(saved.completedGames || {})
+                },
+
+                todayRounds: {
+                    ...defaults.todayRounds,
+                    ...(saved.todayRounds || {})
+                },
+
+                dailyChallengeCompleted: {
+                    ...defaults.dailyChallengeCompleted,
+                    ...(saved.dailyChallengeCompleted || {})
+                },
+
+                todayUsedQuestions: {
+                    ...defaults.todayUsedQuestions,
+                    ...(saved.todayUsedQuestions || {})
+                }
+            };
+
+            return stats;
+
+        } catch (error) {
+            console.warn("Could not load game statistics:", error);
+            return defaults;
+        }
+    }
+
+
+    let stats = loadStats();
+
+
+    function saveStats() {
+        try {
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(stats)
+            );
+        } catch (error) {
+            console.warn("Could not save game statistics:", error);
+        }
+    }
+
+
+    /* =====================================================
+       RESET DAILY DATA WHEN THE DATE CHANGES
+       Lifetime statistics remain untouched.
+       ===================================================== */
+
+    function resetDailyDataIfNeeded() {
+        const today = getLocalDateKey();
+
+        if (stats.todayDate !== today) {
+            stats.todayDate = today;
+
+            stats.todayRounds = {
+                html: 0,
+                css: 0,
+                js: 0
+            };
+
+            stats.dailyChallengeCompleted = {
+                html: false,
+                css: false,
+                js: false
+            };
+
+            stats.todayUsedQuestions = {
+                html: [],
+                css: [],
+                js: []
+            };
+
+            saveStats();
+        }
+    }
+
+
+    /* =====================================================
+       GAME SESSION STATE
+       ===================================================== */
+
+    let currentGameId = null;
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+
+    let currentScore = 0;
+    let currentCorrect = 0;
+    let currentWrong = 0;
+
+    let hasAnswered = false;
+    let hintUsed = false;
+
+    let sessionCorrectAnswers = 0;
+
+
+    /* =====================================================
+       RANDOM HELPERS
+       ===================================================== */
+
+    function shuffleArray(array) {
+        const result = [...array];
+
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+
+        return result;
+    }
+
+
+    /*
+       Pick questions not used earlier today.
+
+       If the remaining bank contains fewer than five questions,
+       the unused questions are selected first. Once all questions
+       have been used, the daily pool starts another cycle.
+    */
+
+    function selectFreshQuestions(gameId) {
+        const bank = questionBank[gameId].map((question, index) => ({
+            ...question,
+            questionId: `${gameId}_${index}`
+        }));
+
+        let used = new Set(
+            stats.todayUsedQuestions[gameId] || []
+        );
+
+        let available = bank.filter(
+            question => !used.has(question.questionId)
+        );
+
+        /*
+           Start a fresh cycle only when the remaining questions
+           cannot provide another complete round.
+        */
+
+        if (available.length < QUESTIONS_PER_ROUND) {
+            used = new Set();
+            available = [...bank];
+        }
+
+        const selected = shuffleArray(available).slice(
+            0,
+            Math.min(QUESTIONS_PER_ROUND, bank.length)
+        );
+
+        /*
+           A question bank should have at least five questions.
+           This fallback keeps the game usable if it is edited later.
+        */
+
+        while (selected.length < QUESTIONS_PER_ROUND && bank.length > 0) {
+            const remaining = shuffleArray(
+                bank.filter(question =>
+                    !selected.some(
+                        item => item.questionId === question.questionId
+                    )
+                )
+            );
+
+            if (!remaining.length) {
+                break;
+            }
+
+            selected.push(remaining[0]);
+        }
+
+        /*
+           Mark the selected questions as used for today's cycle.
+        */
+
+        const updatedUsed = new Set([
+            ...used,
+            ...selected.map(question => question.questionId)
+        ]);
+
+        stats.todayUsedQuestions[gameId] = [...updatedUsed];
+
+        saveStats();
+
+        return shuffleArray(selected);
+    }
+
+
+    /* =====================================================
+       OPEN A GAME
+       ===================================================== */
+
+    function startGame(gameId) {
+        resetDailyDataIfNeeded();
+
+        if (!questionBank[gameId]) {
+            alert("This game is not available yet.");
+            return;
+        }
+
+        currentGameId = gameId;
+
+        currentQuestions = selectFreshQuestions(gameId);
+
+        currentQuestionIndex = 0;
+
+        currentScore = 0;
+        currentCorrect = 0;
+        currentWrong = 0;
+
+        hasAnswered = false;
+        hintUsed = false;
+
+        document.getElementById("gameArea").classList.remove("hidden");
+
+        document.getElementById("questionScreen").classList.remove("hidden");
+        document.getElementById("resultsScreen").classList.add("hidden");
+
+        document.getElementById("activeGameTitle").textContent =
+            gameInfo[gameId].title;
+
+        document.getElementById("activeGameDescription").textContent =
+            gameInfo[gameId].description;
+
+        renderQuestion();
+
+        document.getElementById("gameArea").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        updateDailyPanel();
+    }
+
+
+    /* =====================================================
+       DISPLAY QUESTION
+       ===================================================== */
+
+    function renderQuestion() {
+        if (!currentQuestions.length) {
+            return;
+        }
+
+        hasAnswered = false;
+        hintUsed = false;
+
+        const question = currentQuestions[currentQuestionIndex];
+
+        document.getElementById("questionCounter").textContent =
+            `QUESTION ${currentQuestionIndex + 1} OF ${currentQuestions.length}`;
+
+        document.getElementById("currentScore").textContent =
+            `SCORE: ${currentScore}`;
+
+        document.getElementById("progressFill").style.width =
+            `${(currentQuestionIndex / currentQuestions.length) * 100}%`;
+
+        document.getElementById("questionText").textContent =
+            question.q;
+
+        document.getElementById("questionDescription").textContent =
+            "Choose the best answer. Read the explanation after submitting.";
+
+        document.getElementById("hintBox").classList.add("hidden");
+        document.getElementById("hintBox").textContent = "";
+
+        const feedback = document.getElementById("feedbackBox");
+
+        feedback.classList.add("hidden");
+        feedback.classList.remove("correct", "wrong");
+        feedback.textContent = "";
+
+        const optionsContainer =
+            document.getElementById("answerOptions");
+
+        optionsContainer.innerHTML = "";
+
+        const shuffledOptions = shuffleArray(question.options);
+
+        shuffledOptions.forEach((option, index) => {
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "option";
+
+            button.innerHTML = `
+                <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+                <span></span>
+            `;
+
+            button.querySelector("span:last-child").textContent = option;
+
+            button.addEventListener("click", () => {
+                checkAnswer(option, button);
+            });
+
+            optionsContainer.appendChild(button);
+        });
+
+        document.getElementById("hintButton").disabled = false;
+
+        const nextButton = document.getElementById("nextButton");
+
+        nextButton.disabled = true;
+        nextButton.textContent = "Choose an Answer First →";
+    }
+
+
+    /* =====================================================
+       CHECK ANSWER
+       ===================================================== */
+
+    function checkAnswer(selectedAnswer, selectedButton) {
+        if (hasAnswered) {
+            return;
+        }
+
+        hasAnswered = true;
+
+        const question = currentQuestions[currentQuestionIndex];
+
+        const isCorrect = selectedAnswer === question.answer;
+
+        const optionButtons = document.querySelectorAll(
+            "#answerOptions .option"
+        );
+
+        optionButtons.forEach(button => {
+            const optionText =
+                button.querySelector("span:last-child").textContent;
+
+            button.disabled = true;
+
+            if (optionText === question.answer) {
+                button.classList.add("correct");
+            }
+        });
+
+        const feedback = document.getElementById("feedbackBox");
+
+        feedback.classList.remove("hidden", "correct", "wrong");
+
+        if (isCorrect) {
+            currentScore += POINTS_PER_QUESTION;
+            currentCorrect++;
+
+            feedback.classList.add("correct");
+
+            feedback.innerHTML = `
+                <strong>✓ Correct Answer!</strong><br>
+                <span></span>
+            `;
+
+            feedback.querySelector("span").textContent =
+                question.explanation;
+
+        } else {
+            currentWrong++;
+
+            selectedButton.classList.add("wrong");
+
+            feedback.classList.add("wrong");
+
+            feedback.innerHTML = `
+                <strong>Not quite!</strong><br>
+                <span class="correct-answer-text"></span><br>
+                <span class="explanation-text"></span>
+            `;
+
+            feedback.querySelector(".correct-answer-text").textContent =
+                `Correct answer: ${question.answer}`;
+
+            feedback.querySelector(".explanation-text").textContent =
+                question.explanation;
+        }
+
+        document.getElementById("currentScore").textContent =
+            `SCORE: ${currentScore}`;
+
+        document.getElementById("hintButton").disabled = true;
+
+        const nextButton = document.getElementById("nextButton");
+
+        nextButton.disabled = false;
+
+        nextButton.textContent =
+            currentQuestionIndex === currentQuestions.length - 1
+                ? "Finish Challenge →"
+                : "Next Question →";
+
+        document.getElementById("progressFill").style.width =
+            `${((currentQuestionIndex + 1) / currentQuestions.length) * 100}%`;
+    }
+
+
+    /* =====================================================
+       SHOW HINT
+       ===================================================== */
+
+    function showHint() {
+        if (hasAnswered || hintUsed) {
+            return;
+        }
+
+        const question = currentQuestions[currentQuestionIndex];
+
+        const hintBox = document.getElementById("hintBox");
+
+        hintBox.textContent = `💡 Hint: ${question.hint}`;
+
+        hintBox.classList.remove("hidden");
+
+        hintUsed = true;
+
+        document.getElementById("hintButton").disabled = true;
+    }
+
+
+    /* =====================================================
+       NEXT QUESTION OR FINISH ROUND
+       ===================================================== */
+
+    function nextQuestion() {
+        if (!hasAnswered) {
+            return;
+        }
+
+        if (currentQuestionIndex < currentQuestions.length - 1) {
+            currentQuestionIndex++;
+            renderQuestion();
+        } else {
+            finishGame();
+        }
+    }
+
+
+    /* =====================================================
+       FINISH ROUND
+       ===================================================== */
+
+    function finishGame() {
+        const totalQuestions = currentQuestions.length;
+
+        const accuracy = totalQuestions
+            ? Math.round((currentCorrect / totalQuestions) * 100)
+            : 0;
+
+        /*
+           Lifetime statistics.
+        */
+
+        stats.gamesPlayed++;
+
+        stats.correctAnswers += currentCorrect;
+
+        stats.bestScore = Math.max(
+            stats.bestScore,
+            currentScore
+        );
+
+        stats.completedGames[currentGameId] =
+            (stats.completedGames[currentGameId] || 0) + 1;
+
+        /*
+           Today's progress.
+        */
+
+        stats.todayRounds[currentGameId] =
+            (stats.todayRounds[currentGameId] || 0) + 1;
+
+        if (stats.todayRounds[currentGameId] >= 1) {
+            stats.dailyChallengeCompleted[currentGameId] = true;
+        }
+
+        saveStats();
+
+        updateStats();
+        updateDailyPanel();
+
+        /*
+           Results screen.
+        */
+
+        document.getElementById("questionScreen").classList.add("hidden");
+        document.getElementById("resultsScreen").classList.remove("hidden");
+
+        document.getElementById("finalScore").textContent =
+            currentScore;
+
+        document.getElementById("resultCorrect").textContent =
+            currentCorrect;
+
+        document.getElementById("resultWrong").textContent =
+            currentWrong;
+
+        document.getElementById("resultAccuracy").textContent =
+            `${accuracy}%`;
+
+        let title = "Keep Going!";
+        let message = "Every round is a chance to learn something new.";
+        let icon = "↗";
+
+        if (accuracy === 100) {
+            title = "Perfect Performance!";
+            message = "Outstanding! You answered every question correctly.";
+            icon = "★";
+        } else if (accuracy >= 80) {
+            title = "Excellent Work!";
+            message = "You showed strong understanding of this topic.";
+            icon = "✦";
+        } else if (accuracy >= 60) {
+            title = "Good Progress!";
+            message = "You are making progress. Review the explanations and try again.";
+            icon = "✓";
+        }
+
+        document.getElementById("resultTitle").textContent = title;
+        document.getElementById("resultMessage").textContent = message;
+        document.getElementById("resultIcon").textContent = icon;
+
+        const roundsToday = stats.todayRounds[currentGameId];
+
+        document.getElementById("resultDailyMessage").textContent =
+            `You've completed ${roundsToday} round${roundsToday === 1 ? "" : "s"} of this game today. You can play another fresh set right now.`;
+
+        document.getElementById("resultsScreen").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+
+    /* =====================================================
+       PLAY ANOTHER ROUND
+       ===================================================== */
+
+    function restartGame() {
+        if (!currentGameId) {
+            return;
+        }
+
+        /*
+           startGame() selects a fresh set from the unused
+           questions available for today's date.
+        */
+
+        startGame(currentGameId);
+    }
+
+
+    /* =====================================================
+       EXIT GAME
+       ===================================================== */
+
+    function closeGame() {
+        document.getElementById("gameArea").classList.add("hidden");
+
+        document.getElementById("gameLibrary").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+
+    /* =====================================================
+       UPDATE LIFETIME STATISTICS
+       ===================================================== */
+
+    function updateStats() {
+        document.getElementById("gamesPlayed").textContent =
+            stats.gamesPlayed || 0;
+
+        document.getElementById("correctAnswers").textContent =
+            stats.correctAnswers || 0;
+
+        document.getElementById("bestScore").textContent =
+            stats.bestScore || 0;
+    }
+
+
+    /* =====================================================
+       UPDATE DAILY CHALLENGE PANEL
+       ===================================================== */
+
+    function updateDailyPanel() {
+        resetDailyDataIfNeeded();
+
+        document.getElementById("dailyDate").textContent =
+            getFormattedDate();
+
+        const games = [
+            {
+                id: "html",
+                statusId: "dailyHtmlStatus",
+                detailId: "dailyHtmlDetail",
+                cardId: "dailyCardHtml",
+                name: "HTML"
+            },
+
+            {
+                id: "css",
+                statusId: "dailyCssStatus",
+                detailId: "dailyCssDetail",
+                cardId: "dailyCardCss",
+                name: "CSS"
+            },
+
+            {
+                id: "js",
+                statusId: "dailyJsStatus",
+                detailId: "dailyJsDetail",
+                cardId: "dailyCardJs",
+                name: "JavaScript"
+            }
+        ];
+
+        games.forEach(game => {
+            const completed =
+                stats.dailyChallengeCompleted[game.id];
+
+            const rounds =
+                stats.todayRounds[game.id] || 0;
+
+            const statusElement =
+                document.getElementById(game.statusId);
+
+            const detailElement =
+                document.getElementById(game.detailId);
+
+            const cardElement =
+                document.getElementById(game.cardId);
+
+            cardElement.classList.toggle("completed", completed);
+
+            cardElement.classList.toggle(
+                "today",
+                rounds > 0 && !completed
+            );
+
+            statusElement.textContent = completed
+                ? "✓ Completed"
+                : "Ready to play";
+
+            detailElement.textContent =
+                rounds === 0
+                    ? "Your first daily set is waiting."
+                    : `${rounds} round${rounds === 1 ? "" : "s"} completed today.`;
+        });
+
+        const completedCount = Object.values(
+            stats.dailyChallengeCompleted
+        ).filter(Boolean).length;
+
+        const totalRounds =
+            (stats.todayRounds.html || 0) +
+            (stats.todayRounds.css || 0) +
+            (stats.todayRounds.js || 0);
+
+        document.getElementById("dailySummary").textContent =
+            `${completedCount} of 3 daily challenges completed · ${totalRounds} total rounds played today.`;
+    }
+
+
+    /* =====================================================
+       CINEMATIC PARTICLE GENERATOR
+       ===================================================== */
+
+    function createParticles() {
+        const container = document.getElementById("particles");
+
+        if (!container) {
+            return;
+        }
+
+        const particleCount = window.innerWidth < 600 ? 14 : 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement("span");
+
+            particle.className = "particle";
+
+            particle.style.left = `${Math.random() * 100}%`;
+
+            particle.style.animationDuration =
+                `${7 + Math.random() * 13}s`;
+
+            particle.style.animationDelay =
+                `${Math.random() * 12}s`;
+
+            particle.style.opacity =
+                `${0.15 + Math.random() * 0.45}`;
+
+            const size = 2 + Math.random() * 2;
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            container.appendChild(particle);
+        }
+    }
+
+
+    /* =====================================================
+       INITIALIZE PAGE
+       ===================================================== */
+
+    function initializeGamesPage() {
+        resetDailyDataIfNeeded();
+
+        createParticles();
+
+        updateStats();
+
+        updateDailyPanel();
+    }
+
+
+    initializeGamesPage();
+
+
+    /*
+       If the page stays open across midnight, refresh the
+       daily challenge data when the calendar date changes.
+    */
+
+    setInterval(() => {
+        const oldDate = stats.todayDate;
+
+        resetDailyDataIfNeeded();
+
+        if (oldDate !== stats.todayDate) {
+            updateDailyPanel();
+        }
+    }, 30000);
+
+
+    /*
+       Recheck daily status when the user returns to the tab.
+    */
+
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+            resetDailyDataIfNeeded();
+            updateStats();
+            updateDailyPanel();
+        }
+    });
+
+    </script>
+
+</body>
+</html>

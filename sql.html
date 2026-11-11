@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#071426">
+    <meta name="description" content="Learn SQL with ELOMCODE School. Explore interactive lessons, practise database queries, complete challenges, and build real SQL skills.">
+
+    <title>SQL Masterclass | ELOMCODE School</title>
+
+    <link rel="stylesheet" href="sql.css">
+
+    <!-- Browser-based SQLite engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+
+    <script src="sql.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND EXPERIENCE
+    ========================================== -->
+
+    <div class="background-scene" aria-hidden="true">
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+        <div class="background-grid"></div>
+        <div id="particles" class="particles"></div>
+    </div>
+
+
+    <!-- =========================================
+         TOP NAVIGATION
+    ========================================== -->
+
+    <header class="topbar">
+
+        <a href="courses.html" class="brand" aria-label="Return to ELOMCODE School">
+            <span class="brand-mark">E.</span>
+
+            <span class="brand-copy">
+                <strong>ELOMCODE</strong>
+                <small>SQL MASTERCLASS</small>
+            </span>
+        </a>
+
+        <div class="topbar-center">
+            <span class="live-indicator"></span>
+            <span id="engineStatus">Preparing SQL engine...</span>
+        </div>
+
+        <div class="topbar-actions">
+
+            <button
+                type="button"
+                class="icon-button"
+                id="toggleSidebarButton"
+                aria-label="Toggle lesson sidebar"
+                title="Toggle lessons"
+            >
+                ☰
+            </button>
+
+            <a href="courses.html" class="back-button">
+                <span aria-hidden="true">←</span>
+                <span>Back to Courses</span>
+            </a>
+			
+			<a href="index.html" class="nav-button primary-button">
+                Back to School
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN COURSE LAYOUT
+    ========================================== -->
+
+    <div class="course-layout" id="courseLayout">
+
+
+        <!-- =====================================
+             LESSON SIDEBAR
+        ====================================== -->
+
+        <aside class="lesson-sidebar" id="lessonSidebar">
+
+            <div class="sidebar-top">
+
+                <div class="sidebar-heading">
+                    <span class="eyebrow">YOUR LEARNING PATH</span>
+                    <h2>SQL Explorer</h2>
+                    <p>Learn databases one query at a time.</p>
+                </div>
+
+                <div class="course-mini-card">
+
+                    <div class="database-icon" aria-hidden="true">
+                        ◈
+                    </div>
+
+                    <div class="course-mini-info">
+                        <strong>SQL Masterclass</strong>
+                        <span id="sidebarLessonCount">0 lessons</span>
+                    </div>
+
+                    <span class="course-level">BEGINNER</span>
+
+                </div>
+
+                <div class="sidebar-progress">
+
+                    <div class="progress-label">
+                        <span>Course progress</span>
+                        <strong id="progressPercent">0%</strong>
+                    </div>
+
+                    <div
+                        class="progress-track"
+                        role="progressbar"
+                        aria-label="Course completion"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                        id="progressTrack"
+                    >
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <div class="progress-meta">
+                        <span id="completedText">0 lessons completed</span>
+                        <span><span id="xpCount">0</span> XP</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-section-title">
+                <span>COURSE CONTENT</span>
+                <span class="sidebar-section-line"></span>
+            </div>
+
+
+            <!-- JavaScript builds all lesson groups here. -->
+
+            <nav
+                class="lesson-list"
+                id="lessonList"
+                aria-label="SQL course lessons"
+            >
+
+                <div class="sidebar-loading" id="sidebarLoading">
+                    <span class="loading-spinner"></span>
+                    <p>Preparing your lessons...</p>
+                </div>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-xp-card">
+
+                    <div class="xp-card-icon">✦</div>
+
+                    <div>
+                        <strong>Keep progressing!</strong>
+                        <p>Complete lessons to earn XP.</p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="certificate-sidebar-button"
+                    id="certificateButton"
+                    disabled
+                >
+                    <span>♧</span>
+                    <span id="certificateButtonText">Certificate Locked</span>
+                    <span class="lock-icon" id="certificateLock">🔒</span>
+                </button>
+
+                <div class="sidebar-footer">
+                    <span class="footer-dot"></span>
+                    <span>ELOMCODE LEARNING SYSTEM</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN LEARNING AREA
+        ====================================== -->
+
+        <main class="main-content" id="mainContent">
+
+            <div class="content-container">
+
+
+                <!-- COURSE HERO -->
+
+                <section class="course-hero">
+
+                    <div class="hero-content">
+
+                        <div class="hero-breadcrumb">
+                            <span>COURSES</span>
+                            <span>/</span>
+                            <span>DATABASES</span>
+                            <span>/</span>
+                            <strong>SQL MASTERCLASS</strong>
+                        </div>
+
+                        <div class="hero-badge">
+                            <span class="badge-sparkle">✦</span>
+                            INTERACTIVE LEARNING EXPERIENCE
+                        </div>
+
+                        <h1>
+                            Master the language
+                            <br>
+                            of <span class="gradient-text">data.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Learn how databases work, write real SQL queries,
+                            explore data, and build practical database skills
+                            through hands-on learning.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <button
+                                type="button"
+                                class="primary-button"
+                                id="startLearningButton"
+                            >
+                                Start Learning
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                            <div class="hero-stat">
+                                <span class="stat-icon">⌘</span>
+                                <div>
+                                    <strong>Hands-on practice</strong>
+                                    <small>Learn by doing</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DECORATIVE DATABASE VISUAL -->
+
+                    <div class="hero-visual" aria-hidden="true">
+
+                        <div class="visual-orbit orbit-one"></div>
+                        <div class="visual-orbit orbit-two"></div>
+                        <div class="visual-orbit orbit-three"></div>
+
+                        <div class="database-visual">
+
+                            <div class="database-top"></div>
+
+                            <div class="database-layer layer-one">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="database-layer layer-two">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="database-layer layer-three">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+                        <div class="floating-code code-one">
+                            <span>SELECT</span> *
+                        </div>
+
+                        <div class="floating-code code-two">
+                            <span>FROM</span> database
+                        </div>
+
+                        <div class="floating-data data-one">
+                            <span class="data-dot"></span>
+                            QUERY READY
+                        </div>
+
+                        <div class="floating-data data-two">
+                            <span class="data-symbol">{ }</span>
+                            <span>DATA ENGINE</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- QUICK STATS -->
+
+                <section class="stats-grid" aria-label="Course statistics">
+
+                    <div class="stat-card">
+                        <div class="stat-card-icon blue-icon">▤</div>
+                        <div>
+                            <span>Total lessons</span>
+                            <strong id="heroLessonCount">--</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-icon purple-icon">✦</div>
+                        <div>
+                            <span>XP earned</span>
+                            <strong id="heroXP">0 XP</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-icon green-icon">✓</div>
+                        <div>
+                            <span>Completed</span>
+                            <strong id="heroCompleted">0 lessons</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-icon cyan-icon">⌘</div>
+                        <div>
+                            <span>SQL engine</span>
+                            <strong id="heroEngineStatus">Loading</strong>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     ACTIVE LESSON
+                ================================== -->
+
+                <section class="lesson-workspace" id="lessonWorkspace">
+
+                    <div class="lesson-header">
+
+                        <div class="lesson-heading-main">
+
+                            <div class="lesson-meta">
+
+                                <span class="lesson-category" id="lessonCategory">
+                                    SQL FOUNDATIONS
+                                </span>
+
+                                <span class="meta-divider">•</span>
+
+                                <span id="lessonNumber">LESSON 01</span>
+
+                                <span class="meta-divider">•</span>
+
+                                <span class="lesson-time" id="lessonDuration">
+                                    5 min
+                                </span>
+
+                            </div>
+
+                            <h2 id="lessonTitle">
+                                Welcome to SQL
+                            </h2>
+
+                            <p id="lessonSubtitle">
+                                Begin your journey into the world of databases.
+                            </p>
+
+                        </div>
+
+                        <div class="lesson-completion-badge" id="lessonCompletionBadge">
+                            <span>○</span>
+                            <span>In progress</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- LESSON TIP -->
+
+                    <div class="lesson-tip" id="lessonTipBox">
+
+                        <div class="tip-icon">✦</div>
+
+                        <div>
+                            <strong>LEARNING TIP</strong>
+                            <p id="lessonTip">
+                                Take your time, experiment with the examples,
+                                and practise what you learn.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- LESSON EXPLANATION -->
+
+                    <article
+                        class="lesson-explanation"
+                        id="lessonExplanation"
+                    >
+
+                        <h3>What you will learn</h3>
+
+                        <p>
+                            Your lesson content will appear here. Work through
+                            each explanation before trying the practical examples.
+                        </p>
+
+                    </article>
+
+
+                    <!-- =================================
+                         WORKING SQL EXAMPLE
+                    ================================== -->
+
+                    <section class="example-section">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <span class="section-eyebrow">LEARN BY EXAMPLE</span>
+                                <h3>See it in action</h3>
+                            </div>
+
+                            <span class="example-badge">
+                                <span class="example-badge-dot"></span>
+                                INTERACTIVE
+                            </span>
+
+                        </div>
+
+                        <p class="section-description">
+                            Explore the example below. Run the query to see
+                            what the database returns.
+                        </p>
+
+
+                        <div class="code-window">
+
+                            <div class="code-window-header">
+
+                                <div class="window-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <span class="file-label">
+                                    example.sql
+                                </span>
+
+                                <span class="language-label">SQL</span>
+
+                            </div>
+
+                            <div class="code-window-body">
+
+                                <div class="line-number-column" id="exampleLineNumbers">
+                                    1
+                                </div>
+
+                                <pre class="example-code" id="exampleCode"><code>-- Your SQL example will appear here.</code></pre>
+
+                            </div>
+
+                            <div class="code-window-footer">
+
+                                <span class="code-hint">
+                                    <span>⌘</span>
+                                    Example query
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="run-button"
+                                    id="runExampleButton"
+                                >
+                                    <span>▶</span>
+                                    Run Example
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EXAMPLE OUTPUT -->
+
+                        <div class="output-panel">
+
+                            <div class="output-header">
+
+                                <div class="output-heading">
+                                    <span class="output-status-dot"></span>
+                                    <strong>Query Results</strong>
+                                </div>
+
+                                <span class="output-label" id="exampleOutputStatus">
+                                    READY
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="example-output"
+                                id="exampleOutput"
+                                role="region"
+                                aria-live="polite"
+                                tabindex="0"
+                            >
+                                <div class="empty-output">
+                                    <span class="empty-output-icon">▤</span>
+                                    <p>Run the example to see the results.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         INDEPENDENT PRACTICE EDITOR
+                    ================================== -->
+
+                    <section class="practice-section" id="practiceSection">
+
+                        <div class="practice-heading">
+
+                            <div>
+                                <span class="section-eyebrow">
+                                    YOUR TURN
+                                </span>
+
+                                <h3>SQL Practice Lab</h3>
+
+                                <p>
+                                    Write your own SQL query below.
+                                    The editor starts empty so you can practise
+                                    independently.
+                                </p>
+                            </div>
+
+                            <div class="practice-status">
+                                <span class="practice-status-dot"></span>
+                                <span>Live database</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="editor-card">
+
+                            <div class="editor-toolbar">
+
+                                <div class="editor-file">
+                                    <span class="file-icon">▤</span>
+                                    <span>my-query.sql</span>
+                                    <span class="unsaved-indicator"
+                                          id="editorUnsavedIndicator"></span>
+                                </div>
+
+                                <div class="editor-toolbar-actions">
+
+                                    <button
+                                        type="button"
+                                        class="small-tool-button"
+                                        id="clearEditorButton"
+                                    >
+                                        Clear
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="small-tool-button"
+                                        id="resetDatabaseButton"
+                                    >
+                                        Reset Database
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="editor-body">
+
+                                <div
+                                    class="editor-line-numbers"
+                                    id="editorLineNumbers"
+                                    aria-hidden="true"
+                                >1</div>
+
+                                <textarea
+                                    id="codeEditor"
+                                    class="code-editor"
+                                    spellcheck="false"
+                                    autocapitalize="off"
+                                    autocomplete="off"
+                                    autocorrect="off"
+                                    wrap="off"
+                                    aria-label="Write your SQL query here"
+                                    placeholder="-- Write your SQL query here...
+-- Example: SELECT * FROM students;"
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="editor-footer">
+
+                                <div class="editor-shortcut">
+                                    <span class="keyboard-key">Ctrl</span>
+                                    <span>+</span>
+                                    <span class="keyboard-key">Enter</span>
+                                    <span>to run</span>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="run-button run-practice-button"
+                                    id="runCodeButton"
+                                >
+                                    <span>▶</span>
+                                    Run SQL
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRACTICE OUTPUT -->
+
+                        <div class="output-panel practice-output-panel">
+
+                            <div class="output-header">
+
+                                <div class="output-heading">
+                                    <span class="output-status-dot"></span>
+                                    <strong>Practice Results</strong>
+                                </div>
+
+                                <span
+                                    class="output-label"
+                                    id="codeOutputStatus"
+                                >
+                                    WAITING
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="code-output"
+                                id="codeOutput"
+                                role="region"
+                                aria-live="polite"
+                                tabindex="0"
+                            >
+                                <div class="empty-output">
+                                    <span class="empty-output-icon">⌘</span>
+                                    <p>Your query results will appear here.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="practice-notice">
+                            <span>ⓘ</span>
+                            <p>
+                                Your practice queries run in a browser-based
+                                SQLite database. This is a learning environment,
+                                not a connection to a live production database.
+                            </p>
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         LESSON CHALLENGE
+                    ================================== -->
+
+                    <section class="challenge-section" id="challengeSection">
+
+                        <div class="challenge-top">
+
+                            <div class="challenge-icon">⚡</div>
+
+                            <div class="challenge-heading">
+                                <span class="section-eyebrow">
+                                    TEST YOUR SKILLS
+                                </span>
+
+                                <h3>Lesson Challenge</h3>
+
+                                <p>
+                                    Apply what you have learned in this lesson.
+                                </p>
+                            </div>
+
+                            <div class="challenge-xp">
+                                <span>✦</span>
+                                <strong>+25 XP</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="challenge-content">
+
+                            <h4 id="challengeTitle">
+                                Ready for your first challenge?
+                            </h4>
+
+                            <p id="challengeText">
+                                Complete the lesson and test your understanding.
+                            </p>
+
+                            <div
+                                class="challenge-feedback"
+                                id="challengeFeedback"
+                                aria-live="polite"
+                            ></div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         LESSON NAVIGATION
+                    ================================== -->
+
+                    <div class="lesson-navigation">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="previousButton"
+                            disabled
+                        >
+                            <span>←</span>
+
+                            <span class="navigation-copy">
+                                <small>PREVIOUS LESSON</small>
+                                <strong>Previous</strong>
+                            </span>
+                        </button>
+
+
+                        <div
+                            class="lesson-message"
+                            id="lessonMessage"
+                            role="status"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <div class="navigation-right">
+
+                            <button
+                                type="button"
+                                class="complete-button"
+                                id="completeButton"
+                            >
+                                Mark as Complete
+                                <span>✓</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="primary-button next-button"
+                                id="nextButton"
+                            >
+                                Next Lesson
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LEARNING EXPERIENCE FOOTER -->
+
+                    <footer class="learning-footer">
+
+                        <div class="footer-brand">
+                            <span class="footer-brand-mark">E.</span>
+
+                            <span>
+                                <strong>ELOMCODE SCHOOL</strong>
+                                <small>Learn. Code. Build. Become.</small>
+                            </span>
+                        </div>
+
+                        <p>
+                            Every query is a step toward mastery.
+                        </p>
+
+                        <span class="footer-version">
+                            SQL MASTERCLASS
+                        </span>
+
+                    </footer>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         CERTIFICATE MODAL
+    ========================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="modalBackdrop"
+        hidden
+    ></div>
+
+    <section
+        class="certificate-modal"
+        id="certificateModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="certificateModalTitle"
+        hidden
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeModalButton"
+            aria-label="Close certificate window"
+        >
+            ×
+        </button>
+
+
+        <!-- CERTIFICATE FORM -->
+
+        <div class="certificate-form" id="certificateForm">
+
+            <div class="certificate-form-icon">🏆</div>
+
+            <span class="section-eyebrow">COURSE COMPLETED</span>
+
+            <h2 id="certificateModalTitle">
+                Claim your achievement.
+            </h2>
+
+            <p>
+                You've completed the SQL Masterclass!
+                Enter your name to prepare your certificate.
+            </p>
+
+            <label for="learnerName">
+                Name to appear on certificate
+            </label>
+
+            <input
+                type="text"
+                id="learnerName"
+                maxlength="80"
+                autocomplete="name"
+                placeholder="Enter your full name"
+            >
+
+            <div
+                class="certificate-form-message"
+                id="certificateFormMessage"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+            <button
+                type="button"
+                class="primary-button certificate-generate-button"
+                id="generateCertificateButton"
+            >
+                Generate Certificate
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <!-- PRINTABLE CERTIFICATE -->
+
+        <div class="certificate-card" id="certificateCard" hidden>
+
+            <div class="certificate-inner">
+
+                <div class="certificate-topline">
+                    <span>ELOMCODE SCHOOL</span>
+                    <span class="certificate-seal">E.</span>
+                    <span>LEARNING ACHIEVEMENT</span>
+                </div>
+
+                <div class="certificate-main">
+
+                    <span class="certificate-kicker">
+                        CERTIFICATE OF COMPLETION
+                    </span>
+
+                    <h2>Certificate</h2>
+
+                    <p class="certificate-description">
+                        This certificate is proudly presented to
+                    </p>
+
+                    <h3
+                        class="printed-learner-name"
+                        id="printedLearnerName"
+                    >
+                        Learner Name
+                    </h3>
+
+                    <div class="certificate-divider">
+                        <span></span>
+                        <span>✦</span>
+                        <span></span>
+                    </div>
+
+                    <p class="certificate-award-text">
+                        For successfully completing the
+                    </p>
+
+                    <h4>SQL MASTERCLASS</h4>
+
+                    <p class="certificate-detail">
+                        Demonstrating commitment to learning SQL,
+                        understanding database concepts, and practising
+                        structured query language.
+                    </p>
+
+                </div>
+
+                <div class="certificate-bottom">
+
+                    <div class="certificate-signature">
+                        <span class="signature-line"></span>
+                        <strong>ELOMCODE SCHOOL</strong>
+                        <small>LEARNING PLATFORM</small>
+                    </div>
+
+                    <div class="certificate-achievement">
+                        <span>LESSONS COMPLETED</span>
+                        <strong id="certificateLessons">0 / 0</strong>
+                    </div>
+
+                    <div class="certificate-achievement">
+                        <span>XP EARNED</span>
+                        <strong id="certificateXP">0 XP</strong>
+                    </div>
+
+                </div>
+
+                <div class="certificate-footer-line">
+                    LEARN. CODE. BUILD. BECOME.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CERTIFICATE ACTIONS -->
+
+        <div class="certificate-actions" id="certificateActions" hidden>
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="editCertificateNameButton"
+            >
+                Edit Name
+            </button>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="printCertificateButton"
+            >
+                Print Certificate
+                <span>↗</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DATABASE ENGINE LOADING OVERLAY
+    ========================================== -->
+
+    <div
+        class="engine-loading-overlay"
+        id="engineLoadingOverlay"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="engine-loader-content">
+
+            <div class="engine-loader-logo">
+                <span>E.</span>
+            </div>
+
+            <div class="engine-loader-line"></div>
+
+            <span class="engine-loader-eyebrow">
+                ELOMCODE SQL ENVIRONMENT
+            </span>
+
+            <h2 id="engineLoadingTitle">
+                Preparing your workspace
+            </h2>
+
+            <p id="engineLoadingMessage">
+                Initializing the database engine...
+            </p>
+
+            <div class="engine-loading-track">
+                <div
+                    class="engine-loading-fill"
+                    id="engineLoadingFill"
+                ></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         ACCESSIBILITY ANNOUNCEMENTS
+    ========================================== -->
+
+    <div
+        class="sr-only"
+        id="liveAnnouncement"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+</body>
+</html>

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ELOMCODE School — CSS Masterclass
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CINEMATIC BACKGROUND
+========================================================= -->
+
+<div class="cinematic-bg">
+
+    <div class="bg-grid"></div>
+
+    <div class="bg-glow glow-one"></div>
+
+    <div class="bg-glow glow-two"></div>
+
+    <div class="bg-glow glow-three"></div>
+
+    <div class="floating-css css-one">
+        { }
+    </div>
+
+    <div class="floating-css css-two">
+        .class
+    </div>
+
+    <div class="floating-css css-three">
+        #id
+    </div>
+
+    <div class="floating-css css-four">
+        flex
+    </div>
+
+    <div class="floating-css css-five">
+        grid
+    </div>
+
+    <div class="floating-css css-six">
+        01
+    </div>
+
+    <div class="floating-css css-seven">
+        {}
+    </div>
+
+    <div class="floating-css css-eight">
+        CSS
+    </div>
+
+</div>
+
+
+<div id="particles"></div>
+
+
+
+<!-- =========================================================
+     TOP HEADER
+========================================================= -->
+
+<header class="top-header">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <span>{</span>
+            <b>E</b>
+            <span>}</span>
+        </div>
+
+        <div class="brand-text">
+
+            <div class="brand-name">
+                ELOMCODE
+            </div>
+
+            <div class="brand-subtitle">
+                CODE SCHOOL
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-center">
+
+        <div class="course-mini-label">
+            ELOMCODE LEARNING EXPERIENCE
+        </div>
+
+        <div class="course-name">
+            CSS <span>MASTERCLASS</span>
+        </div>
+
+    </div>
+
+
+    <a
+        href="courses.html"
+        class="back-button"
+    >
+        ← Back to Courses
+    </a>
+	
+	<a href="index.html" class="back-button">
+← Back to School
+                
+            </a>
+
+</header>
+
+
+
+<!-- =========================================================
+     COURSE LAYOUT
+========================================================= -->
+
+<div class="course-layout">
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- COURSE IDENTITY -->
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-course-icon">
+
+                <span>
+                    CSS
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <div class="sidebar-course-name">
+                    CSS MASTERCLASS
+                </div>
+
+                <div class="sidebar-course-sub">
+                    45 LESSONS
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-box">
+
+            <div class="progress-header">
+
+                <span>
+                    Your Progress
+                </span>
+
+                <strong id="progressPercent">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+
+            <div class="progress-meta">
+
+                <span id="progressLessons">
+                    0 / 45 lessons
+                </span>
+
+                <span id="xpText">
+                    0 XP
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LESSON LIST -->
+
+        <div
+            class="lesson-list"
+            id="lessonList"
+        >
+        </div>
+
+
+
+        <!-- CERTIFICATE -->
+
+        <button
+            class="certificate-sidebar-button"
+            id="certificateButton"
+        >
+
+            <span class="certificate-icon">
+                🏆
+            </span>
+
+            <span>
+
+                <strong>
+                    Certificate Corner
+                </strong>
+
+                <small id="certificateStatus">
+                    Complete all lessons
+                </small>
+
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+
+        <!-- EXPERIENCE BAR -->
+
+        <div class="experience-bar">
+
+            <div class="experience-location">
+
+                <span class="live-dot"></span>
+
+                <span>
+                    CSS MASTERCLASS
+                </span>
+
+                <span class="slash">
+                    /
+                </span>
+
+                <span id="experienceLesson">
+                    LESSON 01
+                </span>
+
+            </div>
+
+
+            <div class="experience-xp">
+
+                <span>
+                    XP
+                </span>
+
+                <strong id="topXP">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LESSON HERO
+        ================================================== -->
+
+        <section class="lesson-hero">
+
+            <div class="hero-beam"></div>
+
+            <div class="hero-grid"></div>
+
+
+            <div class="lesson-number-wrap">
+
+                <div class="lesson-number">
+                    01
+                </div>
+
+                <div class="lesson-number-label">
+                    LESSON
+                </div>
+
+            </div>
+
+
+            <div class="lesson-hero-content">
+
+                <div
+                    class="lesson-category"
+                    id="lessonCategory"
+                >
+                    FOUNDATIONS
+                </div>
+
+
+                <h1 id="lessonTitle">
+                    What is CSS?
+                </h1>
+
+
+                <p id="lessonSubtitle">
+                    Learn how CSS controls the appearance,
+                    layout and visual presentation of a webpage.
+                </p>
+
+            </div>
+
+
+            <!-- CSS VISUAL -->
+
+            <div class="css-core-visual">
+
+                <div class="core-orbit orbit-a"></div>
+
+                <div class="core-orbit orbit-b"></div>
+
+                <div class="core-orbit orbit-c"></div>
+
+
+                <div class="core-center">
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <small>
+                        STYLE
+                    </small>
+
+                </div>
+
+
+                <div class="core-node node-a">
+                    <span>
+                        color
+                    </span>
+                </div>
+
+                <div class="core-node node-b">
+                    <span>
+                        layout
+                    </span>
+                </div>
+
+                <div class="core-node node-c">
+                    <span>
+                        font
+                    </span>
+                </div>
+
+                <div class="core-node node-d">
+                    <span>
+                        space
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LESSON EXPLANATION
+        ================================================== -->
+
+        <section class="content-card explanation-card">
+
+            <div class="card-heading-row">
+
+                <div>
+
+                    <div class="card-label">
+                        <span>01</span>
+                        UNDERSTAND THE CONCEPT
+                    </div>
+
+                    <h2>
+                        What You Need To Know
+                    </h2>
+
+                </div>
+
+
+                <div class="lesson-badge">
+                    CORE CONCEPT
+                </div>
+
+            </div>
+
+
+            <div
+                class="lesson-explanation"
+                id="lessonExplanation"
+            >
+
+                CSS stands for Cascading Style Sheets.
+
+                CSS is the language used to control how
+                HTML elements look on a webpage.
+
+                While HTML gives a webpage its structure,
+                CSS controls things such as colors,
+                spacing, fonts, borders, sizes, positioning
+                and layout.
+
+            </div>
+
+
+            <div
+                class="why-box"
+                id="lessonWhy"
+            >
+
+                <div class="why-icon">
+                    WHY?
+                </div>
+
+                <div>
+
+                    <strong>
+                        Why does this matter?
+                    </strong>
+
+                    <p>
+                        CSS allows you to transform plain
+                        HTML into a visually organized,
+                        attractive and responsive interface.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SYNTAX
+        ================================================== -->
+
+        <section class="content-card syntax-card">
+
+            <div class="card-heading-row">
+
+                <div>
+
+                    <div class="card-label">
+                        <span>02</span>
+                        LEARN THE SYNTAX
+                    </div>
+
+                    <h2>
+                        CSS Structure
+                    </h2>
+
+                </div>
+
+                <div class="code-language">
+                    CSS
+                </div>
+
+            </div>
+
+
+            <div
+                class="syntax-explanation"
+                id="syntaxExplanation"
+            >
+                CSS rules normally contain a selector,
+                followed by declarations inside curly braces.
+            </div>
+
+
+            <pre class="syntax-code"><code id="syntaxCode">selector {
+    property: value;
+}</code></pre>
+
+
+            <div
+                class="syntax-breakdown"
+                id="syntaxBreakdown"
+            >
+
+                <div>
+                    <strong>
+                        selector
+                    </strong>
+
+                    <span>
+                        Selects the element you want to style.
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>
+                        property
+                    </strong>
+
+                    <span>
+                        Describes what you want to change.
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>
+                        value
+                    </strong>
+
+                    <span>
+                        Specifies the value of that property.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONCEPT STRIP
+        ================================================== -->
+
+        <section
+            class="concept-strip"
+            id="conceptStrip"
+        >
+
+            <div class="concept-item">
+
+                <span class="concept-icon">
+                    01
+                </span>
+
+                <strong>
+                    SELECT
+                </strong>
+
+                <small>
+                    Choose elements
+                </small>
+
+            </div>
+
+
+            <div class="concept-line"></div>
+
+
+            <div class="concept-item">
+
+                <span class="concept-icon">
+                    02
+                </span>
+
+                <strong>
+                    STYLE
+                </strong>
+
+                <small>
+                    Change appearance
+                </small>
+
+            </div>
+
+
+            <div class="concept-line"></div>
+
+
+            <div class="concept-item">
+
+                <span class="concept-icon">
+                    03
+                </span>
+
+                <strong>
+                    CONTROL
+                </strong>
+
+                <small>
+                    Build the design
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ELOMCODE INSIGHT
+        ================================================== -->
+
+        <section class="tip-card">
+
+            <div class="tip-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <div class="tip-heading">
+                    ELOMCODE INSIGHT
+                </div>
+
+                <p id="lessonTip">
+                    CSS becomes easier when you understand
+                    what each property controls instead of
+                    memorizing random code.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXAMPLE
+        ================================================== -->
+
+        <section class="content-card example-card">
+
+            <div class="card-heading-row">
+
+                <div>
+
+                    <div class="card-label">
+                        <span>03</span>
+                        SEE IT IN CODE
+                    </div>
+
+                    <h2>
+                        Example
+                    </h2>
+
+                </div>
+
+
+                <div class="code-language">
+                    CSS
+                </div>
+
+            </div>
+
+
+            <p
+                class="example-description"
+                id="exampleDescription"
+            >
+                Here is a simple example showing the concept
+                in a real webpage.
+            </p>
+
+
+            <pre><code id="exampleCode">h1 {
+    color: royalblue;
+    font-size: 40px;
+}</code></pre>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MULTIPLE EXAMPLES
+        ================================================== -->
+
+        <section class="content-card examples-card">
+
+            <div class="card-heading-row">
+
+                <div>
+
+                    <div class="card-label">
+                        <span>04</span>
+                        MORE EXAMPLES
+                    </div>
+
+                    <h2>
+                        Explore Different Ways
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="example-grid"
+                id="extraExamples"
+            >
+
+                <!-- JavaScript fills this -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TRY IT YOURSELF
+        ================================================== -->
+
+        <section class="content-card editor-card">
+
+            <div class="card-heading-row">
+
+                <div>
+
+                    <div class="card-label">
+                        <span>05</span>
+                        BUILD SOMETHING
+                    </div>
+
+                    <h2>
+                        Try It Yourself
+                    </h2>
+
+                </div>
+
+
+                <div class="editor-status">
+
+                    <span></span>
+
+                    LIVE EDITOR
+
+                </div>
+
+            </div>
+
+
+            <p class="editor-description">
+
+                Change the code below and run it.
+
+                Your HTML and CSS will appear instantly
+                inside the preview window.
+
+            </p>
+
+
+
+            <div class="editor-layout">
+
+
+                <!-- CODE -->
+
+                <div class="code-panel">
+
+                    <div class="panel-header">
+
+                        <span>
+                            YOUR CODE
+                        </span>
+
+                        <span>
+                            CTRL + ENTER
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="codeEditor"
+                        spellcheck="false"
+                    ></textarea>
+
+
+                    <div class="editor-actions">
+
+                        <button
+                            class="run-button"
+                            id="runButton"
+                        >
+                            ▶ Run Code
+                        </button>
+
+
+                        <button
+                            class="reset-button"
+                            id="resetButton"
+                        >
+                            ↻ Reset
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PREVIEW -->
+
+                <div class="preview-panel">
+
+                    <div class="panel-header">
+
+                        <span>
+                            LIVE PREVIEW
+                        </span>
+
+                        <span class="preview-live">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <iframe
+                        id="previewFrame"
+                        title="CSS Live Preview"
+                    ></iframe>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHALLENGE
+        ================================================== -->
+
+        <section class="challenge-card">
+
+            <div class="challenge-number">
+                CHALLENGE
+            </div>
+
+
+            <div class="challenge-content">
+
+                <div class="challenge-label">
+                    ELOMCODE BUILD TASK
+                </div>
+
+                <h2>
+                    Your Turn
+                </h2>
+
+                <p id="challengeText">
+
+                    Create a simple heading and change
+                    its color using CSS.
+
+                </p>
+
+
+                <div class="challenge-hint">
+
+                    <strong>
+                        💡 Hint
+                    </strong>
+
+                    <span id="challengeHint">
+                        Start by selecting the element,
+                        then change its color property.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LESSON NAVIGATION
+        ================================================== -->
+
+        <div class="lesson-navigation">
+
+            <button
+                class="nav-button previous-button"
+                id="previousButton"
+            >
+                ← Previous Lesson
+            </button>
+
+
+            <button
+                class="complete-button"
+                id="completeButton"
+            >
+                ✓ Complete Lesson
+            </button>
+
+
+            <button
+                class="nav-button next-button"
+                id="nextButton"
+            >
+                Next Lesson →
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CERTIFICATE CORNER
+        ================================================== -->
+
+        <section
+            class="certificate-corner"
+            id="certificateCorner"
+        >
+
+            <div class="certificate-glow"></div>
+
+
+            <div class="certificate-badge">
+                🏆
+            </div>
+
+
+            <div class="certificate-content">
+
+                <div class="certificate-small">
+                    ELOMCODE ACHIEVEMENT
+                </div>
+
+
+                <h2>
+                    Certificate Corner
+                </h2>
+
+
+                <p id="certificateMessage">
+
+                    Complete all 45 CSS Masterclass lessons
+                    to unlock your certificate.
+
+                </p>
+
+
+                <button
+                    class="certificate-main-button"
+                    id="certificateMainButton"
+                    disabled
+                >
+                    Certificate Locked
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     CERTIFICATE MODAL
+========================================================= -->
+
+<div
+    class="certificate-modal"
+    id="certificateModal"
+>
+
+    <div class="certificate-modal-overlay"></div>
+
+
+    <div class="certificate-window">
+
+
+        <button
+            class="certificate-close"
+            id="certificateClose"
+        >
+            ×
+        </button>
+
+
+        <!-- NAME SCREEN -->
+
+        <div
+            class="certificate-name-screen"
+            id="certificateNameScreen"
+        >
+
+            <div class="certificate-modal-icon">
+                🏆
+            </div>
+
+
+            <div class="certificate-small">
+                ELOMCODE CERTIFICATION
+            </div>
+
+
+            <h2>
+                You Did It.
+            </h2>
+
+
+            <p>
+                You have completed all 45 lessons
+                of the CSS Masterclass.
+            </p>
+
+
+            <label for="learnerName">
+                Enter your name
+            </label>
+
+
+            <input
+                type="text"
+                id="learnerName"
+                placeholder="Your full name"
+                autocomplete="off"
+            >
+
+
+            <button
+                class="generate-certificate-button"
+                id="generateCertificateButton"
+            >
+                Generate My Certificate →
+            </button>
+
+        </div>
+
+
+
+        <!-- ACTUAL CERTIFICATE -->
+
+        <div
+            class="certificate-paper"
+            id="certificatePaper"
+        >
+
+            <div class="certificate-border"></div>
+
+            <div class="certificate-inner">
+
+
+                <div class="certificate-brand">
+                    ELOMCODE
+                </div>
+
+
+                <div class="certificate-school">
+                    CODING SCHOOL
+                </div>
+
+
+                <div class="certificate-title">
+                    CERTIFICATE
+                </div>
+
+
+                <div class="certificate-subtitle">
+                    OF COMPLETION
+                </div>
+
+
+                <p>
+                    This certificate is proudly presented to
+                </p>
+
+
+                <div
+                    class="certificate-name"
+                    id="certificateName"
+                >
+                    Your Name
+                </div>
+
+
+                <p>
+                    for successfully completing the
+                </p>
+
+
+                <div class="certificate-course">
+                    CSS MASTERCLASS
+                </div>
+
+
+                <div class="certificate-divider"></div>
+
+
+                <div class="certificate-details">
+
+                    <div>
+
+                        <strong>
+                            45
+                        </strong>
+
+                        <span>
+                            LESSONS
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="certificateXP">
+                            1125
+                        </strong>
+
+                        <span>
+                            XP EARNED
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            CSS
+                        </strong>
+
+                        <span>
+                            MASTERED
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-footer">
+
+                    <div>
+                        ELOMCODE SCHOOL
+                    </div>
+
+                    <div>
+                        LEARN. CODE. BUILD. BECOME.
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CERTIFICATE ACTIONS -->
+
+        <div
+            class="certificate-actions"
+            id="certificateActions"
+        >
+
+            <button
+                id="printCertificate"
+            >
+                🖨 Print Certificate
+            </button>
+
+
+            <button
+                id="closeCertificate"
+            >
+                Close
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     XP POPUP
+========================================================= -->
+
+<div
+    class="xp-popup"
+    id="xpPopup"
+>
+    +25 XP
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="css.js"></script>
+
+
+</body>
+
+</html>

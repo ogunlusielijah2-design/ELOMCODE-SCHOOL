@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELOMCODE School | JavaScript Masterclass</title>
+
+    <link rel="stylesheet" href="javascript.css">
+    <script src="javascript.js" defer></script>
+</head>
+
+<body>
+
+<div class="background-effects">
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div id="particles"></div>
+</div>
+
+<header class="topbar">
+
+    <a href="courses.html" class="brand">
+        <span class="brand-icon">&lt;E&gt;</span>
+
+        <span class="brand-text">
+            <strong>ELOMCODE</strong>
+            <small>CODE SCHOOL</small>
+        </span>
+    </a>
+
+    <div class="topbar-title">
+        <span class="live-dot"></span>
+        JAVASCRIPT MASTERCLASS
+    </div>
+
+    <a href="courses.html" class="back-button">
+        ← Back to Courses
+    </a>
+	
+	<a href="index.html" class="back-button">
+ ← Back to School
+              
+            </a>
+
+</header>
+
+
+<div class="course-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-course-heading">
+            <div class="javascript-logo">JS</div>
+
+            <div>
+                <h2>JavaScript</h2>
+                <p>Masterclass</p>
+            </div>
+        </div>
+
+        <div class="course-stat">
+            <div class="stat-heading">
+                <span>Course Progress</span>
+                <strong id="progressPercent">0%</strong>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressFill"></div>
+            </div>
+
+            <div class="stat-footer">
+                <span id="completedText">0 of 30 lessons</span>
+                <span><strong id="xpCount">0</strong> XP</span>
+            </div>
+        </div>
+
+        <div class="lesson-heading">
+            <span>YOUR LEARNING PATH</span>
+            <span id="sidebarLessonCount">30 LESSONS</span>
+        </div>
+
+        <div id="lessonList" class="lesson-list">
+            <div class="sidebar-loading">
+                Loading your lessons...
+            </div>
+        </div>
+
+        <button id="certificateButton" class="sidebar-certificate" type="button">
+            <span>🏆</span>
+            <span>
+                <strong>Course Certificate</strong>
+                <small id="certificateStatus">Complete all lessons to unlock</small>
+            </span>
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <div class="welcome-strip">
+            <span class="welcome-dot"></span>
+            <span>YOUR JAVASCRIPT LEARNING EXPERIENCE</span>
+            <span class="strip-right">LEARN · PRACTISE · BUILD</span>
+        </div>
+
+
+        <!-- LESSON HERO -->
+
+        <section class="lesson-hero">
+
+            <div class="hero-copy">
+
+                <div class="lesson-breadcrumb">
+                    <span>JAVASCRIPT</span>
+                    <span>›</span>
+                    <span id="lessonCategory">FOUNDATIONS</span>
+                    <span>›</span>
+                    <span id="lessonNumber">LESSON 01</span>
+                </div>
+
+                <h1 id="lessonTitle">Welcome to JavaScript</h1>
+
+                <p id="lessonSubtitle">
+                    Begin your journey into the language that makes websites interactive.
+                </p>
+
+                <div class="hero-tags">
+                    <span>Beginner Friendly</span>
+                    <span>Practical Learning</span>
+                    <span>Live Examples</span>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="js-core">
+                    <span>JS</span>
+                </div>
+
+                <span class="floating-symbol symbol-one">{ }</span>
+                <span class="floating-symbol symbol-two">01</span>
+                <span class="floating-symbol symbol-three">;</span>
+                <span class="floating-symbol symbol-four">()</span>
+            </div>
+
+        </section>
+
+
+        <!-- LESSON EXPERIENCE BAR -->
+
+        <div class="experience-bar">
+            <div class="experience-label">
+                <span>YOUR LEARNING JOURNEY</span>
+                <strong id="experienceText">Ready to begin</strong>
+            </div>
+
+            <div class="experience-track">
+                <div id="experienceFill"></div>
+            </div>
+        </div>
+
+
+        <!-- EXPLANATION -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div class="section-icon">01</div>
+
+                <div>
+                    <h2>Understand the Concept</h2>
+                    <p>Learn what it means and how it works.</p>
+                </div>
+            </div>
+
+            <div id="lessonExplanation" class="lesson-explanation">
+                Select a lesson from the sidebar to begin.
+            </div>
+
+            <div class="concept-tip">
+                <span class="tip-icon">✦</span>
+
+                <div>
+                    <strong>ELomcode Learning Tip</strong>
+                    <p id="lessonTip">
+                        Take your time, understand the concept, and practise what you learn.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- EXAMPLE -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div class="section-icon">02</div>
+
+                <div>
+                    <h2>Live Code Example</h2>
+                    <p>Study the code, run it, and observe the result.</p>
+                </div>
+            </div>
+
+            <div class="example-toolbar">
+                <span class="file-label">
+                    <span class="file-dot"></span>
+                    example.js
+                </span>
+
+                <button id="runExampleButton" class="button button-primary" type="button">
+                    ▶ Run Example
+                </button>
+            </div>
+
+            <pre class="example-code"><code id="exampleCode">// Your lesson example will appear here.</code></pre>
+
+            <div class="result-heading">
+                <span class="result-indicator"></span>
+                EXAMPLE OUTPUT
+            </div>
+
+            <pre id="exampleOutput" class="example-output">Run the example to see the result.</pre>
+
+        </section>
+
+
+        <!-- PERSONAL PLAYGROUND -->
+
+        <section class="content-card playground-card">
+
+            <div class="section-heading">
+                <div class="section-icon">03</div>
+
+                <div>
+                    <h2>Your Practice Playground</h2>
+                    <p>Write your own JavaScript and experiment freely.</p>
+                </div>
+            </div>
+
+            <div class="playground-notice">
+                <span>✦</span>
+                This editor is separate from the lesson example. Your practice starts blank.
+            </div>
+
+            <div class="editor-toolbar">
+                <div class="editor-file">
+                    <span class="file-dot"></span>
+                    my-code.js
+                </div>
+
+                <div class="editor-actions">
+
+                    <button id="clearEditorButton" class="button button-light" type="button">
+                        Clear
+                    </button>
+
+                    <button id="runCodeButton" class="button button-primary" type="button">
+                        ▶ Run My Code
+                    </button>
+
+                </div>
+            </div>
+
+            <textarea
+                id="codeEditor"
+                class="code-editor"
+                spellcheck="false"
+                autocomplete="off"
+                autocapitalize="off"
+                aria-label="JavaScript practice editor"
+                placeholder="// Write your JavaScript here...
+// Example:
+console.log('Hello, ELOMCODE!');"></textarea>
+
+            <div class="editor-footer">
+                <span>JavaScript Playground</span>
+                <span>Your code runs in an isolated preview.</span>
+            </div>
+
+            <div class="result-heading">
+                <span class="result-indicator"></span>
+                YOUR OUTPUT
+            </div>
+
+            <pre id="codeOutput" class="practice-output">Your result will appear here when you run your code.</pre>
+
+        </section>
+
+
+        <!-- CHALLENGE -->
+
+        <section class="challenge-card">
+
+            <div class="challenge-top">
+                <div class="challenge-icon">✦</div>
+
+                <div>
+                    <span class="challenge-label">YOUR NEXT CHALLENGE</span>
+                    <h2 id="challengeTitle">Put Your Knowledge to Work</h2>
+                </div>
+            </div>
+
+            <p id="challengeText">
+                Complete the challenge using what you have learned.
+            </p>
+
+        </section>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="lesson-navigation">
+
+            <button id="previousButton" class="button button-light" type="button">
+                ← Previous Lesson
+            </button>
+
+            <button id="completeButton" class="button button-success" type="button">
+                ✓ Complete Lesson
+            </button>
+
+            <button id="nextButton" class="button button-primary" type="button">
+                Next Lesson →
+            </button>
+
+        </div>
+
+        <div id="lessonMessage" class="lesson-message" role="status"></div>
+
+        <footer class="course-footer">
+            <span>ELOMCODE SCHOOL</span>
+            <span>Learn. Code. Build. Become.</span>
+            <span>Built by Elijah Opomulero</span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- CERTIFICATE MODAL -->
+
+<div id="certificateModal" class="modal" aria-hidden="true">
+
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="certificate-card">
+
+        <button id="closeModalButton" class="modal-close" type="button" aria-label="Close">
+            ×
+        </button>
+
+        <div class="certificate-symbol">✦</div>
+
+        <p class="certificate-overline">ELOMCODE SCHOOL PRESENTS</p>
+
+        <h2>Certificate of Completion</h2>
+
+        <p class="certificate-description">
+            This certificate recognises the successful completion of the
+            JavaScript Masterclass.
+        </p>
+
+        <label for="learnerName">Enter your name</label>
+
+        <input
+            id="learnerName"
+            type="text"
+            maxlength="80"
+            placeholder="Your full name">
+
+        <div class="certificate-details">
+            <span>COURSE</span>
+            <strong>JavaScript Masterclass</strong>
+
+            <span>LESSONS COMPLETED</span>
+            <strong id="certificateLessons">0 of 30</strong>
+
+            <span>XP EARNED</span>
+            <strong id="certificateXP">0 XP</strong>
+        </div>
+
+        <button id="printCertificateButton" class="button button-primary certificate-print" type="button">
+            Print Certificate
+        </button>
+
+        <p class="certificate-founder">
+            Course Architect: Elijah Opomulero
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

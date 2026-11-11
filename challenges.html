@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELOMCODE School | Challenge Universe</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #050916;
+    --panel: #0c1630;
+    --panel-light: #101e3b;
+    --blue: #3986ff;
+    --cyan: #00e0ff;
+    --purple: #9b70ff;
+    --pink: #ff73c7;
+    --gold: #ffd580;
+    --green: #40e8ad;
+    --red: #ff6985;
+    --text: #f5f8ff;
+    --muted: #91a4c5;
+    --border: rgba(140, 174, 255, .18);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text);
+    background: var(--bg);
+    font-family: Inter, sans-serif;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* ================= CINEMATIC BACKGROUND ================= */
+
+#universe {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 10% 10%, rgba(26, 92, 255, .19), transparent 38%),
+        radial-gradient(ellipse at 90% 25%, rgba(137, 61, 255, .15), transparent 35%),
+        radial-gradient(ellipse at 50% 100%, rgba(0, 205, 255, .09), transparent 45%),
+        #050916;
+}
+
+#stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+    opacity: .12;
+    background-image:
+        linear-gradient(rgba(74, 130, 255, .18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 130, 255, .18) 1px, transparent 1px);
+    background-size: 55px 55px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.glow-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .19;
+    animation: floatOrb 16s ease-in-out infinite alternate;
+}
+
+.orb-blue {
+    background: #1266ff;
+    left: -130px;
+    top: 15%;
+}
+
+.orb-purple {
+    background: #913dff;
+    right: -140px;
+    top: 38%;
+    animation-delay: -6s;
+}
+
+.orb-cyan {
+    background: #00dfff;
+    left: 35%;
+    bottom: -200px;
+    animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(65px, -55px) scale(1.2); }
+}
+
+.floating-symbol {
+    position: fixed;
+    z-index: -1;
+    color: rgba(94, 165, 255, .13);
+    font-family: Consolas, monospace;
+    font-weight: 800;
+    pointer-events: none;
+    animation: symbolFloat 13s ease-in-out infinite;
+}
+
+.symbol-one {
+    top: 20%;
+    left: 3%;
+    font-size: 40px;
+}
+
+.symbol-two {
+    top: 42%;
+    right: 4%;
+    font-size: 54px;
+    animation-delay: -4s;
+}
+
+.symbol-three {
+    top: 72%;
+    left: 6%;
+    font-size: 32px;
+    animation-delay: -7s;
+}
+
+.symbol-four {
+    top: 82%;
+    right: 8%;
+    font-size: 38px;
+    animation-delay: -3s;
+}
+
+@keyframes symbolFloat {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-28px) rotate(7deg); }
+}
+
+/* ================= HEADER ================= */
+
+.topbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px clamp(16px, 4vw, 55px);
+    border-bottom: 1px solid var(--border);
+    background: rgba(5, 9, 22, .82);
+    backdrop-filter: blur(20px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand-logo {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #246bff, #00dfff 65%, #a66cff);
+    box-shadow: 0 0 32px rgba(0, 207, 255, .28);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.brand-name {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.4px;
+}
+
+.brand-sub {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.xp-pill {
+    padding: 11px 14px;
+    border: 1px solid rgba(255, 213, 128, .2);
+    border-radius: 12px;
+    color: var(--gold);
+    background: rgba(255, 213, 128, .06);
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.back-btn,
+.button-secondary,
+.button-primary {
+    min-height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    background: rgba(255,255,255,.045);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .22s ease;
+}
+
+.back-btn:hover,
+.button-secondary:hover {
+    border-color: rgba(0,224,255,.5);
+    background: rgba(0,224,255,.08);
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    border: 0;
+    color: #04101e;
+    background: linear-gradient(100deg, #53a2ff, #00e4ee);
+    box-shadow: 0 7px 27px rgba(0, 205, 255, .18);
+    font-weight: 900;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(0, 205, 255, .3);
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+main {
+    position: relative;
+    width: min(1450px, 100%);
+    margin: auto;
+    padding: 36px clamp(15px, 4vw, 55px) 65px;
+}
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(27px, 5vw, 62px);
+    overflow: hidden;
+    border: 1px solid rgba(117, 163, 255, .24);
+    border-radius: 29px;
+    background:
+        radial-gradient(ellipse at 90% 0%, rgba(132, 69, 255, .2), transparent 40%),
+        radial-gradient(ellipse at 0% 100%, rgba(0, 218, 255, .11), transparent 42%),
+        linear-gradient(135deg, rgba(14, 29, 58, .94), rgba(6, 14, 31, .93));
+    box-shadow: 0 30px 100px rgba(0,0,0,.23);
+}
+
+.hero::before {
+    content: "E";
+    position: absolute;
+    z-index: -1;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(105, 165, 255, .055);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(200px, 31vw, 400px);
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 320px;
+    height: 320px;
+    right: -130px;
+    bottom: -230px;
+    border: 1px solid rgba(0,224,255,.22);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(0,224,255,.025),
+        0 0 0 70px rgba(0,224,255,.02),
+        0 0 0 105px rgba(0,224,255,.015);
+    pointer-events: none;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    border: 1px solid rgba(0,224,255,.24);
+    border-radius: 40px;
+    color: var(--cyan);
+    background: rgba(0,224,255,.06);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .35; transform: scale(.75); }
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-top: 23px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(39px, 6.5vw, 78px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.gradient-text {
+    color: transparent;
+    background: linear-gradient(95deg, white, #7ae0ff 42%, #ad90ff 78%, #ffe0a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hero-description {
+    max-width: 690px;
+    margin-top: 21px;
+    color: #a8bad8;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 8%;
+    bottom: 12%;
+    display: flex;
+    gap: 9px;
+    opacity: .8;
+}
+
+.hero-decoration span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 20px var(--cyan);
+    animation: pulse 2s infinite;
+}
+
+.hero-decoration span:nth-child(2) {
+    background: var(--purple);
+    box-shadow: 0 0 20px var(--purple);
+    animation-delay: .4s;
+}
+
+.hero-decoration span:nth-child(3) {
+    background: var(--gold);
+    box-shadow: 0 0 20px var(--gold);
+    animation-delay: .8s;
+}
+
+/* ================= STATS ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 22px 0 40px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    padding: 21px;
+    border: 1px solid var(--border);
+    border-radius: 19px;
+    background: rgba(11, 23, 46, .83);
+    backdrop-filter: blur(15px);
+    transition: .25s ease;
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(0,224,255,.07);
+    filter: blur(25px);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,224,255,.35);
+}
+
+.stat-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    color: var(--cyan);
+    background: rgba(0,224,255,.09);
+    font-size: 19px;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    color: var(--gold);
+    background: rgba(255,213,128,.08);
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    color: var(--purple);
+    background: rgba(155,112,255,.1);
+}
+
+.stat-card:nth-child(4) .stat-icon {
+    color: var(--green);
+    background: rgba(64,232,173,.09);
+}
+
+.stat-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.stat-label {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* ================= CHALLENGE CONTROLS ================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin: 37px 0 20px;
+}
+
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(24px, 3vw, 33px);
+    letter-spacing: -.8px;
+}
+
+.section-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.challenge-count {
+    padding: 10px 13px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: var(--cyan);
+    background: rgba(0,224,255,.05);
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 185px;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-input,
+.difficulty-select {
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    color: var(--text);
+    background: rgba(11,23,46,.92);
+    font-size: 12px;
+}
+
+.search-input::placeholder {
+    color: #7e91b2;
+}
+
+.difficulty-select option {
+    color: white;
+    background: #0b1730;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.category-tab {
+    min-height: 39px;
+    padding: 9px 13px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: #a8bad7;
+    background: rgba(255,255,255,.025);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.category-tab:hover,
+.category-tab.active {
+    border-color: rgba(0,224,255,.5);
+    color: var(--cyan);
+    background: rgba(0,224,255,.09);
+}
+
+/* ================= CHALLENGE CARDS ================= */
+
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.challenge-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 270px;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 21px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(60,114,255,.09), transparent 40%),
+        linear-gradient(145deg, rgba(16,31,59,.95), rgba(7,15,31,.96));
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    animation: cardAppear .45s ease both;
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.challenge-card::before {
+    content: "";
+    position: absolute;
+    top: -85px;
+    right: -85px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--card-glow, rgba(0,224,255,.16));
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(100,168,255,.48);
+    box-shadow: 0 18px 45px rgba(0,0,0,.24);
+}
+
+.card-top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 6px 9px;
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.language-tag {
+    color: #83e4ff;
+    background: rgba(0,224,255,.1);
+}
+
+.difficulty-easy {
+    color: var(--green);
+    background: rgba(64,232,173,.09);
+}
+
+.difficulty-medium {
+    color: var(--gold);
+    background: rgba(255,213,128,.09);
+}
+
+.difficulty-hard {
+    color: #ff91a8;
+    background: rgba(255,105,133,.1);
+}
+
+.challenge-card h3 {
+    position: relative;
+    margin-top: 21px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.challenge-card p {
+    position: relative;
+    margin-top: 10px;
+    color: #9aacc9;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.card-bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 23px;
+}
+
+.card-xp {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.start-btn {
+    min-height: 39px;
+    padding: 10px 13px;
+    border: 1px solid rgba(0,224,255,.28);
+    border-radius: 10px;
+    color: var(--cyan);
+    background: rgba(0,224,255,.07);
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.start-btn:hover {
+    color: #03101e;
+    background: var(--cyan);
+}
+
+.completed-label {
+    margin-top: 12px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 55px 20px;
+    border: 1px dashed var(--border);
+    border-radius: 20px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.empty-state strong {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--text);
+    font-size: 20px;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress-panel {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: rgba(11,23,46,.82);
+}
+
+.progress-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.progress-heading h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+}
+
+.progress-heading span {
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.progress-track {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255,255,255,.07);
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--blue), var(--cyan), var(--purple));
+    transition: width .5s ease;
+}
+
+footer {
+    padding: 27px 15px;
+    border-top: 1px solid var(--border);
+    color: #7789a9;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+footer strong {
+    color: #dbe8ff;
+}
+
+/* ================= QUESTION MODAL ================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    place-items: center;
+    padding: 16px;
+    overflow-y: auto;
+    background: rgba(2,6,17,.88);
+    backdrop-filter: blur(14px);
+    pointer-events: auto;
+}
+
+.modal-overlay.open {
+    display: grid;
+}
+
+.question-modal {
+    position: relative;
+    z-index: 1001;
+    isolation: isolate;
+    width: min(760px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: clamp(20px, 4vw, 34px);
+    border: 1px solid rgba(110,164,255,.3);
+    border-radius: 23px;
+    background:
+        radial-gradient(ellipse at 100% 0%, rgba(132,70,255,.13), transparent 40%),
+        linear-gradient(145deg, #111f3c, #071120);
+    box-shadow: 0 30px 120px rgba(0,0,0,.65);
+    animation: modalEnter .25s ease both;
+    pointer-events: auto;
+}
+
+@keyframes modalEnter {
+    from { opacity: 0; transform: translateY(18px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.modal-label {
+    color: var(--cyan);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.close-modal {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: white;
+    background: rgba(255,255,255,.05);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.question-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(23px, 4vw, 32px);
+    line-height: 1.4;
+}
+
+.question-description {
+    margin-top: 12px;
+    color: #b5c4dd;
+    font-size: 13px;
+    line-height: 1.9;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.code-block {
+    margin-top: 17px;
+    padding: 17px;
+    overflow-x: auto;
+    border: 1px solid rgba(94,149,255,.2);
+    border-radius: 13px;
+    color: #9fe7ff;
+    background: #040a15;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.85;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.answers-heading {
+    margin: 23px 0 12px;
+    color: #dce8ff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.answer-options {
+    display: grid;
+    gap: 10px;
+}
+
+.answer-option {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(131,165,222,.2);
+    border-radius: 13px;
+    color: #dce7fa;
+    background: rgba(255,255,255,.035);
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+    transition: .2s ease;
+}
+
+.answer-option:hover:not(:disabled) {
+    transform: translateX(3px);
+    border-color: rgba(0,224,255,.5);
+    background: rgba(0,224,255,.07);
+}
+
+.answer-letter {
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--cyan);
+    background: rgba(0,224,255,.06);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.answer-option.correct {
+    border-color: rgba(64,232,173,.7);
+    color: #b5ffe1;
+    background: rgba(64,232,173,.09);
+}
+
+.answer-option.correct .answer-letter {
+    color: #041a11;
+    background: var(--green);
+}
+
+.answer-option.incorrect {
+    border-color: rgba(255,105,133,.7);
+    color: #ffc0cd;
+    background: rgba(255,105,133,.08);
+}
+
+.answer-option.incorrect .answer-letter {
+    color: white;
+    background: var(--red);
+}
+
+.feedback-box {
+    display: none;
+    margin-top: 17px;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: rgba(255,255,255,.035);
+}
+
+.feedback-box.show {
+    display: block;
+    animation: modalEnter .2s ease both;
+}
+
+.feedback-box.correct {
+    border-color: rgba(64,232,173,.3);
+    background: rgba(64,232,173,.06);
+}
+
+.feedback-box.incorrect {
+    border-color: rgba(255,105,133,.3);
+    background: rgba(255,105,133,.05);
+}
+
+.feedback-title {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.feedback-box.correct .feedback-title {
+    color: var(--green);
+}
+
+.feedback-box.incorrect .feedback-title {
+    color: #ff8ba4;
+}
+
+.feedback-explanation {
+    margin-top: 9px;
+    color: #bdcce3;
+    font-size: 12px;
+    line-height: 1.85;
+    white-space: pre-wrap;
+}
+
+.hint-box {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    border: 1px solid rgba(255,213,128,.25);
+    border-radius: 12px;
+    color: #f6dca0;
+    background: rgba(255,213,128,.06);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.hint-box.show {
+    display: block;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 21px;
+}
+
+.modal-actions button {
+    flex: 1;
+}
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    max-width: calc(100vw - 40px);
+    padding: 14px 18px;
+    border: 1px solid rgba(0,224,255,.3);
+    border-radius: 13px;
+    color: white;
+    background: #102342;
+    box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: .25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+    .challenge-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        padding: 12px 13px;
+    }
+
+    .brand-logo {
+        width: 38px;
+        height: 38px;
+        font-size: 23px;
+    }
+
+    .brand-name {
+        font-size: 13px;
+    }
+
+    .brand-sub {
+        font-size: 8px;
+        letter-spacing: .8px;
+    }
+
+    .xp-pill {
+        display: none;
+    }
+
+    .back-btn {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    main {
+        padding-top: 23px;
+    }
+
+    .hero {
+        border-radius: 21px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.7px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero::before {
+        right: -10%;
+        opacity: .6;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 25px;
+    }
+
+    .tools {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-card {
+        min-height: 235px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .question-modal {
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .modal-actions button {
+        flex-basis: 40%;
+    }
+
+    .floating-symbol {
+        opacity: .5;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe" aria-hidden="true">
+    <canvas id="stars"></canvas>
+    <div class="grid-background"></div>
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-purple"></div>
+    <div class="glow-orb orb-cyan"></div>
+</div>
+
+<div class="floating-symbol symbol-one" aria-hidden="true">&lt;/&gt;</div>
+<div class="floating-symbol symbol-two" aria-hidden="true">{ }</div>
+<div class="floating-symbol symbol-three" aria-hidden="true">01</div>
+<div class="floating-symbol symbol-four" aria-hidden="true">;</div>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-logo">E</div>
+        <div>
+            <div class="brand-name">ELOMCODE School</div>
+            <div class="brand-sub">Learn. Code. Build. Become.</div>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <div class="xp-pill">✦ <span id="topXP">0</span> XP</div>
+		
+        <div class="nav-actions">
+            <a href="courses.html" class="top-link">
+                ← Back to Courses
+            </a>
+
+            <a href="index.html" class="nav-button primary">
+                Back to School
+            </a>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="eyebrow">
+            <span class="live-dot"></span>
+            Your Coding Universe
+        </div>
+
+        <h1>
+            Challenge Your Mind.<br>
+            <span class="gradient-text">Unlock Your Potential.</span>
+        </h1>
+
+        <p class="hero-description">
+            This is where knowledge meets action. Explore coding challenges,
+            predict outputs, debug mistakes, solve logical problems, and grow
+            your programming skills one challenge at a time.
+        </p>
+
+        <div class="hero-actions">
+            <button class="button-primary" id="startRandomBtn" type="button">
+                ⚡ Start a Challenge
+            </button>
+
+            <button class="button-secondary" id="continueBtn" type="button">
+                Continue Your Journey →
+            </button>
+        </div>
+
+        <div class="hero-decoration" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">◎</div>
+            <div class="stat-number" id="totalChallenges">0</div>
+            <div class="stat-label">Available Challenges</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✦</div>
+            <div class="stat-number" id="completedChallenges">0</div>
+            <div class="stat-label">Completed Challenges</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number" id="totalXP">0</div>
+            <div class="stat-label">Experience Points</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✓</div>
+            <div class="stat-number" id="accuracy">0%</div>
+            <div class="stat-label">Answer Accuracy</div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <div>
+                <h2>Explore the Challenge Library</h2>
+                <p>Choose a subject. Open a challenge. Test what you know.</p>
+            </div>
+
+            <div class="challenge-count" id="visibleCount">Loading challenges...</div>
+        </div>
+
+        <div class="tools">
+            <input
+                class="search-input"
+                id="searchInput"
+                type="search"
+                placeholder="⌕  Search challenges, topics, or languages..."
+                aria-label="Search challenges"
+            >
+
+            <select class="difficulty-select" id="difficultyFilter" aria-label="Filter by difficulty">
+                <option value="all">All difficulties</option>
+                <option value="easy">Beginner</option>
+                <option value="medium">Intermediate</option>
+                <option value="hard">Advanced</option>
+            </select>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs">
+            <button class="category-tab active" data-category="all" type="button">All Challenges</button>
+            <button class="category-tab" data-category="HTML" type="button">HTML</button>
+            <button class="category-tab" data-category="CSS" type="button">CSS</button>
+            <button class="category-tab" data-category="JavaScript" type="button">JavaScript</button>
+            <button class="category-tab" data-category="Python" type="button">Python</button>
+            <button class="category-tab" data-category="Java" type="button">Java</button>
+            <button class="category-tab" data-category="SQL" type="button">SQL</button>
+            <button class="category-tab" data-category="Logic" type="button">Logic</button>
+        </div>
+
+        <div class="challenge-grid" id="challengeGrid">
+            <div class="empty-state">
+                <strong>Preparing your challenge universe...</strong>
+                Your challenges will appear here.
+            </div>
+        </div>
+    </section>
+
+    <section class="progress-panel">
+        <div class="progress-heading">
+            <h3>Your Challenge Journey</h3>
+            <span id="progressText">0% completed</span>
+        </div>
+
+        <div
+            class="progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-label="Challenge completion"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <strong>ELOMCODE School</strong><br>
+    Learn. Code. Build. Become.<br>
+    Created by Elijah Opomulero.
+</footer>
+
+<div class="modal-overlay" id="questionModal" aria-hidden="true">
+    <section class="question-modal" role="dialog" aria-modal="true" aria-labelledby="questionTitle">
+
+        <div class="modal-top">
+            <div class="modal-label" id="modalLabel">Coding Challenge</div>
+            <button class="close-modal" id="closeModal" type="button" aria-label="Close challenge">×</button>
+        </div>
+
+        <h2 class="question-title" id="questionTitle"></h2>
+        <p class="question-description" id="questionDescription"></p>
+
+        <pre class="code-block" id="questionCode" hidden></pre>
+
+        <div class="answers-heading">Select your answer</div>
+        <div class="answer-options" id="answerOptions"></div>
+
+        <div class="hint-box" id="hintBox"></div>
+
+        <div class="feedback-box" id="feedbackBox" aria-live="polite">
+            <div class="feedback-title" id="feedbackTitle"></div>
+            <div class="feedback-explanation" id="feedbackExplanation"></div>
+        </div>
+
+        <div class="modal-actions">
+            <button class="button-secondary" id="hintBtn" type="button">💡 Show Hint</button>
+            <button class="button-primary" id="nextBtn" type="button" hidden>Next Challenge →</button>
+        </div>
+    </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   ELOMCODE CHALLENGE ENGINE
+========================================================= */
+
+const $ = (selector, parent = document) => parent.querySelector(selector);
+const $$ = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
+
+const STORAGE_KEY = "elomcode_challenge_progress_v3";
+
+const defaultProgress = {
+    completed: [],
+    xp: 0,
+    attempts: 0,
+    correct: 0
+};
+
+function loadProgress() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+        if (!saved || typeof saved !== "object") {
+            return { ...defaultProgress };
+        }
+
+        return {
+            ...defaultProgress,
+            ...saved,
+            completed: Array.isArray(saved.completed) ? saved.completed : []
+        };
+    } catch (error) {
+        return { ...defaultProgress };
+    }
+}
+
+let progress = loadProgress();
+let activeQuestion = null;
+let answerLocked = false;
+let activeCategory = "all";
+let toastTimer = null;
+
+/* =========================================================
+   CHALLENGE LIBRARY
+========================================================= */
+
+const questions = [
+    {
+        id: "html01", language: "HTML", difficulty: "easy", category: "Knowledge",
+        title: "The foundation of a webpage",
+        description: "Which HTML element contains the main visible content of a webpage?",
+        options: ["<head>", "<body>", "<meta>", "<title>"],
+        answer: 1,
+        hint: "This element contains headings, paragraphs, images, and buttons.",
+        explanation: "The <body> element contains the main content displayed inside a browser window."
+    },
+    {
+        id: "html02", language: "HTML", difficulty: "easy", category: "Knowledge",
+        title: "Creating a hyperlink",
+        description: "Which HTML element creates a clickable link?",
+        options: ["<link>", "<a>", "<href>", "<url>"],
+        answer: 1,
+        hint: "The destination is usually supplied using an href attribute.",
+        explanation: "The <a> element creates hyperlinks, such as <a href='page.html'>Open page</a>."
+    },
+    {
+        id: "html03", language: "HTML", difficulty: "easy", category: "Knowledge",
+        title: "The main heading",
+        description: "Which tag represents the highest-level heading?",
+        options: ["<heading>", "<h6>", "<h1>", "<head>"],
+        answer: 2,
+        hint: "HTML headings range from h1 to h6.",
+        explanation: "<h1> represents the highest-level heading in the HTML heading hierarchy."
+    },
+    {
+        id: "html04", language: "HTML", difficulty: "medium", category: "Debugging",
+        title: "Repair the hyperlink",
+        description: "Why won't this link navigate to contact.html?",
+        code: '<a src="contact.html">Contact</a>',
+        options: [
+            "The text must be uppercase",
+            "Anchor elements use href for their destination",
+            "Links cannot contain text",
+            "The file must be called index.html"
+        ],
+        answer: 1,
+        hint: "Images use src. Hyperlinks use a different attribute.",
+        explanation: 'Use <a href="contact.html">Contact</a>. The href attribute defines the link destination.'
+    },
+    {
+        id: "html05", language: "HTML", difficulty: "easy", category: "Knowledge",
+        title: "Paragraph element",
+        description: "Which HTML element marks up a paragraph?",
+        options: ["<p>", "<para>", "<text>", "<paragraph>"],
+        answer: 0,
+        hint: "It is a single-letter element name.",
+        explanation: "The <p> element represents a paragraph of text."
+    },
+    {
+        id: "html06", language: "HTML", difficulty: "medium", category: "Knowledge",
+        title: "Accessible images",
+        description: "What is the purpose of an image's alt attribute?",
+        options: [
+            "To animate the image",
+            "To provide a text alternative",
+            "To resize the image",
+            "To make the image a link"
+        ],
+        answer: 1,
+        hint: "Think about screen readers and images that cannot load.",
+        explanation: "Alternative text communicates an image's meaning or purpose to assistive technology and when the image cannot load."
+    },
+    {
+        id: "html07", language: "HTML", difficulty: "medium", category: "Knowledge",
+        title: "Collecting information",
+        description: "Which HTML element groups controls used to submit information?",
+        options: ["<form>", "<inputbox>", "<submit>", "<collect>"],
+        answer: 0,
+        hint: "It can contain text fields, checkboxes, and submit buttons.",
+        explanation: "The <form> element groups controls used to collect and submit information."
+    },
+    {
+        id: "html08", language: "HTML", difficulty: "hard", category: "Knowledge",
+        title: "Semantic HTML",
+        description: "Which element represents the dominant content of a document?",
+        options: ["<main>", "<center>", "<big>", "<contentbox>"],
+        answer: 0,
+        hint: "Its name describes the primary content area.",
+        explanation: "The <main> element represents the document's dominant content."
+    },
+
+    {
+        id: "css01", language: "CSS", difficulty: "easy", category: "Knowledge",
+        title: "Changing text colour",
+        description: "Which CSS property changes text colour?",
+        options: ["font-color", "text-color", "color", "background-color"],
+        answer: 2,
+        hint: "The property name is just one word.",
+        explanation: "The color property sets text colour. Example: p { color: blue; }."
+    },
+    {
+        id: "css02", language: "CSS", difficulty: "easy", category: "Knowledge",
+        title: "Selecting a class",
+        description: "Which selector targets elements with class='card'?",
+        options: ["#card", ".card", "card()", "*card"],
+        answer: 1,
+        hint: "Class selectors begin with a dot.",
+        explanation: "The .card selector targets elements whose class list includes card."
+    },
+    {
+        id: "css03", language: "CSS", difficulty: "medium", category: "Knowledge",
+        title: "The CSS box model",
+        description: "Which property adds space inside an element's border?",
+        options: ["margin", "padding", "outline", "position"],
+        answer: 1,
+        hint: "It separates the content from its border.",
+        explanation: "Padding creates space between an element's content and its border. Margin creates space outside the border."
+    },
+    {
+        id: "css04", language: "CSS", difficulty: "medium", category: "Debugging",
+        title: "Find the CSS mistake",
+        description: "Why might this declaration fail?",
+        code: 'div {\n  background-colour: red;\n}',
+        options: [
+            "The property should be background-color",
+            "Red is not a valid colour",
+            "A div cannot have a background",
+            "CSS requires quotes around red"
+        ],
+        answer: 0,
+        hint: "Check the spelling of the property name.",
+        explanation: "The standard CSS property is background-color, not background-colour."
+    },
+    {
+        id: "css05", language: "CSS", difficulty: "medium", category: "Knowledge",
+        title: "Flexible layouts",
+        description: "Which declaration creates a flex container?",
+        options: [
+            "position: flex;",
+            "display: flex;",
+            "flex: display;",
+            "layout: flexible;"
+        ],
+        answer: 1,
+        hint: "It begins with the display property.",
+        explanation: "display: flex establishes a flex layout for an element's children."
+    },
+    {
+        id: "css06", language: "CSS", difficulty: "hard", category: "Output",
+        title: "Predict the text colour",
+        description: "Assuming no other conflicting rules, what colour is a paragraph with class note?",
+        code: 'p { color: blue; }\n.note { color: purple; }',
+        options: ["Blue", "Purple", "Red", "No colour"],
+        answer: 1,
+        hint: "A class selector is more specific than a plain element selector.",
+        explanation: "The .note class selector is more specific than the p element selector, so the paragraph is purple."
+    },
+    {
+        id: "css07", language: "CSS", difficulty: "easy", category: "Knowledge",
+        title: "Rounded corners",
+        description: "Which CSS property rounds an element's corners?",
+        options: ["corner-style", "border-radius", "round-border", "radius"],
+        answer: 1,
+        hint: "The property name combines border and radius.",
+        explanation: "border-radius controls how much an element's corners are rounded."
+    },
+    {
+        id: "css08", language: "CSS", difficulty: "hard", category: "Knowledge",
+        title: "Grid columns",
+        description: "Which property defines the columns of a CSS Grid container?",
+        options: ["grid-columns", "grid-template-columns", "column-template", "display-columns"],
+        answer: 1,
+        hint: "It begins with grid-template.",
+        explanation: "grid-template-columns defines the sizes and structure of grid columns."
+    },
+
+    {
+        id: "js01", language: "JavaScript", difficulty: "easy", category: "Output",
+        title: "Predict the output",
+        description: "What does this code print?",
+        code: "console.log(2 + 3);",
+        options: ["23", "5", "undefined", "An error"],
+        answer: 1,
+        hint: "Both values are numbers.",
+        explanation: "The numbers 2 and 3 are added, producing 5."
+    },
+    {
+        id: "js02", language: "JavaScript", difficulty: "easy", category: "Output",
+        title: "Joining strings",
+        description: "What is printed by this code?",
+        code: 'console.log("Code" + "Lab");',
+        options: ["Code Lab", "Code+Lab", "CodeLab", "An error"],
+        answer: 2,
+        hint: "The plus operator joins strings.",
+        explanation: 'The result is "CodeLab". No space is added unless it is included in a string.'
+    },
+    {
+        id: "js03", language: "JavaScript", difficulty: "medium", category: "Output",
+        title: "Updating a variable",
+        description: "What is the final value of score?",
+        code: "let score = 10;\nscore += 5;\nconsole.log(score);",
+        options: ["5", "10", "15", "105"],
+        answer: 2,
+        hint: "The += operator adds a value to the current variable.",
+        explanation: "score += 5 means score = score + 5. The result is 15."
+    },
+    {
+        id: "js04", language: "JavaScript", difficulty: "medium", category: "Debugging",
+        title: "Repair the string",
+        description: "Which statement correctly fixes the quotation marks?",
+        code: 'console.log("Hello World);',
+        options: [
+            'console.log("Hello World");',
+            "console.log Hello World;",
+            'console.log("Hello World);',
+            'console("Hello World");'
+        ],
+        answer: 0,
+        hint: "The opening quotation mark needs a matching closing quotation mark.",
+        explanation: 'The corrected statement is console.log("Hello World");.'
+    },
+    {
+        id: "js05", language: "JavaScript", difficulty: "easy", category: "Knowledge",
+        title: "Declare a variable",
+        description: "Which keyword declares a block-scoped variable that can be reassigned?",
+        options: ["const", "let", "fixed", "static"],
+        answer: 1,
+        hint: "Use it when a variable's value may change.",
+        explanation: "let declares a block-scoped variable that can be reassigned."
+    },
+    {
+        id: "js06", language: "JavaScript", difficulty: "medium", category: "Output",
+        title: "Array indexing",
+        description: "What does this code print?",
+        code: 'const colours = ["red", "blue", "green"];\nconsole.log(colours[1]);',
+        options: ["red", "blue", "green", "1"],
+        answer: 1,
+        hint: "JavaScript arrays begin at index zero.",
+        explanation: "Index 0 is red, index 1 is blue, and index 2 is green."
+    },
+    {
+        id: "js07", language: "JavaScript", difficulty: "medium", category: "Knowledge",
+        title: "Strict equality",
+        description: "What does the === operator check?",
+        options: [
+            "Only whether values look similar",
+            "Equality without type conversion",
+            "Whether a variable exists",
+            "Whether strings have equal lengths"
+        ],
+        answer: 1,
+        hint: "It is stricter than ==.",
+        explanation: "Strict equality compares values without converting their types first."
+    },
+    {
+        id: "js08", language: "JavaScript", difficulty: "hard", category: "Output",
+        title: "Count the loop",
+        description: "How many times does this loop print Hello?",
+        code: 'for (let i = 0; i < 4; i++) {\n  console.log("Hello");\n}',
+        options: ["3 times", "4 times", "5 times", "Forever"],
+        answer: 1,
+        hint: "The values of i are 0, 1, 2, and 3.",
+        explanation: "The loop executes four times, for i values 0 through 3."
+    },
+    {
+        id: "js09", language: "JavaScript", difficulty: "easy", category: "Knowledge",
+        title: "Select an element",
+        description: "Which method selects the first element matching a CSS selector?",
+        options: [
+            "document.getAll()",
+            "document.querySelector()",
+            "document.selectEvery()",
+            "document.findCSS()"
+        ],
+        answer: 1,
+        hint: "The method name contains the word selector.",
+        explanation: "document.querySelector() returns the first element matching a CSS selector."
+    },
+
+    {
+        id: "py01", language: "Python", difficulty: "easy", category: "Output",
+        title: "Your first output",
+        description: "What does this Python code display?",
+        code: 'print("Hello!")',
+        options: ["Hello!", '"Hello!" including quotes', "print Hello!", "An error"],
+        answer: 0,
+        hint: "print displays the contents of the string.",
+        explanation: "The output is Hello! without the quotation marks."
+    },
+    {
+        id: "py02", language: "Python", difficulty: "easy", category: "Output",
+        title: "Simple addition",
+        description: "What is the output?",
+        code: "print(8 + 4)",
+        options: ["84", "12", "4", "An error"],
+        answer: 1,
+        hint: "Both values are integers.",
+        explanation: "Python adds 8 and 4 to produce 12."
+    },
+    {
+        id: "py03", language: "Python", difficulty: "medium", category: "Debugging",
+        title: "Fix the indentation",
+        description: "What is wrong with this Python code?",
+        code: 'if True:\nprint("Ready")',
+        options: [
+            "Python does not support if statements",
+            "The print statement needs indentation",
+            "True must be a string",
+            "print cannot appear inside if"
+        ],
+        answer: 1,
+        hint: "Python uses indentation to define code blocks.",
+        explanation: 'Correct version:\nif True:\n    print("Ready")'
+    },
+    {
+        id: "py04", language: "Python", difficulty: "medium", category: "Output",
+        title: "List indexing",
+        description: "What does this code print?",
+        code: "numbers = [10, 20, 30]\nprint(numbers[0])",
+        options: ["0", "10", "20", "30"],
+        answer: 1,
+        hint: "The first list item has index zero.",
+        explanation: "numbers[0] accesses the first item, which is 10."
+    },
+    {
+        id: "py05", language: "Python", difficulty: "easy", category: "Knowledge",
+        title: "Create a function",
+        description: "Which keyword defines a Python function?",
+        options: ["function", "define", "def", "fun"],
+        answer: 2,
+        hint: "The keyword has three letters.",
+        explanation: "Python uses def to define a function."
+    },
+    {
+        id: "py06", language: "Python", difficulty: "hard", category: "Output",
+        title: "The range challenge",
+        description: "How many numbers are produced by range(2, 6)?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        hint: "The ending value is excluded.",
+        explanation: "range(2, 6) produces 2, 3, 4, and 5: four numbers."
+    },
+    {
+        id: "py07", language: "Python", difficulty: "easy", category: "Knowledge",
+        title: "Python comments",
+        description: "Which symbol begins a single-line Python comment?",
+        options: ["//", "#", "<!--", "/*"],
+        answer: 1,
+        hint: "It is also called a hash sign.",
+        explanation: "A single-line Python comment begins with #."
+    },
+
+    {
+        id: "java01", language: "Java", difficulty: "easy", category: "Knowledge",
+        title: "Java entry point",
+        description: "Which method is commonly used as the entry point of a Java application?",
+        options: [
+            "startProgram()",
+            "public static void main(String[] args)",
+            "begin()",
+            "runJava()"
+        ],
+        answer: 1,
+        hint: "It begins with public static void main.",
+        explanation: "The standard Java application entry point is public static void main(String[] args)."
+    },
+    {
+        id: "java02", language: "Java", difficulty: "easy", category: "Output",
+        title: "Java addition",
+        description: "What does this statement print?",
+        code: "System.out.println(4 + 6);",
+        options: ["46", "10", "4 + 6", "An error"],
+        answer: 1,
+        hint: "Both operands are integers.",
+        explanation: "Java evaluates 4 + 6 as numeric addition and prints 10."
+    },
+    {
+        id: "java03", language: "Java", difficulty: "medium", category: "Debugging",
+        title: "Complete the statement",
+        description: "What is missing from this Java statement?",
+        code: "int age = 17",
+        options: ["A colon", "A comma", "A semicolon", "An exclamation mark"],
+        answer: 2,
+        hint: "Java statements usually end with punctuation.",
+        explanation: "The corrected statement is int age = 17;."
+    },
+    {
+        id: "java04", language: "Java", difficulty: "easy", category: "Knowledge",
+        title: "Whole-number data",
+        description: "Which Java primitive type commonly stores whole numbers?",
+        options: ["String", "int", "boolean", "char[]"],
+        answer: 1,
+        hint: "It is a short, three-letter type name.",
+        explanation: "The int primitive type stores integer values."
+    },
+    {
+        id: "java05", language: "Java", difficulty: "hard", category: "Output",
+        title: "Array positions",
+        description: "What is the value of numbers[2]?",
+        code: "int[] numbers = {3, 6, 9, 12};",
+        options: ["3", "6", "9", "12"],
+        answer: 2,
+        hint: "The first array item has index zero.",
+        explanation: "The positions are 0→3, 1→6, 2→9, and 3→12."
+    },
+
+    {
+        id: "sql01", language: "SQL", difficulty: "easy", category: "Knowledge",
+        title: "Retrieve database records",
+        description: "Which SQL command retrieves data from a table?",
+        options: ["GET", "SELECT", "FETCHALL", "OPEN"],
+        answer: 1,
+        hint: "A typical database query begins with this word.",
+        explanation: "SELECT retrieves data from one or more database tables."
+    },
+    {
+        id: "sql02", language: "SQL", difficulty: "easy", category: "Knowledge",
+        title: "Filter records",
+        description: "Which SQL clause filters rows using a condition?",
+        options: ["WHERE", "ORDER", "GROUP", "TABLE"],
+        answer: 0,
+        hint: "It usually comes after FROM.",
+        explanation: "WHERE filters rows according to a specified condition."
+    },
+    {
+        id: "sql03", language: "SQL", difficulty: "medium", category: "Debugging",
+        title: "Repair the query",
+        description: "Which keyword is missing from this query?",
+        code: "SELECT name students;",
+        options: ["FROM", "INTO", "UPDATE", "VALUES"],
+        answer: 0,
+        hint: "The query must identify the table to read.",
+        explanation: "A typical query is SELECT name FROM students;."
+    },
+    {
+        id: "sql04", language: "SQL", difficulty: "medium", category: "Knowledge",
+        title: "Sort query results",
+        description: "Which SQL clause sorts the returned records?",
+        options: ["SORT BY", "ORDER BY", "ARRANGE", "SEQUENCE"],
+        answer: 1,
+        hint: "It commonly appears near the end of a SELECT query.",
+        explanation: "ORDER BY sorts records using one or more columns."
+    },
+    {
+        id: "sql05", language: "SQL", difficulty: "hard", category: "Knowledge",
+        title: "Count records",
+        description: "Which expression counts rows in a SQL query?",
+        options: ["SUM(*)", "COUNT(*)", "TOTAL(*)", "ROWS(*)"],
+        answer: 1,
+        hint: "The function begins with a word meaning to count.",
+        explanation: "COUNT(*) counts the rows returned by a query, subject to its filters."
+    },
+
+    {
+        id: "logic01", language: "Logic", difficulty: "easy", category: "Logic",
+        title: "Complete the sequence",
+        description: "Which number comes next?",
+        code: "2, 4, 6, 8, ?",
+        options: ["9", "10", "11", "12"],
+        answer: 1,
+        hint: "Each number increases by the same amount.",
+        explanation: "The sequence increases by 2 each time, so the next number is 10."
+    },
+    {
+        id: "logic02", language: "Logic", difficulty: "medium", category: "Logic",
+        title: "Find the original number",
+        description: "A number is doubled and then increased by 3 to produce 13. What was the original number?",
+        options: ["4", "5", "6", "8"],
+        answer: 1,
+        hint: "Subtract 3 from 13, then divide by 2.",
+        explanation: "13 − 3 = 10, and 10 ÷ 2 = 5."
+    },
+    {
+        id: "logic03", language: "Logic", difficulty: "easy", category: "Logic",
+        title: "Find the odd one out",
+        description: "Which item does not belong with the others?",
+        options: ["HTML", "CSS", "JavaScript", "Keyboard"],
+        answer: 3,
+        hint: "Think about which items are web technologies.",
+        explanation: "HTML, CSS, and JavaScript are web technologies. A keyboard is a physical input device."
+    },
+    {
+        id: "logic04", language: "Logic", difficulty: "hard", category: "Logic",
+        title: "The next square",
+        description: "What comes next in the sequence?",
+        code: "1, 4, 9, 16, 25, ?",
+        options: ["30", "32", "36", "49"],
+        answer: 2,
+        hint: "These are squares of consecutive positive integers.",
+        explanation: "The values are 1², 2², 3², 4², 5². The next is 6² = 36."
+    },
+    {
+        id: "logic05", language: "Logic", difficulty: "medium", category: "Logic",
+        title: "Boolean thinking",
+        description: "If A is true and B is false, what is A AND B?",
+        options: ["True", "False", "Both", "Undefined"],
+        answer: 1,
+        hint: "AND requires both conditions to be true.",
+        explanation: "A AND B is false because B is false."
+    },
+    {
+        id: "logic06", language: "Logic", difficulty: "hard", category: "Logic",
+        title: "Pattern challenge",
+        description: "Which number completes this pattern?",
+        code: "3, 6, 12, 24, ?",
+        options: ["30", "36", "42", "48"],
+        answer: 3,
+        hint: "Each number is multiplied by the same factor.",
+        explanation: "Each number doubles, so 24 × 2 = 48."
+    },
+    {
+        id: "logic07", language: "Logic", difficulty: "medium", category: "Logic",
+        title: "Truth condition",
+        description: "When does an AND expression evaluate to true?",
+        options: [
+            "When at least one condition is true",
+            "When both conditions are true",
+            "When both conditions are false",
+            "Only when the values are numbers"
+        ],
+        answer: 1,
+        hint: "AND is stricter than OR.",
+        explanation: "A Boolean AND expression is true only when both operands are true."
+    },
+    {
+        id: "logic08", language: "Logic", difficulty: "easy", category: "Logic",
+        title: "Doubling pattern",
+        description: "What comes next?",
+        code: "5, 10, 20, 40, ?",
+        options: ["45", "60", "70", "80"],
+        answer: 3,
+        hint: "Multiply each number by two.",
+        explanation: "The pattern doubles each time. 40 × 2 = 80."
+    }
+];
+
+/* ================= PROGRESS ================= */
+
+function saveProgress() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    } catch (error) {
+        console.warn("Progress could not be saved.", error);
+    }
+}
+
+function getPoints(question) {
+    return { easy: 10, medium: 20, hard: 30 }[question.difficulty] || 10;
+}
+
+/* ================= RENDER CHALLENGES ================= */
+
+function renderChallenges() {
+    const grid = $("#challengeGrid");
+    const search = $("#searchInput").value.trim().toLowerCase();
+    const difficulty = $("#difficultyFilter").value;
+    const completed = new Set(progress.completed);
+
+    const filtered = questions.filter(question => {
+        const categoryMatches =
+            activeCategory === "all" ||
+            question.language === activeCategory ||
+            question.category === activeCategory;
+
+        const difficultyMatches =
+            difficulty === "all" || question.difficulty === difficulty;
+
+        const text = [
+            question.title,
+            question.description,
+            question.language,
+            question.category,
+            question.difficulty
+        ].join(" ").toLowerCase();
+
+        return categoryMatches && difficultyMatches && text.includes(search);
+    });
+
+    grid.replaceChildren();
+    $("#visibleCount").textContent = `${filtered.length} CHALLENGES`;
+
+    if (filtered.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty-state";
+
+        const title = document.createElement("strong");
+        title.textContent = "No challenges found";
+
+        const description = document.createElement("span");
+        description.textContent = "Try another search or choose a different filter.";
+
+        empty.append(title, description);
+        grid.appendChild(empty);
+        return;
+    }
+
+    filtered.forEach((question, index) => {
+        const card = document.createElement("article");
+        card.className = "challenge-card";
+        card.style.animationDelay = `${Math.min(index * 25, 250)}ms`;
+
+        const glow = {
+            HTML: "rgba(255,129,70,.20)",
+            CSS: "rgba(67,147,255,.24)",
+            JavaScript: "rgba(245,200,107,.19)",
+            Python: "rgba(85,190,255,.22)",
+            Java: "rgba(255,90,115,.19)",
+            SQL: "rgba(152,92,255,.23)",
+            Logic: "rgba(0,224,255,.20)"
+        }[question.language];
+
+        card.style.setProperty("--card-glow", glow || "rgba(0,224,255,.2)");
+
+        const top = document.createElement("div");
+        top.className = "card-top";
+
+        const language = document.createElement("span");
+        language.className = "tag language-tag";
+        language.textContent = question.language;
+
+        const level = document.createElement("span");
+        level.className = `tag difficulty-${question.difficulty}`;
+        level.textContent = question.difficulty;
+
+        top.append(language, level);
+
+        const title = document.createElement("h3");
+        title.textContent = question.title;
+
+        const description = document.createElement("p");
+        description.textContent = question.description;
+
+        const bottom = document.createElement("div");
+        bottom.className = "card-bottom";
+
+        const xp = document.createElement("span");
+        xp.className = "card-xp";
+        xp.textContent = `✦ ${getPoints(question)} XP`;
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "start-btn";
+        button.textContent = completed.has(question.id) ? "Try Again ↻" : "Start Challenge →";
+
+        button.addEventListener("click", () => openQuestion(question.id));
+
+        bottom.append(xp, button);
+        card.append(top, title, description);
+
+        if (completed.has(question.id)) {
+            const badge = document.createElement("div");
+            badge.className = "completed-label";
+            badge.textContent = "✓ COMPLETED";
+            card.appendChild(badge);
+        }
+
+        card.appendChild(bottom);
+        grid.appendChild(card);
+    });
+}
+
+/* ================= OPEN CHALLENGE ================= */
+
+function openQuestion(id) {
+    const question = questions.find(item => item.id === id);
+    if (!question) {
+        showToast("This challenge could not be found.");
+        return;
+    }
+
+    activeQuestion = question;
+    answerLocked = false;
+
+    $("#modalLabel").textContent =
+        `${question.language} • ${question.difficulty} • ${question.category}`;
+
+    $("#questionTitle").textContent = question.title;
+    $("#questionDescription").textContent = question.description;
+
+    const code = $("#questionCode");
+
+    if (question.code) {
+        code.hidden = false;
+        code.textContent = question.code;
+    } else {
+        code.hidden = true;
+        code.textContent = "";
+    }
+
+    const optionsContainer = $("#answerOptions");
+    optionsContainer.replaceChildren();
+
+    question.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "answer-option";
+
+        const letter = document.createElement("span");
+        letter.className = "answer-letter";
+        letter.textContent = String.fromCharCode(65 + index);
+
+        const answerText = document.createElement("span");
+        answerText.textContent = option;
+
+        button.append(letter, answerText);
+
+        // This listener is attached directly to each answer button.
+        button.addEventListener("click", function () {
+            chooseAnswer(index, button);
+        });
+
+        optionsContainer.appendChild(button);
+    });
+
+    $("#hintBox").textContent = `💡 Hint: ${question.hint}`;
+    $("#hintBox").classList.remove("show");
+
+    $("#feedbackBox").className = "feedback-box";
+    $("#feedbackTitle").textContent = "";
+    $("#feedbackExplanation").textContent = "";
+
+    $("#hintBtn").hidden = false;
+    $("#hintBtn").disabled = false;
+    $("#hintBtn").textContent = "💡 Show Hint";
+
+    $("#nextBtn").hidden = true;
+
+    $("#questionModal").classList.add("open");
+    $("#questionModal").setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeQuestion() {
+    $("#questionModal").classList.remove("open");
+    $("#questionModal").setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    activeQuestion = null;
+    answerLocked = false;
+}
+
+/* ================= ANSWER CHECKING ================= */
+
+function chooseAnswer(selectedIndex, selectedButton) {
+    if (!activeQuestion || answerLocked) return;
+
+    answerLocked = true;
+
+    const question = activeQuestion;
+    const correct = selectedIndex === question.answer;
+    const options = $$(".answer-option", $("#answerOptions"));
+
+    // Lock all answers after one selection.
+    options.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === question.answer) {
+            button.classList.add("correct");
+        }
+    });
+
+    if (!correct) {
+        selectedButton.classList.add("incorrect");
+    }
+
+    progress.attempts += 1;
+
+    const feedback = $("#feedbackBox");
+    const feedbackTitle = $("#feedbackTitle");
+    const explanation = $("#feedbackExplanation");
+
+    feedback.className = "feedback-box show";
+
+    if (correct) {
+        feedback.classList.add("correct");
+        feedbackTitle.textContent = "✓ Excellent! Correct answer.";
+
+        progress.correct += 1;
+
+        if (!progress.completed.includes(question.id)) {
+            progress.completed.push(question.id);
+            const earned = getPoints(question);
+            progress.xp += earned;
+            showToast(`Correct answer! You earned ${earned} XP.`);
+        } else {
+            showToast("Correct! You have already earned XP for this challenge.");
+        }
+    } else {
+        feedback.classList.add("incorrect");
+        feedbackTitle.textContent = "Not quite! Keep learning.";
+        showToast("Review the explanation and try another challenge.");
+    }
+
+    explanation.textContent = question.explanation;
+
+    $("#hintBtn").hidden = true;
+    $("#nextBtn").hidden = false;
+
+    saveProgress();
+    updateDashboard();
+    renderChallenges();
+}
+
+/* ================= HINTS AND NAVIGATION ================= */
+
+function toggleHint() {
+    if (!activeQuestion || answerLocked) return;
+
+    const hint = $("#hintBox");
+    hint.classList.toggle("show");
+
+    $("#hintBtn").textContent =
+        hint.classList.contains("show") ? "Hide Hint" : "💡 Show Hint";
+}
+
+function nextChallenge() {
+    if (!activeQuestion) return;
+
+    const index = questions.findIndex(q => q.id === activeQuestion.id);
+    const completed = new Set(progress.completed);
+
+    let next = null;
+
+    for (let step = 1; step <= questions.length; step++) {
+        const candidate = questions[(index + step) % questions.length];
+
+        if (!completed.has(candidate.id)) {
+            next = candidate;
+            break;
+        }
+    }
+
+    if (!next) {
+        next = questions[(index + 1) % questions.length];
+        showToast("You've completed all challenges! Keep practising.");
+    }
+
+    openQuestion(next.id);
+}
+
+function startRandomChallenge() {
+    const completed = new Set(progress.completed);
+    const remaining = questions.filter(q => !completed.has(q.id));
+    const pool = remaining.length ? remaining : questions;
+    const question = pool[Math.floor(Math.random() * pool.length)];
+
+    openQuestion(question.id);
+}
+
+function continueJourney() {
+    const completed = new Set(progress.completed);
+    const question = questions.find(q => !completed.has(q.id));
+
+    if (question) {
+        openQuestion(question.id);
+    } else {
+        showToast("Fantastic! You have completed every challenge.");
+    }
+}
+
+/* ================= DASHBOARD ================= */
+
+function updateDashboard() {
+    const total = questions.length;
+
+    const completedCount = questions.filter(
+        q => progress.completed.includes(q.id)
+    ).length;
+
+    const percentage = total
+        ? Math.round((completedCount / total) * 100)
+        : 0;
+
+    const accuracy = progress.attempts
+        ? Math.round((progress.correct / progress.attempts) * 100)
+        : 0;
+
+    $("#totalChallenges").textContent = total;
+    $("#completedChallenges").textContent = completedCount;
+    $("#totalXP").textContent = progress.xp;
+    $("#topXP").textContent = progress.xp;
+    $("#accuracy").textContent = `${accuracy}%`;
+    $("#progressText").textContent = `${percentage}% completed`;
+    $("#progressFill").style.width = `${percentage}%`;
+    $("#progressTrack").setAttribute("aria-valuenow", percentage);
+}
+
+/* ================= FILTERS AND EVENTS ================= */
+
+function setupEvents() {
+    $("#searchInput").addEventListener("input", renderChallenges);
+    $("#difficultyFilter").addEventListener("change", renderChallenges);
+
+    $$(".category-tab").forEach(button => {
+        button.addEventListener("click", () => {
+            activeCategory = button.dataset.category;
+
+            $$(".category-tab").forEach(tab => {
+                tab.classList.toggle("active", tab === button);
+            });
+
+            renderChallenges();
+        });
+    });
+
+    $("#startRandomBtn").addEventListener("click", startRandomChallenge);
+    $("#continueBtn").addEventListener("click", continueJourney);
+    $("#closeModal").addEventListener("click", closeQuestion);
+    $("#hintBtn").addEventListener("click", toggleHint);
+    $("#nextBtn").addEventListener("click", nextChallenge);
+
+    $("#questionModal").addEventListener("click", event => {
+        if (event.target === $("#questionModal")) {
+            closeQuestion();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            $("#questionModal").classList.contains("open")
+        ) {
+            closeQuestion();
+        }
+    });
+}
+
+/* ================= TOAST ================= */
+
+function showToast(message) {
+    const toast = $("#toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2800);
+}
+
+/* ================= ANIMATED STARFIELD ================= */
+
+function startStarfield() {
+    const canvas = $("#stars");
+    const context = canvas.getContext("2d");
+
+    if (!context) return;
+
+    let width = 0;
+    let height = 0;
+    let stars = [];
+
+    function resize() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        canvas.width = Math.floor(width * ratio);
+        canvas.height = Math.floor(height * ratio);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        const count = Math.min(130, Math.floor(width * height / 9000));
+
+        stars = Array.from({ length: count }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 1.4 + .3,
+            speed: Math.random() * .2 + .04,
+            opacity: Math.random() * .65 + .2
+        }));
+    }
+
+    function draw() {
+        context.clearRect(0, 0, width, height);
+
+        stars.forEach(star => {
+            star.y -= star.speed;
+
+            if (star.y < -2) {
+                star.y = height + 2;
+                star.x = Math.random() * width;
+            }
+
+            context.beginPath();
+            context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            context.fillStyle = `rgba(190,220,255,${star.opacity})`;
+            context.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    draw();
+}
+
+/* ================= START THE PLATFORM ================= */
+
+function initialise() {
+    setupEvents();
+    updateDashboard();
+    renderChallenges();
+    startStarfield();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialise);
+} else {
+    initialise();
+}
+</script>
+
+</body>
+</html>

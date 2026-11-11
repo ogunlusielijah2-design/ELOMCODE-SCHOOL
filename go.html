@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Go Programming Masterclass | ELOMCODE School</title>
+
+    <meta
+        name="description"
+        content="Learn Go programming with interactive lessons, editable examples, practical challenges and a live code playground at ELOMCODE School."
+    >
+
+    <link rel="stylesheet" href="go.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND EFFECTS
+    ========================== -->
+
+    <div class="background-effects" aria-hidden="true">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
+
+    <header class="topbar">
+
+        <a href="index.html" class="brand">
+            <div class="brand-logo">
+                <span>G</span>
+            </div>
+
+            <div class="brand-text">
+                <strong>ELOMCODE</strong>
+                <small>GO MASTERCLASS</small>
+            </div>
+        </a>
+
+        <div class="topbar-center">
+            <span class="status-dot"></span>
+            <span>Interactive Learning Environment</span>
+        </div>
+
+        <div class="topbar-actions">
+
+            <button
+                type="button"
+                class="icon-button"
+                id="themeToggle"
+                aria-label="Toggle appearance"
+                title="Toggle appearance"
+            >
+                ◐
+            </button>
+
+            <button
+                type="button"
+                class="icon-button mobile-menu-button"
+                id="sidebarToggle"
+                aria-label="Toggle lesson navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         COURSE LAYOUT
+    ========================== -->
+
+    <div class="course-layout">
+
+
+        <!-- =========================
+             LESSON SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="courseSidebar">
+
+            <div class="sidebar-heading">
+
+                <div>
+                    <span class="eyebrow">YOUR LEARNING PATH</span>
+                    <h2>Go Programming</h2>
+                </div>
+
+                <span class="language-badge">GO</span>
+
+            </div>
+
+
+            <!-- COURSE PROGRESS -->
+
+            <section class="sidebar-progress">
+
+                <div class="progress-heading">
+                    <span>Course progress</span>
+                    <strong id="coursePercent">0%</strong>
+                </div>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Course completion"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                    id="progressBarTrack"
+                >
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+
+                <div class="progress-details">
+                    <span id="completedLessons">0 completed</span>
+                    <span id="totalLessons">45 lessons</span>
+                </div>
+
+                <div class="xp-card">
+                    <div class="xp-icon">✦</div>
+
+                    <div>
+                        <span>Learning XP</span>
+                        <strong id="courseXP">0 XP</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- SEARCH LESSONS -->
+
+            <div class="lesson-search">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="lessonSearch"
+                    placeholder="Search lessons..."
+                    aria-label="Search course lessons"
+                >
+
+                <span class="search-shortcut">GO</span>
+
+            </div>
+
+
+            <!-- LESSON NAVIGATION -->
+
+            <nav
+                class="lesson-navigation"
+                id="lessonNavigation"
+                aria-label="Course lessons"
+            >
+
+                <!-- JavaScript generates all 45 lessons here. -->
+
+                <div class="navigation-loading">
+                    <span class="loading-spinner"></span>
+                    <p>Preparing your lessons...</p>
+                </div>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <div class="founder-mark">E</div>
+
+                <div>
+                    <strong>ELOMCODE School</strong>
+                    <small>Built by Elijah Opomulero</small>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN LEARNING AREA
+        ========================== -->
+
+        <main class="main-content" id="mainContent">
+
+            <!-- MOBILE COURSE LABEL -->
+
+            <div class="mobile-course-label">
+                <span>YOUR COURSE</span>
+                <strong>Go Programming Masterclass</strong>
+            </div>
+
+
+            <!-- =========================
+                 COURSE HERO
+            ========================== -->
+
+            <section class="course-hero">
+
+                <div class="hero-content">
+
+                    <div class="breadcrumb">
+                        <span>ELOMCODE School</span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span>Programming</span>
+                        <span class="breadcrumb-separator">/</span>
+                        <strong>Go</strong>
+                    </div>
+
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        BEGINNER TO ADVANCED
+                    </div>
+
+                    <h1>
+                        Master <span>Go Programming.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Learn to build fast, reliable and scalable software.
+                        Write real Go code, run your programs, solve challenges
+                        and develop the confidence to build your own projects.
+                    </p>
+
+                    <div class="hero-features">
+
+                        <div class="hero-feature">
+                            <span class="feature-icon">▤</span>
+                            <span>45 Lessons</span>
+                        </div>
+
+                        <div class="hero-feature">
+                            <span class="feature-icon">⌘</span>
+                            <span>Live Code Playground</span>
+                        </div>
+
+                        <div class="hero-feature">
+                            <span class="feature-icon">◆</span>
+                            <span>Practical Challenges</span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="startLearning"
+                    >
+                        <span>Start Learning</span>
+                        <span class="button-arrow">→</span>
+                    </button>
+
+                </div>
+
+
+                <!-- ANIMATED GO SYMBOL -->
+
+                <div class="hero-visual" aria-hidden="true">
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit orbit-three"></div>
+
+                    <div class="orbit-dot orbit-dot-one"></div>
+                    <div class="orbit-dot orbit-dot-two"></div>
+                    <div class="orbit-dot orbit-dot-three"></div>
+
+                    <div class="go-core">
+                        <div class="go-core-inner">
+                            <span>GO</span>
+                            <small>LANGUAGE</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-code floating-code-one">
+                        func()
+                    </div>
+
+                    <div class="floating-code floating-code-two">
+                        go run
+                    </div>
+
+                    <div class="floating-code floating-code-three">
+                        { }
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 COURSE STATISTICS
+            ========================== -->
+
+            <section class="course-statistics">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon stat-icon-blue">▤</div>
+
+                    <div>
+                        <span>LESSONS COMPLETED</span>
+                        <strong id="statCompleted">0 / 45</strong>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon stat-icon-purple">✦</div>
+
+                    <div>
+                        <span>EXPERIENCE POINTS</span>
+                        <strong id="statXP">0 XP</strong>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon stat-icon-cyan">⌘</div>
+
+                    <div>
+                        <span>YOUR PLAYGROUND</span>
+                        <strong>Ready to Code</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LESSON HEADER
+            ========================== -->
+
+            <section class="lesson-header" id="lessonHeader">
+
+                <div class="lesson-header-main">
+
+                    <div class="lesson-meta">
+
+                        <span class="module-label" id="moduleLabel">
+                            GETTING STARTED
+                        </span>
+
+                        <span class="lesson-number" id="lessonNumber">
+                            LESSON 01
+                        </span>
+
+                    </div>
+
+                    <h2 id="lessonTitle">
+                        Introduction to Go
+                    </h2>
+
+                    <p id="lessonSubtitle">
+                        Discover Go and understand why developers use it.
+                    </p>
+
+                </div>
+
+                <div class="lesson-status" id="lessonStatus">
+                    <span class="status-indicator"></span>
+                    <span>In progress</span>
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LESSON CONTENT
+            ========================== -->
+
+            <section class="lesson-content-card">
+
+                <div class="section-heading">
+
+                    <div class="section-heading-icon">▤</div>
+
+                    <div>
+                        <span class="eyebrow">UNDERSTAND THE CONCEPT</span>
+                        <h3>Lesson Explanation</h3>
+                    </div>
+
+                </div>
+
+                <div
+                    class="lesson-content"
+                    id="lessonContent"
+                >
+
+                    <p>
+                        Welcome to the Go Programming Masterclass.
+                        Select a lesson from the navigation panel to begin.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CODE EXAMPLE
+            ========================== -->
+
+            <section class="code-example-card">
+
+                <div class="section-heading">
+
+                    <div class="section-heading-icon code-heading-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+                        <span class="eyebrow">LEARN BY EXAMPLE</span>
+                        <h3>Code Example</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-window-topbar">
+
+                        <div class="window-dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="code-filename">
+                            main.go
+                        </div>
+
+                        <div class="code-language">
+                            GO
+                        </div>
+
+                    </div>
+
+
+                    <div class="code-editor-wrapper">
+
+                        <div class="line-numbers" id="lineNumbers">
+                            1
+                        </div>
+
+                        <textarea
+                            id="codeExample"
+                            class="code-editor"
+                            spellcheck="false"
+                            autocapitalize="off"
+                            autocomplete="off"
+                            autocorrect="off"
+                            aria-label="Editable Go example code"
+                            wrap="off"
+                        >package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Welcome to ELOMCODE School!")
+}</textarea>
+
+                    </div>
+
+
+                    <div class="code-toolbar">
+
+                        <div class="code-toolbar-left">
+                            <span class="editor-status-dot"></span>
+                            <span>Editable Go code</span>
+                        </div>
+
+                        <div class="code-toolbar-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="resetCode"
+                            >
+                                ↺ Reset
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="copyCode"
+                            >
+                                ▣ Copy Code
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RUN BUTTON -->
+
+                <div class="run-code-area">
+
+                    <div class="run-code-description">
+
+                        <strong>Ready to see what your code does?</strong>
+
+                        <p>
+                            Run the program to compile and execute your Go code.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        id="runCode"
+                    >
+                        <span class="run-icon">▶</span>
+                        <span>RUN CODE</span>
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     LIVE OUTPUT PANEL
+                ========================== -->
+
+                <div class="output-panel" id="outputPanel">
+
+                    <div class="output-header">
+
+                        <div class="output-title">
+
+                            <span class="terminal-icon">⌘</span>
+
+                            <div>
+                                <strong>Program Output</strong>
+                                <small id="outputStatus">Waiting to run</small>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="clear-output-button"
+                            id="clearOutput"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="output-body"
+                        id="codeOutput"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        <span class="output-placeholder">
+                            Your program's output will appear here.
+                        </span>
+                    </div>
+
+                    <div class="output-footer">
+
+                        <span>
+                            <span class="terminal-status-dot"></span>
+                            <span id="executionStatus">Execution environment ready</span>
+                        </span>
+
+                        <span id="executionTime"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="execution-notice">
+                    <span class="notice-icon">ⓘ</span>
+
+                    <p>
+                        Live execution requires an internet connection and an
+                        available Go execution service. Do not enter passwords,
+                        API keys or other sensitive information into the editor.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 EXPECTED OUTPUT
+            ========================== -->
+
+            <section class="expected-output-card">
+
+                <div class="section-heading">
+
+                    <div class="section-heading-icon output-heading-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span class="eyebrow">UNDERSTAND THE RESULT</span>
+                        <h3>Expected Output</h3>
+                    </div>
+
+                </div>
+
+                <p class="expected-output-description">
+                    This is the result you should expect when you run the
+                    original example without making changes.
+                </p>
+
+                <div class="expected-output-window">
+
+                    <div class="expected-output-topbar">
+                        <span class="output-window-dot"></span>
+                        <span>EXPECTED RESULT</span>
+                    </div>
+
+                    <pre id="expectedOutput">Welcome to ELOMCODE School!</pre>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CODE EXPLANATION
+            ========================== -->
+
+            <section class="code-explanation-card">
+
+                <button
+                    type="button"
+                    class="explanation-toggle"
+                    id="explainCode"
+                    aria-expanded="false"
+                >
+
+                    <span class="explanation-toggle-left">
+
+                        <span class="explanation-icon">✧</span>
+
+                        <span>
+                            <strong>Understand the Code</strong>
+                            <small>Explore what each part does.</small>
+                        </span>
+
+                    </span>
+
+                    <span class="explanation-arrow">⌄</span>
+
+                </button>
+
+
+                <div
+                    class="code-explanation-content"
+                    id="codeExplanation"
+                    hidden
+                >
+
+                    <div id="codeExplanationText">
+
+                        <p>
+                            Every line in a Go program has a purpose.
+                            Work through the example to understand how
+                            the program operates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PRACTICAL CHALLENGE
+            ========================== -->
+
+            <section class="challenge-card" id="challengeSection">
+
+                <div class="challenge-top">
+
+                    <div class="challenge-icon">⚡</div>
+
+                    <div>
+                        <span class="eyebrow">YOUR TURN TO BUILD</span>
+                        <h3>Practical Challenge</h3>
+                    </div>
+
+                    <span class="challenge-badge">HANDS-ON</span>
+
+                </div>
+
+
+                <p
+                    class="challenge-description"
+                    id="challengeText"
+                >
+                    Write a Go program that prints a message to the screen.
+                    Run your solution and examine the result.
+                </p>
+
+
+                <div class="challenge-instructions">
+
+                    <div class="instruction-icon">◎</div>
+
+                    <div>
+                        <strong>Your task</strong>
+
+                        <p id="challengeInstructions">
+                            Use fmt.Println() to display a message of your choice.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="challenge-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="showHint"
+                    >
+                        <span>☼</span>
+                        Show Hint
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="showSolution"
+                    >
+                        View Solution
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="challenge-hint"
+                    id="challengeHint"
+                    hidden
+                >
+                    <strong>💡 Hint</strong>
+
+                    <p id="challengeHintText">
+                        Think about how fmt.Println() displays text.
+                    </p>
+                </div>
+
+
+                <div
+                    class="challenge-solution"
+                    id="challengeSolution"
+                    hidden
+                >
+                    <strong>Example Solution</strong>
+
+                    <pre id="challengeSolutionCode">fmt.Println("Hello, Go!")</pre>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="loadSolution"
+                    >
+                        Load Solution into Editor
+                    </button>
+                </div>
+
+
+                <div class="challenge-check-area">
+
+                    <div>
+                        <strong>Test your solution</strong>
+
+                        <p>
+                            Write your answer in the editor above and run it.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="challenge-run-button"
+                        id="runChallenge"
+                    >
+                        ▶ RUN MY SOLUTION
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="challenge-feedback"
+                    id="challengeFeedback"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+            </section>
+
+
+            <!-- =========================
+                 QUIZ
+            ========================== -->
+
+            <section class="quiz-card" id="quizSection">
+
+                <div class="quiz-header">
+
+                    <div class="quiz-icon">?</div>
+
+                    <div>
+                        <span class="eyebrow">CHECK YOUR UNDERSTANDING</span>
+                        <h3>Quick Knowledge Check</h3>
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="quiz-question"
+                    id="quizQuestion"
+                >
+                    Which function is commonly used to print text in Go?
+                </p>
+
+
+                <div
+                    class="quiz-options"
+                    id="quizOptions"
+                >
+
+                    <button
+                        type="button"
+                        class="quiz-option"
+                        data-option="0"
+                    >
+                        <span class="option-letter">A</span>
+                        <span>console.log()</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="quiz-option"
+                        data-option="1"
+                    >
+                        <span class="option-letter">B</span>
+                        <span>fmt.Println()</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="quiz-option"
+                        data-option="2"
+                    >
+                        <span class="option-letter">C</span>
+                        <span>System.out.println()</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="quiz-option"
+                        data-option="3"
+                    >
+                        <span class="option-letter">D</span>
+                        <span>printText()</span>
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="quiz-feedback"
+                    id="quizFeedback"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+
+                <div class="quiz-footer">
+
+                    <span id="quizProgress">
+                        Knowledge check
+                    </span>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="submitQuiz"
+                    >
+                        Check Answer →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LESSON NAVIGATION BUTTONS
+            ========================== -->
+
+            <section class="lesson-navigation-footer">
+
+                <button
+                    type="button"
+                    class="lesson-nav-button previous-button"
+                    id="previousLesson"
+                >
+                    <span>←</span>
+
+                    <span>
+                        <small>PREVIOUS LESSON</small>
+                        <strong>Previous</strong>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="complete-lesson-button"
+                    id="completeLesson"
+                >
+                    <span>✓</span>
+                    Mark as Completed
+                </button>
+
+
+                <button
+                    type="button"
+                    class="lesson-nav-button next-button"
+                    id="nextLesson"
+                >
+                    <span>
+                        <small>NEXT LESSON</small>
+                        <strong>Continue Learning</strong>
+                    </span>
+
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 CERTIFICATE SECTION
+            ========================== -->
+
+            <section
+                class="certificate-section"
+                id="certificateSection"
+            >
+
+                <div class="certificate-decoration certificate-decoration-one"></div>
+                <div class="certificate-decoration certificate-decoration-two"></div>
+
+                <div class="certificate-inner">
+
+                    <div class="certificate-icon">✧</div>
+
+                    <span class="eyebrow">YOUR ACHIEVEMENT AWAITS</span>
+
+                    <h2>Earn Your Go Programming Certificate</h2>
+
+                    <p>
+                        Complete all 45 lessons to unlock your course
+                        completion certificate.
+                    </p>
+
+
+                    <div
+                        class="certificate-locked"
+                        id="certificateLocked"
+                    >
+
+                        <div class="lock-icon">🔒</div>
+
+                        <strong>Certificate Locked</strong>
+
+                        <span id="certificateMessage">
+                            Complete all course lessons to unlock your certificate.
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="certificate-unlocked"
+                        id="certificateUnlocked"
+                        hidden
+                    >
+
+                        <div class="certificate-preview">
+
+                            <div class="certificate-preview-border">
+
+                                <div class="certificate-preview-brand">
+                                    ELOMCODE SCHOOL
+                                </div>
+
+                                <div class="certificate-preview-decoration">
+                                    ✦
+                                </div>
+
+                                <p class="certificate-small-title">
+                                    CERTIFICATE OF COMPLETION
+                                </p>
+
+                                <h3>Certificate of Achievement</h3>
+
+                                <p class="certificate-awarded-text">
+                                    This certificate is presented to
+                                </p>
+
+                                <input
+                                    type="text"
+                                    id="learnerName"
+                                    class="certificate-name-input"
+                                    placeholder="Enter your full name"
+                                    maxlength="80"
+                                    autocomplete="name"
+                                    aria-label="Name for certificate"
+                                >
+
+                                <p class="certificate-achievement-text">
+                                    for completing the Go Programming Masterclass
+                                    at ELOMCODE School.
+                                </p>
+
+                                <div class="certificate-signatures">
+
+                                    <div>
+                                        <strong>Elijah Opomulero</strong>
+                                        <span>Course Architect</span>
+                                    </div>
+
+                                    <div>
+                                        <strong id="certificateDate">
+                                            Date of Completion
+                                        </strong>
+
+                                        <span>Completion Date</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="certificate-actions">
+
+                            <button
+                                type="button"
+                                class="primary-button"
+                                id="updateCertificate"
+                            >
+                                Update Certificate
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="printCertificate"
+                            >
+                                Print Certificate
+                            </button>
+
+                        </div>
+
+                        <p class="certificate-disclaimer">
+                            This is a local course-completion certificate.
+                            It is not a third-party professional accreditation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PAGE FOOTER
+            ========================== -->
+
+            <footer class="course-footer">
+
+                <a href="index.html" class="footer-brand">
+                    <span class="footer-brand-symbol">E</span>
+                    <span>ELOMCODE School</span>
+                </a>
+
+                <p>
+                    Learn. Code. Build. Become.
+                </p>
+
+                <span class="footer-credit">
+                    Course Architect: Elijah Opomulero
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         NOTIFICATION
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+        hidden
+    >
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Changes saved.</span>
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="go.js"></script>
+
+</body>
+</html>

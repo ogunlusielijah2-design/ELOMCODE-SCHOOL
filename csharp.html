@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f5f8ff">
+    <meta name="description" content="Learn C# programming from beginner to advanced with ELOMCODE School. Explore lessons, write code, complete challenges, and earn your certificate.">
+
+    <title>C# Programming Masterclass | ELOMCODE School</title>
+
+    <link rel="stylesheet" href="csharp.css">
+
+    <script src="csharp.js" defer></script>
+</head>
+
+<body class="csharp-course-page">
+
+    <!-- =========================================
+         AMBIENT BACKGROUND
+    ========================================== -->
+
+    <div class="ambient-background" aria-hidden="true">
+        <div class="ambient-orb orb-one"></div>
+        <div class="ambient-orb orb-two"></div>
+        <div class="ambient-orb orb-three"></div>
+        <div class="ambient-grid"></div>
+        <div class="ambient-particles" id="ambientParticles"></div>
+    </div>
+
+
+    <!-- =========================================
+         ACCESSIBILITY ANNOUNCEMENTS
+    ========================================== -->
+
+    <div
+        class="sr-only"
+        id="liveAnnouncement"
+        aria-live="polite"
+        aria-atomic="true">
+    </div>
+
+
+    <!-- =========================================
+         TOP NAVIGATION
+    ========================================== -->
+
+    <header class="course-navbar">
+
+        <div class="navbar-inner">
+
+            <a href="courses.html" class="brand-logo" aria-label="ELOMCODE School courses">
+
+                <span class="brand-mark">E</span>
+
+                <span class="brand-text">
+                    <strong>ELOMCODE</strong>
+                    <small>CODE SCHOOL</small>
+                </span>
+
+            </a>
+
+
+            <div class="navbar-course-title">
+
+                <span class="navbar-course-icon">#</span>
+
+                <div>
+                    <strong>C# Programming</strong>
+                    <small>Programming Learning Environment</small>
+                </div>
+
+            </div>
+
+
+            <div class="navbar-actions">
+
+                <a href="courses.html" class="nav-button secondary-button">
+                    <span aria-hidden="true">←</span>
+                    <span>Back to Courses</span>
+                </a>
+
+                <a href="index.html" class="nav-button primary-button">
+                    <span aria-hidden="true">⌂</span>
+                    <span>Back to School</span>
+				</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN COURSE CONTAINER
+    ========================================== -->
+
+    <main class="course-main">
+
+
+        <!-- =====================================
+             COURSE HERO
+        ====================================== -->
+
+        <section class="course-hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <span class="status-dot"></span>
+
+                    <span>EL OMCODE PROGRAMMING SERIES</span>
+
+                </div>
+
+
+                <h1>
+                    Master <span class="gradient-text">C#</span>
+                    Programming
+                </h1>
+
+
+                <p class="hero-description">
+                    Start your programming journey with C#.
+                    Learn how to write instructions, work with data,
+                    build logic, understand object-oriented programming,
+                    and develop the skills to create real applications.
+                </p>
+
+
+                <div class="hero-feature-list">
+
+                    <span class="hero-feature">
+                        <span class="feature-icon">✓</span>
+                        Beginner Friendly
+                    </span>
+
+                    <span class="hero-feature">
+                        <span class="feature-icon">✓</span>
+                        Real C# Code Practice
+                    </span>
+
+                    <span class="hero-feature">
+                        <span class="feature-icon">✓</span>
+                        Practical Challenges
+                    </span>
+
+                    <span class="hero-feature">
+                        <span class="feature-icon">✓</span>
+                        Course Certificate
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div class="hero-stat">
+                        <span class="stat-number" id="heroLessonCount">40</span>
+                        <span class="stat-label">Lessons</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <span class="stat-number" id="heroCompletedCount">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <span class="stat-number" id="heroXP">0</span>
+                        <span class="stat-label">XP Earned</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- C# VISUAL CARD -->
+
+            <div class="hero-visual">
+
+                <div class="visual-glow"></div>
+
+                <div class="floating-code-symbol symbol-one">{ }</div>
+                <div class="floating-code-symbol symbol-two">&lt;/&gt;</div>
+                <div class="floating-code-symbol symbol-three">C#</div>
+                <div class="floating-code-symbol symbol-four">( )</div>
+
+
+                <div class="csharp-core">
+
+                    <div class="core-ring ring-one"></div>
+                    <div class="core-ring ring-two"></div>
+                    <div class="core-ring ring-three"></div>
+
+                    <div class="core-inner">
+
+                        <span class="core-language-symbol">C#</span>
+
+                        <span class="core-language-name">
+                            PROGRAMMING
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-code-card">
+
+                    <div class="code-card-heading">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>Program.cs</span>
+
+                    </div>
+
+
+                    <pre><code><span class="code-purple">using</span> System;
+
+<span class="code-purple">class</span> Program
+{
+    <span class="code-purple">static void</span> Main()
+    {
+        Console.WriteLine(
+            <span class="code-green">"Hello, World!"</span>
+        );
+    }
+}</code></pre>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             COURSE PROGRESS
+        ====================================== -->
+
+        <section class="course-progress-card">
+
+            <div class="progress-heading">
+
+                <div>
+                    <span class="section-eyebrow">YOUR LEARNING JOURNEY</span>
+
+                    <h2>Course Progress</h2>
+
+                    <p>
+                        Every completed lesson takes you closer
+                        to mastering C#.
+                    </p>
+                </div>
+
+
+                <div class="progress-percentage" id="progressPercentage">
+                    0%
+                </div>
+
+            </div>
+
+
+            <div
+                class="progress-track"
+                role="progressbar"
+                aria-label="Course completion"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="courseProgressTrack">
+
+                <div
+                    class="progress-fill"
+                    id="courseProgressFill">
+                </div>
+
+            </div>
+
+
+            <div class="progress-footer">
+
+                <span id="progressLessonText">
+                    0 of 40 lessons completed
+                </span>
+
+                <span id="progressMotivation">
+                    Your journey starts here!
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LEARNING WORKSPACE
+        ====================================== -->
+
+        <section class="learning-workspace">
+
+
+            <!-- =================================
+                 LEFT LESSON SIDEBAR
+            ================================== -->
+
+            <aside class="lesson-sidebar" id="lessonSidebar">
+
+                <div class="sidebar-heading">
+
+                    <div>
+                        <span class="section-eyebrow">COURSE CONTENT</span>
+                        <h2>Learning Path</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                        aria-label="Toggle lesson sidebar"
+                        aria-expanded="true">
+
+                        ☰
+
+                    </button>
+
+                </div>
+
+
+                <div class="sidebar-course-summary">
+
+                    <div class="sidebar-course-icon">C#</div>
+
+                    <div class="sidebar-course-info">
+                        <strong>C# Masterclass</strong>
+                        <span id="sidebarLessonSummary">40 lessons</span>
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-mini-progress">
+
+                    <div class="mini-progress-track">
+
+                        <div
+                            class="mini-progress-fill"
+                            id="sidebarProgressFill">
+                        </div>
+
+                    </div>
+
+                    <span id="sidebarProgressText">0% complete</span>
+
+                </div>
+
+
+                <div class="lesson-search-wrapper">
+
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+
+                    <input
+                        type="search"
+                        id="lessonSearch"
+                        placeholder="Search lessons..."
+                        aria-label="Search course lessons"
+                        autocomplete="off">
+
+                </div>
+
+
+                <div class="lesson-filter-wrapper">
+
+                    <button
+                        type="button"
+                        class="lesson-filter active"
+                        data-filter="all">
+
+                        All Lessons
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="lesson-filter"
+                        data-filter="completed">
+
+                        Completed
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="lesson-filter"
+                        data-filter="incomplete">
+
+                        Remaining
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="lesson-list"
+                    id="lessonList"
+                    aria-label="Course lessons">
+
+                    <!--
+                        Lesson buttons will be created by csharp.js.
+                    -->
+
+                    <div class="lesson-list-loading">
+
+                        <div class="loading-spinner"></div>
+
+                        <p>Preparing your learning path...</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-bottom-card">
+
+                    <div class="sidebar-bottom-icon">✦</div>
+
+                    <div>
+                        <strong>Keep Building</strong>
+
+                        <p>
+                            Learn one concept at a time.
+                            Every step matters.
+                        </p>
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================
+                 MAIN LESSON CONTENT
+            ================================== -->
+
+            <div class="lesson-main-content" id="lessonMainContent">
+
+
+                <!-- LESSON INTRODUCTION -->
+
+                <section class="lesson-intro-card">
+
+                    <div class="lesson-breadcrumb">
+
+                        <span>C# Masterclass</span>
+
+                        <span aria-hidden="true">›</span>
+
+                        <span id="lessonBreadcrumbCurrent">
+                            Getting Started
+                        </span>
+
+                    </div>
+
+
+                    <div class="lesson-heading-row">
+
+                        <div class="lesson-heading-text">
+
+                            <div class="lesson-category-badge" id="lessonCategory">
+                                INTRODUCTION
+                            </div>
+
+                            <h2 id="lessonTitle">
+                                Welcome to C# Programming
+                            </h2>
+
+                            <p id="lessonSubtitle">
+                                Begin your journey into the world of C#.
+                            </p>
+
+                        </div>
+
+
+                        <div class="lesson-number-badge">
+
+                            <span>LESSON</span>
+
+                            <strong id="lessonNumber">01</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lesson-divider"></div>
+
+
+                    <div
+                        class="lesson-explanation"
+                        id="lessonExplanation">
+
+                        <p>
+                            Welcome to the ELOMCODE School C# Programming
+                            Masterclass. This course will guide you from
+                            the basics of C# to more advanced programming
+                            concepts through explanations, examples,
+                            practice, and challenges.
+                        </p>
+
+                    </div>
+
+
+                    <div class="lesson-tip" id="lessonTip">
+
+                        <div class="tip-icon">✦</div>
+
+                        <div>
+                            <strong>Learning Tip</strong>
+
+                            <p>
+                                Take your time to understand each concept
+                                before moving to the next lesson.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     CODE EXAMPLE
+                ================================== -->
+
+                <section class="lesson-panel example-panel">
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-title">
+
+                            <div class="panel-icon example-icon">
+                                &lt;/&gt;
+                            </div>
+
+                            <div>
+                                <span class="section-eyebrow">LEARN BY EXAMPLE</span>
+                                <h3>Code Example</h3>
+                            </div>
+
+                        </div>
+
+
+                        <span class="language-tag">C#</span>
+
+                    </div>
+
+
+                    <p class="panel-description" id="exampleDescription">
+                        Study the example below to understand how the
+                        concept works.
+                    </p>
+
+
+                    <div class="code-window">
+
+                        <div class="code-window-toolbar">
+
+                            <div class="window-title">
+
+                                <span class="file-icon">▣</span>
+
+                                <span id="exampleFileName">Program.cs</span>
+
+                            </div>
+
+
+                            <div class="code-window-actions">
+
+                                <span class="code-language-label">
+                                    C#
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="small-action-button"
+                                    id="copyExampleButton">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <pre
+                            class="code-display"
+                            tabindex="0"><code id="exampleCode">using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}</code></pre>
+
+                    </div>
+
+
+                    <div class="example-output-heading">
+
+                        <strong>Expected Output</strong>
+
+                        <span class="output-indicator">
+                            <span class="output-dot"></span>
+                            Example
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="example-output"
+                        id="exampleOutput"
+                        aria-label="Expected program output">
+
+                        <pre>Hello, World!</pre>
+
+                    </div>
+
+
+                    <div class="example-explanation" id="exampleExplanation">
+
+                        <span class="explanation-icon">ⓘ</span>
+
+                        <p>
+                            Read the code carefully and pay attention
+                            to what each instruction does.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     REAL C# PRACTICE EDITOR
+                ================================== -->
+
+                <section class="lesson-panel practice-panel">
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-title">
+
+                            <div class="panel-icon practice-icon">
+                                &gt;_
+                            </div>
+
+                            <div>
+                                <span class="section-eyebrow">YOUR TURN TO CODE</span>
+                                <h3>Practice Playground</h3>
+                            </div>
+
+                        </div>
+
+
+                        <span class="live-editor-badge">
+                            <span class="status-dot"></span>
+                            C# Editor
+                        </span>
+
+                    </div>
+
+
+                    <p class="panel-description">
+                        Edit the C# program below and run it to see the
+                        result. Your code will be sent to an online
+                        compiler service for execution.
+                    </p>
+
+
+                    <div class="editor-instructions">
+
+                        <span class="instruction-icon">ⓘ</span>
+
+                        <p>
+                            <strong>Remember:</strong>
+                            Real C# execution requires an internet
+                            connection and a working compiler service.
+                            Never enter passwords, private information,
+                            or confidential code into an online compiler.
+                        </p>
+
+                    </div>
+
+
+                    <div class="practice-editor-shell">
+
+
+                        <!-- EDITOR TOOLBAR -->
+
+                        <div class="editor-toolbar">
+
+                            <div class="editor-file-info">
+
+                                <span class="editor-file-icon">▣</span>
+
+                                <span>Program.cs</span>
+
+                                <span class="editor-modified-indicator"
+                                    id="editorModifiedIndicator">
+                                    Ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="editor-toolbar-actions">
+
+                                <button
+                                    type="button"
+                                    class="editor-tool-button"
+                                    id="resetEditorButton"
+                                    title="Reset the editor code">
+
+                                    Reset
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="editor-tool-button"
+                                    id="clearEditorButton"
+                                    title="Clear the editor">
+
+                                    Clear
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CODE INPUT -->
+
+                        <div class="editor-body">
+
+                            <div
+                                class="editor-line-numbers"
+                                id="editorLineNumbers"
+                                aria-hidden="true">
+
+                                1
+                                2
+                                3
+                                4
+                                5
+                                6
+                                7
+                                8
+                                9
+
+                            </div>
+
+
+                            <textarea
+                                id="practiceCode"
+                                class="practice-code-editor"
+                                spellcheck="false"
+                                autocapitalize="off"
+                                autocomplete="off"
+                                autocorrect="off"
+                                aria-label="C sharp code editor"
+                                wrap="off">using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello from ELOMCODE School!");
+    }
+}</textarea>
+
+                        </div>
+
+
+
+                        <!-- EDITOR FOOTER -->
+
+                        <div class="editor-footer">
+
+                            <div class="editor-status">
+
+                                <span class="status-dot"></span>
+
+                                <span id="editorStatusText">
+                                    Editor ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="editor-language-info">
+
+                                <span>C#</span>
+
+                                <span>UTF-8</span>
+
+                                <span>Program.cs</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RUN CODE CONTROLS -->
+
+                    <div class="run-code-controls">
+
+                        <div class="run-code-left">
+
+                            <button
+                                type="button"
+                                class="run-code-button"
+                                id="runCodeButton">
+
+                                <span class="run-button-icon">▶</span>
+
+                                <span>Run Code</span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="secondary-editor-button"
+                                id="copyPracticeCodeButton">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="run-code-right">
+
+                            <span class="compiler-status-label">
+                                Compiler:
+                            </span>
+
+                            <span
+                                class="compiler-status"
+                                id="compilerStatus">
+
+                                Checking...
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COMPILER OUTPUT -->
+
+                    <div class="compiler-output-card">
+
+                        <div class="compiler-output-toolbar">
+
+                            <div class="output-title">
+
+                                <span class="terminal-icon">›_</span>
+
+                                <strong>Program Output</strong>
+
+                            </div>
+
+
+                            <div class="output-toolbar-actions">
+
+                                <span
+                                    class="execution-status"
+                                    id="executionStatus">
+
+                                    Not executed yet
+
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="small-action-button"
+                                    id="clearOutputButton">
+
+                                    Clear Output
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="compiler-output"
+                            id="compilerOutput"
+                            role="status"
+                            aria-live="polite">
+
+                            <div class="output-placeholder">
+
+                                <span class="terminal-placeholder-icon">
+                                    &gt;_
+                                </span>
+
+                                <p>
+                                    Your program's output will appear here.
+                                </p>
+
+                                <small>
+                                    Write some C# code and click Run Code.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="compiler-output-footer">
+
+                            <span id="executionTime">
+                                Execution time: —
+                            </span>
+
+                            <span id="compilerMessage">
+                                Ready for your first program
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="compiler-disclaimer">
+
+                        <span aria-hidden="true">ⓘ</span>
+
+                        <p>
+                            Online compilation depends on the availability
+                            of the configured compiler service. Code may be
+                            processed by a third-party service, so avoid
+                            submitting sensitive or confidential information.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     LESSON CHALLENGE
+                ================================== -->
+
+                <section class="lesson-panel challenge-panel">
+
+                    <div class="challenge-top-decoration"></div>
+
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-title">
+
+                            <div class="panel-icon challenge-icon">
+                                ★
+                            </div>
+
+                            <div>
+                                <span class="section-eyebrow">TEST YOUR UNDERSTANDING</span>
+                                <h3>Lesson Challenge</h3>
+                            </div>
+
+                        </div>
+
+
+                        <span class="challenge-points" id="challengePoints">
+                            +10 XP
+                        </span>
+
+                    </div>
+
+
+                    <p
+                        class="challenge-description"
+                        id="challengeDescription">
+
+                        Put what you have learned into practice.
+
+                    </p>
+
+
+                    <div class="challenge-instructions">
+
+                        <div class="challenge-instruction-icon">✦</div>
+
+                        <div>
+                            <strong>Your Mission</strong>
+
+                            <p id="challengeTask">
+                                Complete the task for this lesson using
+                                the knowledge you have gained.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="challenge-hint-box" id="challengeHintBox">
+
+                        <button
+                            type="button"
+                            class="hint-toggle-button"
+                            id="showHintButton"
+                            aria-expanded="false"
+                            aria-controls="challengeHint">
+
+                            <span>Need a hint?</span>
+
+                            <span class="hint-toggle-icon">＋</span>
+
+                        </button>
+
+
+                        <div
+                            class="challenge-hint"
+                            id="challengeHint"
+                            hidden>
+
+                            <p id="challengeHintText">
+                                Review the lesson example and try
+                                applying the same concept.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="challenge-answer-area">
+
+                        <label for="challengeAnswer">
+                            Your Answer
+                        </label>
+
+                        <textarea
+                            id="challengeAnswer"
+                            rows="5"
+                            placeholder="Write your solution or explain how you would solve the challenge..."></textarea>
+
+                        <small>
+                            Your answer can be checked against the lesson
+                            requirements where an automatic check is available.
+                        </small>
+
+                    </div>
+
+
+                    <div class="challenge-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-editor-button"
+                            id="checkChallengeButton">
+
+                            Check Challenge
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="challenge-reset-button"
+                            id="resetChallengeButton">
+
+                            Reset Answer
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="challenge-feedback"
+                        id="challengeFeedback"
+                        aria-live="polite"
+                        hidden>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     LESSON NAVIGATION
+                ================================== -->
+
+                <section class="lesson-navigation">
+
+                    <button
+                        type="button"
+                        class="lesson-nav-button previous-lesson-button"
+                        id="previousLessonButton"
+                        disabled>
+
+                        <span class="nav-arrow">←</span>
+
+                        <span class="nav-button-content">
+                            <small>PREVIOUS LESSON</small>
+                            <strong>Previous</strong>
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="complete-lesson-button"
+                        id="completeLessonButton">
+
+                        <span class="complete-icon">✓</span>
+
+                        <span id="completeLessonButtonText">
+                            Mark as Complete
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="lesson-nav-button next-lesson-button"
+                        id="nextLessonButton">
+
+                        <span class="nav-button-content">
+                            <small>NEXT LESSON</small>
+                            <strong>Continue Learning</strong>
+                        </span>
+
+                        <span class="nav-arrow">→</span>
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =================================
+                     LESSON COMPLETION MESSAGE
+                ================================== -->
+
+                <div
+                    class="lesson-completion-message"
+                    id="lessonCompletionMessage"
+                    hidden>
+
+                    <div class="completion-message-icon">✦</div>
+
+                    <div>
+                        <strong>Lesson Completed!</strong>
+
+                        <p>
+                            Great progress! Continue to the next lesson
+                            to keep building your C# skills.
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CERTIFICATE CORNER
+        ====================================== -->
+
+        <section class="certificate-section" id="certificateSection">
+
+            <div class="certificate-background-decoration"></div>
+
+
+            <div class="certificate-content">
+
+                <div class="certificate-icon-wrapper">
+                    <div class="certificate-icon">🏆</div>
+                </div>
+
+
+                <span class="section-eyebrow">
+                    YOUR ACHIEVEMENT AWAITS
+                </span>
+
+
+                <h2>
+                    Your C# Journey.
+                    <span class="gradient-text">Your Achievement.</span>
+                </h2>
+
+
+                <p class="certificate-description">
+                    Complete every lesson in the C# Programming Masterclass
+                    to unlock your course completion certificate.
+                </p>
+
+
+                <div class="certificate-progress-summary">
+
+                    <div class="certificate-progress-text">
+
+                        <span>Course Completion</span>
+
+                        <strong id="certificateProgressText">
+                            0 of 40 lessons completed
+                        </strong>
+
+                    </div>
+
+
+                    <div class="certificate-progress-track">
+
+                        <div
+                            class="certificate-progress-fill"
+                            id="certificateProgressFill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="certificate-locked-message"
+                    id="certificateLockedMessage">
+
+                    <span class="certificate-lock-icon">🔒</span>
+
+                    <div>
+                        <strong>Certificate Locked</strong>
+
+                        <p>
+                            Complete all course lessons to unlock
+                            your certificate.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="certificate-unlock-button"
+                    id="openCertificateButton"
+                    disabled>
+
+                    <span aria-hidden="true">🏆</span>
+
+                    Unlock My Certificate
+
+                </button>
+
+
+                <div class="certificate-note">
+
+                    <span aria-hidden="true">ⓘ</span>
+
+                    <span>
+                        Your certificate becomes available after
+                        all lessons have been completed.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FOUNDER SIGNATURE
+        ====================================== -->
+
+        <footer class="course-footer">
+
+            <div class="footer-brand">
+
+                <span class="footer-brand-mark">E</span>
+
+                <div>
+                    <strong>ELOMCODE School</strong>
+
+                    <span>Learn. Code. Build. Become.</span>
+                </div>
+
+            </div>
+
+
+            <p class="footer-message">
+                Keep learning. Keep building. Keep becoming.
+            </p>
+
+
+            <div class="footer-founder">
+                Built with purpose by
+                <strong>Elijah Opomulero</strong>
+            </div>
+
+
+            <div class="footer-copyright">
+                © <span id="currentYear">2026</span>
+                ELOMCODE School. All rights reserved.
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         CERTIFICATE MODAL
+    ========================================== -->
+
+    <div
+        class="certificate-modal"
+        id="certificateModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="certificateModalTitle"
+        aria-hidden="true"
+        hidden>
+
+
+        <div class="certificate-modal-backdrop" id="certificateModalBackdrop"></div>
+
+
+        <div class="certificate-modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-eyebrow">YOUR ACHIEVEMENT</span>
+
+                    <h2 id="certificateModalTitle">
+                        Claim Your Certificate
+                    </h2>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    id="closeCertificateModal"
+                    aria-label="Close certificate window">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="modal-description">
+                Enter the name you want printed on your certificate.
+            </p>
+
+
+            <form id="certificateForm">
+
+                <div class="form-field">
+
+                    <label for="certificateLearnerName">
+                        Learner's Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="certificateLearnerName"
+                        name="certificateLearnerName"
+                        placeholder="Enter your full name"
+                        minlength="2"
+                        maxlength="80"
+                        autocomplete="name"
+                        required>
+
+                </div>
+
+
+                <div class="certificate-preview" id="certificatePreview">
+
+                    <div class="preview-top-line"></div>
+
+
+                    <div class="preview-inner">
+
+                        <div class="preview-logo">E</div>
+
+
+                        <span class="preview-school-name">
+                            ELOMCODE SCHOOL
+                        </span>
+
+
+                        <span class="preview-certificate-label">
+                            CERTIFICATE OF COMPLETION
+                        </span>
+
+
+                        <p class="preview-awarded-text">
+                            This certificate is proudly presented to
+                        </p>
+
+
+                        <h3
+                            class="preview-learner-name"
+                            id="previewLearnerName">
+
+                            Learner's Name
+
+                        </h3>
+
+
+                        <div class="preview-divider"></div>
+
+
+                        <p class="preview-course-description">
+                            For successfully completing the
+                        </p>
+
+
+                        <h4>
+                            C# Programming Masterclass
+                        </h4>
+
+
+                        <p class="preview-course-subtitle">
+                            Learn. Code. Build. Become.
+                        </p>
+
+
+                        <div class="preview-signature">
+
+                            <div class="signature-line"></div>
+
+                            <strong>Elijah Opomulero</strong>
+
+                            <span>Founder & Course Architect</span>
+
+                        </div>
+
+
+                        <div class="preview-seal">
+                            <span>EL</span>
+                            <small>COMPLETED</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-bottom-line"></div>
+
+                </div>
+
+
+                <div class="certificate-form-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-editor-button"
+                        id="cancelCertificateButton">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="generate-certificate-button"
+                        id="generateCertificateButton">
+
+                        Generate Certificate
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <p class="certificate-modal-disclaimer">
+                Certificate completion is tracked in this browser.
+                Browser-based progress is not a tamper-proof verification
+                of course completion.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CERTIFICATE PRINT AREA
+    ========================================== -->
+
+    <section
+        class="print-certificate"
+        id="printCertificate"
+        aria-label="Printable C sharp course certificate">
+
+        <div class="print-certificate-border">
+
+            <div class="print-certificate-content">
+
+                <div class="print-certificate-logo">E</div>
+
+
+                <h1>ELOMCODE SCHOOL</h1>
+
+
+                <p class="print-tagline">
+                    LEARN. CODE. BUILD. BECOME.
+                </p>
+
+
+                <div class="print-divider"></div>
+
+
+                <h2>CERTIFICATE OF COMPLETION</h2>
+
+
+                <p class="print-awarded-text">
+                    This certificate is proudly presented to
+                </p>
+
+
+                <h3 id="printLearnerName">
+                    Learner's Name
+                </h3>
+
+
+                <p class="print-completion-text">
+                    for completing the
+                </p>
+
+
+                <h4>C# Programming Masterclass</h4>
+
+
+                <p class="print-course-description">
+                    Demonstrating dedication to learning C# programming
+                    fundamentals and completing the course learning path.
+                </p>
+
+
+                <div class="print-certificate-bottom">
+
+                    <div class="print-signature-block">
+
+                        <div class="print-signature-line"></div>
+
+                        <strong>Elijah Opomulero</strong>
+
+                        <span>Founder & Course Architect</span>
+
+                    </div>
+
+
+                    <div class="print-date-block">
+
+                        <div class="print-date-line"></div>
+
+                        <strong id="printCertificateDate"></strong>
+
+                        <span>Date of Completion</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="print-certificate-footer">
+                    ELOMCODE SCHOOL • C# PROGRAMMING MASTERCLASS
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         LOADING / NOTIFICATION CONTAINER
+    ========================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="false">
+
+    </div>
+
+
+</body>
+</html>

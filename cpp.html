@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>C++ Masterclass | ELOMCODE School</title>
+
+    <meta name="description"
+          content="Learn C++ programming step by step with the ELOMCODE School C++ Masterclass.">
+
+    <link rel="stylesheet" href="cpp.css">
+    <script src="cpp.js" defer></script>
+</head>
+
+<body>
+
+    <!-- AMBIENT BACKGROUND -->
+    <div class="ambient-background" aria-hidden="true">
+        <div id="particles"></div>
+        <div class="ambient-glow glow-one"></div>
+        <div class="ambient-glow glow-two"></div>
+        <div class="ambient-glow glow-three"></div>
+        <div class="floating-code code-one">&lt;cpp&gt;</div>
+        <div class="floating-code code-two">{ }</div>
+        <div class="floating-code code-three">#include</div>
+        <div class="floating-code code-four">std::cout</div>
+    </div>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+        <a href="index.html" class="brand">
+            <span class="brand-symbol">E</span>
+
+            <span class="brand-text">
+                <strong>ELOMCODE</strong>
+                <small>SCHOOL</small>
+            </span>
+        </a>
+
+        <div class="topbar-center">
+            <span class="course-status-dot"></span>
+            C++ PROGRAMMING MASTERCLASS
+        </div>
+
+        <div class="topbar-actions">
+            <a href="courses.html" class="nav-button">
+                ← Back to Courses
+            </a>
+
+            <a href="index.html" class="home-button">
+                School Home
+            </a>
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="course-hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-line"></span>
+                ELOMCODE LEARNING EXPERIENCE
+            </div>
+
+            <h1>
+                Master the art of
+                <span class="gradient-text">C++ Programming.</span>
+            </h1>
+
+            <p class="hero-description">
+                Start with the fundamentals, understand how programs work,
+                and develop the skills to build powerful software with C++.
+                One lesson at a time.
+            </p>
+
+            <div class="hero-tags">
+                <span>⚡ Beginner Friendly</span>
+                <span>💻 Hands-on Practice</span>
+                <span>🏆 Certificate</span>
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <span class="stat-number" id="progressLessons">0/45</span>
+                    <span class="stat-label">Lessons Completed</span>
+                </div>
+
+                <div class="hero-stat">
+                    <span class="stat-number" id="topXP">0 XP</span>
+                    <span class="stat-label">Experience Points</span>
+                </div>
+
+                <div class="hero-stat">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Total Lessons</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- C++ VISUAL CARD -->
+        <div class="hero-visual">
+
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+
+            <div class="cpp-core">
+
+                <div class="cpp-core-inner">
+                    <span class="cpp-symbol">C++</span>
+                    <span class="cpp-core-label">PROGRAMMING</span>
+                </div>
+
+            </div>
+
+            <div class="floating-code-card card-one">
+                <span class="code-card-dot"></span>
+                <span>#include &lt;iostream&gt;</span>
+            </div>
+
+            <div class="floating-code-card card-two">
+                <span>std::cout</span>
+                <span class="code-card-success">✓</span>
+            </div>
+
+            <div class="floating-code-card card-three">
+                <span class="code-card-bracket">{ }</span>
+                <span>BUILD YOUR FUTURE</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COURSE WORKSPACE -->
+    <main class="course-workspace">
+
+
+        <!-- LESSON SIDEBAR -->
+        <aside class="lesson-sidebar">
+
+            <div class="sidebar-heading">
+
+                <div>
+                    <span class="section-kicker">YOUR LEARNING PATH</span>
+                    <h2>Course Lessons</h2>
+                </div>
+
+                <span class="lesson-count-badge" id="sidebarLessonCount">
+                    45 Lessons
+                </span>
+
+            </div>
+
+
+            <!-- OVERALL PROGRESS -->
+            <div class="overall-progress-card">
+
+                <div class="progress-heading">
+                    <span>Course Progress</span>
+                    <strong id="progressPercent">0%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="overallProgressBar" class="progress-bar"></div>
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+
+                <p id="progressMessage">
+                    Your C++ journey starts here. Let's begin!
+                </p>
+
+            </div>
+
+
+            <!-- LESSON LIST GENERATED BY JAVASCRIPT -->
+            <div id="lessonList" class="lesson-list">
+
+                <div class="lesson-list-loading">
+                    Preparing your C++ learning path...
+                </div>
+
+            </div>
+
+
+            <!-- SIDEBAR FOOTER -->
+            <div class="sidebar-footer">
+                <span class="sidebar-footer-icon">✦</span>
+
+                <p>
+                    Every expert started as a beginner.
+                    Keep learning and keep building.
+                </p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN LESSON AREA -->
+        <section class="lesson-main">
+
+            <!-- LESSON HEADER -->
+            <div class="lesson-heading-card">
+
+                <div class="lesson-heading-top">
+
+                    <div class="lesson-breadcrumb">
+                        <a href="courses.html">Courses</a>
+                        <span>/</span>
+                        <span>C++ Masterclass</span>
+                    </div>
+
+                    <span class="lesson-category-badge" id="lessonCategory">
+                        FOUNDATIONS
+                    </span>
+
+                </div>
+
+                <div class="lesson-heading-content">
+
+                    <span class="lesson-number-label" id="lessonNumber">
+                        LESSON 01 OF 45
+                    </span>
+
+                    <h2 id="lessonTitle">
+                        Welcome to C++ Programming
+                    </h2>
+
+                    <p id="lessonSubtitle">
+                        Discover C++ and understand what you can build with it.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LESSON EXPLANATION -->
+            <article class="lesson-content-card">
+
+                <div class="content-card-heading">
+                    <span class="content-icon">📘</span>
+
+                    <div>
+                        <span class="section-kicker">UNDERSTAND THE CONCEPT</span>
+                        <h3>Lesson Explanation</h3>
+                    </div>
+                </div>
+
+                <div id="lessonExplanation" class="lesson-explanation">
+
+                    <p>
+                        Welcome to the ELOMCODE School C++ Masterclass!
+                        This course will guide you through the fundamentals
+                        of programming and gradually introduce more advanced
+                        C++ concepts.
+                    </p>
+
+                </div>
+
+
+                <!-- LESSON TIP -->
+                <div class="lesson-tip-box">
+
+                    <div class="tip-icon">💡</div>
+
+                    <div>
+                        <strong>EL OMCODE Learning Tip</strong>
+
+                        <p id="lessonTip">
+                            Take your time to understand each concept.
+                            You do not need to know everything at once.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- EXAMPLE CODE -->
+            <section class="code-section-card">
+
+                <div class="content-card-heading">
+
+                    <span class="content-icon">💻</span>
+
+                    <div>
+                        <span class="section-kicker">LEARN BY EXAMPLE</span>
+                        <h3>Example Code</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="code-window">
+
+                    <div class="code-window-header">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="code-filename">main.cpp</span>
+
+                        <span class="language-badge">C++</span>
+
+                    </div>
+
+
+                    <pre class="code-display"><code id="exampleCode">// Your C++ example will appear here.</code></pre>
+
+
+                    <div class="code-window-footer">
+
+                        <span class="code-footer-note">
+                            Study the example before running it.
+                        </span>
+
+                        <button id="runExampleButton" class="primary-button"
+                                type="button">
+                            ▶ Run Example
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="output-section">
+
+                    <div class="output-heading">
+                        <span class="output-terminal-icon">›_</span>
+                        <strong>Example Output</strong>
+                        <span id="outputStatus" class="output-status">
+                            READY
+                        </span>
+                    </div>
+
+                    <iframe
+                        id="exampleOutputFrame"
+                        class="output-frame"
+                        title="C++ example output"
+                        sandbox="allow-scripts">
+                    </iframe>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRACTICE WORKSPACE -->
+            <section class="practice-section-card">
+
+                <div class="content-card-heading">
+
+                    <span class="content-icon">⌨️</span>
+
+                    <div>
+                        <span class="section-kicker">YOUR TURN TO BUILD</span>
+                        <h3>Practice Workspace</h3>
+                    </div>
+
+                </div>
+
+
+                <p class="practice-description">
+                    Write your own C++ code below. Experiment, make changes,
+                    and learn by doing.
+                </p>
+
+
+                <div class="editor-window">
+
+                    <div class="editor-header">
+
+                        <div class="editor-file-info">
+                            <span class="editor-file-icon">▣</span>
+                            <strong>main.cpp</strong>
+                        </div>
+
+                        <span id="editorStatus" class="editor-status">
+                            READY TO CODE
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="codeEditor"
+                        class="code-editor"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        autocorrect="off"
+                        aria-label="Write your C++ code"
+                        placeholder="// Write your C++ code here.
+
+// Example:
+// #include <iostream>
+// int main() {
+//     std::cout << &quot;Hello, ELOMCODE!&quot;;
+//     return 0;
+// }"></textarea>
+
+
+                    <div class="editor-toolbar">
+
+                        <div class="editor-shortcut">
+                            <span>TIP</span>
+                            Press Ctrl + Enter to run your code.
+                        </div>
+
+                        <div class="editor-actions">
+
+                            <button id="resetButton"
+                                    class="secondary-button"
+                                    type="button">
+                                ↺ Clear Editor
+                            </button>
+
+                            <button id="runButton"
+                                    class="primary-button"
+                                    type="button">
+                                ▶ Run My Code
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRACTICE OUTPUT -->
+                <div class="output-section practice-output-section">
+
+                    <div class="output-heading">
+                        <span class="output-terminal-icon">›_</span>
+                        <strong>Your Program Output</strong>
+                        <span class="output-status">CONSOLE</span>
+                    </div>
+
+                    <iframe
+                        id="practiceOutputFrame"
+                        class="output-frame practice-output-frame"
+                        title="Your C++ program output"
+                        sandbox="allow-scripts">
+                    </iframe>
+
+                </div>
+
+
+                <div class="compiler-notice">
+                    <span class="notice-icon">ℹ</span>
+
+                    <p>
+                        C++ programs require a compiler. The Run buttons will
+                        connect to a compiler service through the JavaScript
+                        functionality. Do not enter passwords or other
+                        sensitive information into the practice editor.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- CHALLENGE ZONE -->
+            <section class="challenge-card">
+
+                <div class="challenge-decoration">?</div>
+
+                <div class="challenge-header">
+
+                    <div class="challenge-icon">🎯</div>
+
+                    <div>
+                        <span class="section-kicker">TEST YOUR UNDERSTANDING</span>
+                        <h3>Lesson Challenge</h3>
+                    </div>
+
+                </div>
+
+                <h4 id="challengeTitle">
+                    Your First C++ Challenge
+                </h4>
+
+                <p id="challengeText">
+                    Complete the challenge for this lesson and practise
+                    applying what you have learned.
+                </p>
+
+                <div class="challenge-footer">
+                    <span>🧠 Think. Write. Test. Improve.</span>
+                </div>
+
+            </section>
+
+
+            <!-- LESSON NAVIGATION -->
+            <div class="lesson-navigation">
+
+                <button id="previousButton"
+                        class="secondary-button navigation-button"
+                        type="button">
+                    ← Previous Lesson
+                </button>
+
+                <button id="completeButton"
+                        class="complete-button"
+                        type="button">
+
+                    <span id="completeButtonText">
+                        ✓ Mark Lesson Complete
+                    </span>
+
+                </button>
+
+                <button id="nextButton"
+                        class="primary-button navigation-button"
+                        type="button">
+                    Next Lesson →
+                </button>
+
+            </div>
+
+
+            <div id="lessonCompletionMessage"
+                 class="completion-message"
+                 role="status"
+                 aria-live="polite">
+            </div>
+
+
+            <!-- CERTIFICATE CORNER -->
+            <section class="certificate-card">
+
+                <div class="certificate-visual">
+                    <div class="certificate-ring ring-one"></div>
+                    <div class="certificate-ring ring-two"></div>
+
+                    <div class="certificate-icon">🏆</div>
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <span class="section-kicker">YOUR ACHIEVEMENT</span>
+
+                    <h3>C++ Masterclass Certificate</h3>
+
+                    <p id="certificateMessage">
+                        Complete all 45 lessons to unlock your C++ Masterclass
+                        certificate.
+                    </p>
+
+                    <div class="certificate-status" id="certificateStatus">
+                        🔒 Certificate Locked
+                    </div>
+
+                    <div class="certificate-actions">
+
+                        <button id="certificateButton"
+                                class="primary-button"
+                                type="button"
+                                disabled>
+                            🏆 Unlock Certificate
+                        </button>
+
+                        <button id="certificateOpenButton"
+                                class="secondary-button"
+                                type="button"
+                                hidden>
+                            View Certificate
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COURSE FOOTER -->
+            <footer class="course-footer">
+
+                <div class="footer-brand">
+                    <span class="footer-brand-symbol">E</span>
+
+                    <div>
+                        <strong>ELOMCODE SCHOOL</strong>
+                        <span>Learn. Code. Build. Become.</span>
+                    </div>
+                </div>
+
+                <p>
+                    Designed and developed by
+                    <strong>Elijah Opomulero</strong>
+                </p>
+
+                <span class="footer-copyright">
+                    © <span id="currentYear">2026</span> ELOMCODE School
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- CERTIFICATE MODAL -->
+    <div id="certificateModal"
+         class="certificate-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="certificateModalTitle"
+         aria-hidden="true">
+
+        <div id="certificateBackdrop" class="certificate-backdrop"></div>
+
+        <div class="certificate-modal-panel">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-kicker">ELOMCODE SCHOOL</span>
+                    <h2 id="certificateModalTitle">
+                        Your C++ Certificate
+                    </h2>
+                </div>
+
+                <button id="certificateClose"
+                        class="modal-close-button"
+                        type="button"
+                        aria-label="Close certificate">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="certificate-paper" id="certificatePaper">
+
+                <div class="certificate-paper-border">
+
+                    <div class="certificate-paper-brand">
+                        <span class="certificate-paper-logo">E</span>
+                        <span>ELOMCODE SCHOOL</span>
+                    </div>
+
+                    <div class="certificate-paper-decoration">✦</div>
+
+                    <p class="certificate-small-heading">
+                        CERTIFICATE OF COMPLETION
+                    </p>
+
+                    <h2>Certificate of Achievement</h2>
+
+                    <p class="certificate-presented">
+                        This certificate is presented to
+                    </p>
+
+                    <input
+                        id="certificateName"
+                        class="certificate-name-input"
+                        type="text"
+                        maxlength="80"
+                        placeholder="Enter your full name"
+                        aria-label="Certificate recipient name">
+
+                    <p class="certificate-description">
+                        in recognition of completing the
+                        <strong>C++ Programming Masterclass</strong>
+                        at ELOMCODE School.
+                    </p>
+
+                    <div class="certificate-paper-stats">
+                        <div>
+                            <span>COURSE</span>
+                            <strong>C++ Programming</strong>
+                        </div>
+
+                        <div>
+                            <span>EXPERIENCE POINTS</span>
+                            <strong id="certificateXP">0 XP</strong>
+                        </div>
+
+                        <div>
+                            <span>DATE</span>
+                            <strong id="certificateDate">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="certificate-signature-area">
+
+                        <div class="certificate-signature">
+                            <strong>Elijah Opomulero</strong>
+                            <span>Course Architect</span>
+                        </div>
+
+                        <div class="certificate-seal">E</div>
+
+                    </div>
+
+                    <p class="certificate-paper-footer">
+                        LEARN. CODE. BUILD. BECOME.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button id="certificateCancelButton"
+                        class="secondary-button"
+                        type="button">
+                    Close
+                </button>
+
+                <button id="certificatePrintButton"
+                        class="primary-button"
+                        type="button">
+                    Print / Save Certificate
+                </button>
+
+            </div>
+
+            <p class="certificate-print-note">
+                Enter your name before printing. Certificate completion
+                is tracked in this browser.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN READER ANNOUNCEMENTS -->
+    <div id="liveAnnouncement"
+         class="visually-hidden"
+         aria-live="polite"
+         aria-atomic="true">
+    </div>
+
+</body>
+</html>
